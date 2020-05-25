@@ -1,0 +1,89 @@
+.custom-navbar{
+    .container{
+        position: relative;
+    }
+    .navbar-brand{
+        margin-right: 100px;
+        img{
+            width: 100px ;
+            height: auto ;
+            object-fit: contain;
+        }
+    }
+    .toggle_icon{
+        display: none;
+    }
+    .nav-item {
+        margin: 0 5px;
+        a{
+            cursor: pointer;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 17px;
+            padding: 0px 5px;
+            font-weight: 550;
+            color: #222222;
+            border: 1px solid transparent;
+            -webkit-transition: all 0.3s ease 0s;
+            -moz-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s
+        }
+        .active , a:hover{
+            color: $mainColor;
+            border-bottom: 1px solid $mainColor ;
+            border-left: 1px solid $mainColor ;
+        }
+    }
+} 
+
+/*** Start Media Queries ***/
+@media only screen and (max-width: 479px){
+    .custom-navbar{
+        .toggle_icon{
+            display: block;
+            left: calc(100% - 30px);
+        }
+        .navbar-nav {
+            display: none;
+        }
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    .custom-navbar{
+        .toggle_icon{
+            display: block;
+            left: calc(100% - 30px);
+        }
+        .navbar-nav {
+            display: none;
+        }
+    } 
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .custom-navbar{
+        .navbar-brand{
+            margin-right: 25px;
+            img{
+                width: 80px ;
+            }
+        }
+        .toggle_icon{
+            display: block;
+            left: calc(100% - 30px);
+        }
+        .navbar-nav {
+            display: none;
+        }
+    } 
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .custom-navbar{
+        .nav-item {
+            a{
+                font-size: 15px;
+            }
+        }
+    } 
+}
+/*** End Media Queries ***/

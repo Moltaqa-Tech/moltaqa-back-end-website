@@ -1,0 +1,340 @@
+header{
+    background-image: url(../images/headerbg.png);
+    width: 100% ;
+    height: 658px ;
+    .container{
+        position: relative;
+    }
+    .v-line{
+        height: 225px;
+        width: 2px;
+        position: absolute;
+        top: 160px ;
+        left: 3px;
+    }
+    .socail-media{
+        position: absolute;
+        top: 425px;
+        left: 0;   
+        a{
+            display: block ;
+            margin: 10px 0;
+            img{
+                width: 15px;
+            }
+        }
+    }
+    .header-cover{
+        display: flex ;
+        flex-wrap: wrap;
+        justify-content: center ;
+        position: absolute;
+        left: 15%;
+        align-items: center;
+        width: 70% ;
+        top: 40px ;
+        margin: 0 auto;
+        height: 618px ;
+        background: url(../images/cover.png);
+        background-size: cover;
+        .contnet-img{
+            position: relative;
+            top: 50px;
+            width: 30% ;
+            height: 50% ;
+            background: url(../images/start.png);
+            background-size: cover;
+            img{
+                position: absolute;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        p{
+            font-family: 'Roboto Condensed', sans-serif;
+            position: absolute;
+            width: 100% ;
+            bottom: 145px ;
+            font-weight: bold ;
+            font-size: 18px ;
+        }
+    }
+}
+.side_menu {
+    position: fixed;
+    left: -100% ;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: RGBA(235,234,234,.8);
+    z-index: 999;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    .logo-side{
+        display: none;
+        width: 100px;
+        position: absolute;
+        top: 25px ;
+        left: 25px;
+    }
+    .menu{
+        width: 100px;
+        display: inline-block;
+        margin-right: 25px;
+    }
+    .content-menu{
+        display: flex ;
+        align-items: center;
+        height: 100% ;
+    }
+    .list {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        li{
+            margin-bottom: 50px;
+            a{
+                cursor: pointer;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: 22px;
+                padding: 0px 5px;
+                font-weight: 500;
+                color: #222222;
+                border-bottom: 1px solid transparent ;
+                border-left: 1px solid transparent ;
+                -webkit-transition: all 0.3s ease 0s;
+                -moz-transition: all 0.3s ease 0s;
+                -o-transition: all 0.3s ease 0s;
+                transition: all 0.3s ease 0s
+            }
+            .active , a:hover{
+                color: $mainColor;
+                border-bottom: 1px solid $mainColor ;
+                border-left: 1px solid $mainColor ;
+            }
+        }
+        li:last-of-type{
+            margin-bottom: 0;
+        }
+    }
+}
+.side_menu_open{
+    left: 0;
+}
+.toggle_icon{
+    cursor: pointer;
+    position: absolute;
+    height: 20px;
+    width: 30px;
+    top: 25px;
+    left: 0;
+    z-index: 9999;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    display: inline-block ;
+    span{
+        height: 2px;
+        width: 30px;
+        display: block;
+        background: #222222;
+        cursor: pointer;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        &::before , &::after{
+            content: "";
+            height: 2px;
+            display: block;
+            background: #222222;
+            left: 0px;
+            position: absolute;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+        &::before{
+            width: 30px;
+            top: 15px;
+        }
+        &::after{
+
+        }
+    }
+}
+.toggle_icon_open{
+    left: 100%;
+    span {
+        background: transparent !important;
+        &::before{
+            width: 25px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            top: 9px;
+            left: 3px;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+        &::after{
+            width: 25px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            left: 3px;
+            top: 9px;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+@import "./nav" ;
+
+/*** Start Media Queries ***/
+@media only screen and (max-width: 479px){
+    header{
+        height: 400px ;
+        overflow: hidden;
+        .v-line{
+            height: 80px;
+            top: 80px ;
+            left: 28px;
+        }
+        .socail-media{
+            top: 180px;
+            left: 25px;   
+            a{
+                margin: 7px 0;
+                img{
+                    width: 12px;
+                }
+            }
+        }
+        .header-cover{
+            left: 0%;
+            width: 100% ;
+            top: 30px ;
+            height: 400px ;
+            background-size: contain;
+            background-repeat: no-repeat;
+            .contnet-img{
+                top: 0px;
+                width: 35% ;
+            }
+            p{
+                width: 80% ;
+                margin: 0 auto;
+                bottom: 150px ;
+                font-size: 12px ;
+            }
+        }
+    }
+    .side_menu {
+        background: RGBA(235,234,234,1);
+        .menu{
+            width: 100px;
+            margin-right: 100px;
+        }
+        .logo-side{
+            display: block;
+        }
+    }
+    .toggle_icon{
+        left: 25px;
+    }
+    .toggle_icon_open{
+        left: 90%;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    header{
+        height: 450px ;
+        .v-line{
+            height: 100px;
+            top: 100px ;
+            left: 28px;
+        }
+        .socail-media{
+            top: 230px;
+            left: 25px;   
+        }
+        .header-cover{
+            left: 1%;
+            width: 98% ;
+            top: 20px ;
+            height: 430px ;
+            .contnet-img{
+                top: 35px;
+                width: 35% ;
+            }
+            p{
+                width: 80% ;
+                margin: 0 auto;
+                bottom: 120px ;
+                font-size: 14px ;
+            }
+        }
+    }
+    .side_menu {
+        background: RGBA(235,234,234,1);
+        .menu{
+            width: 100px;
+            margin-right: 100px;
+        }
+        .logo-side{
+            display: block;
+        }
+    }
+    .toggle_icon{
+        left: 25px;
+    }
+    .toggle_icon_open{
+        left: 80%;
+        top:35px ;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    header{
+        height: 550px ;
+        .v-line{
+            height: 150px;
+            top: 150px ;
+        }
+        .socail-media{
+            top: 350px;
+        }
+        .header-cover{
+            left: 5%;
+            width: 90% ;
+            top: 30px ;
+            height: 520px ;
+        }
+    }
+    .side_menu {
+        background: RGBA(235,234,234,1);
+        .menu{
+            width: 100px;
+            margin-right: 100px;
+        }
+        .logo-side{
+            display: block;
+        }
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+/*** End Media Queries ***/
