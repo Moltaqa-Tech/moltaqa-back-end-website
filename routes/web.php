@@ -27,13 +27,9 @@ Route::get('/pricing', function () {
 
 Route::get('/services', 'ServiceController@index');
 
-Route::get('/portofolio', function () {
-    return view('layouts.portofolio');
-});
+Route::get('/portofolio', 'PortofolioController@index');
 
-Route::get('/blog', function () {
-    return view('layouts.blog');
-});
+Route::get('/blog', 'BlogController@index');
 
 Route::get('/contact', function () {
     return view('layouts.contact-us');
