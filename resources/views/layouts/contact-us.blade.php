@@ -13,7 +13,7 @@
                 <h3 data-aos="fade-left" data-aos-duration="2000">contact us</h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">contact us</li>
                     </ol>
                 </nav>
@@ -100,15 +100,17 @@
             <div class="col-md-6 client-said-box">
               <div class="new-project">
                 <h3>Let's start a new project together!</h3>
-                <form>
+              <form action="{{url('/contact-us')}}" method="POST">
+                @csrf
+
                   <div class="form-group">
-                    <input type="text" class="form-control" id="textinput" placeholder="Name">
+                    <input type="text" class="form-control" name="contactName" id="textinput" placeholder="Name" required>
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <input type="email" class="form-control" name="contactEmail" id="exampleInputEmail1" placeholder="Email" required>
                   </div>
                   <div class="form-group">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
+                    <textarea class="form-control" name="contactMessage" id="exampleFormControlTextarea1" rows="3" placeholder="Message" required></textarea>
                   </div>
                   <button type="submit">Submit Message</button>
                 </form>

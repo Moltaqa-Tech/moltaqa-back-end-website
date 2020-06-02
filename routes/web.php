@@ -31,7 +31,10 @@ Route::get('/portofolio', 'PortofolioController@index');
 
 Route::get('/blog', 'BlogController@index');
 
-Route::get('/contact', function () {
-    return view('layouts.contact-us');
-});
+
+// Contact US routes
+Route::get('/contact', 'ContactUsController@index');
+Route::post('/contact-us', 'ContactUsController@store');
+
+
 
