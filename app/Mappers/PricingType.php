@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Mappers;
+
+
 class PricingType
 {
     const WEBSITE_PRICING = 1;
