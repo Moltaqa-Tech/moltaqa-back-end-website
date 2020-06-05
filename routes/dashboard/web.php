@@ -10,5 +10,6 @@ Route::prefix('dashboard')->name('dashboard.')->namespace("Dashboard")->group(fu
     Route::get('/contact-messages', 'ContactUsController@index')->name("contact");
     Route::resource('/services', 'ServiceController')->except(['show']);
     Route::resource('/blogs', 'BlogController')->except(['show']);
+    Route::resource('/teams', 'TeamController')->except(['show']);
 });//end of dashboard routes
 

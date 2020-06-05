@@ -17,6 +17,7 @@ return [
     'contact' => 'Contact Messages',
     'services' => 'Services',
     'blogs' => 'Blogs',
+    'teams' => 'Teams',
 
     // actions
     'search' => 'Search',

@@ -320,7 +320,7 @@
                             </a> --}}
                         </div>
                         <div class="card-item">
-                            <img src="{{asset($team->image_path)}}" alt="user">
+                            <img src="{{$team->image_path_val}}" alt="user">
                         </div>
                     </div>
                 @endforeach
