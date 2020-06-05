@@ -21,8 +21,8 @@
     </div>
     <div class="header-cover">
     <section class="contnet-img">
-        <img src="{{asset('images/logo.png')}}" id="mainlogo" alt="Art Geeks" data-aos="zoom-in" data-aos-duration="2000">
-        <img src="{{asset('images/imagic.png')}}" id="addlogo" alt="Art Geeks" data-aos="zoom-in" data-aos-duration="2000">
+        <img src="{{asset('images/logo.png')}}" id="mainlogo" alt="Moltaqa Tech" data-aos="zoom-in" data-aos-duration="2000">
+        <img src="{{asset('images/imagic.png')}}" id="addlogo" alt="Moltaqa Tech" data-aos="zoom-in" data-aos-duration="2000">
     </section>
     <p class="text-center">
         web Desgin - Hosting Services - UI/UX Desgin - Mobile Apps - Digital Marketing

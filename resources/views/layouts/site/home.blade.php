@@ -20,7 +20,7 @@
           <img src="{{asset('images/bgwho.png')}}" class="bg-who">
           <img src="{{asset('images/ellipse.png')}}" alt="ellipse" class="ellipse" data-aos="zoom-in" data-aos-duration="2000">
           <div class="who-descraption"  data-aos="fade-right" data-aos-duration="2000">
-            <h2>Who are <span class="company-name">Art Geeks</span></h2>
+            <h2>Who are <span class="company-name">Moltaqa Tech</span></h2>
             <p class="text-details">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta itaque nam repellendus animi ratione dolores optio. Necessitatibus sapiente itaque placeat corporis possimus nulla odio amet, consectetur, perferendis iusto dignissimos?
             </p>
@@ -140,10 +140,10 @@
       <section class="portfolio">
         <div class="container">
           <h1>unique lourny</h1>
-          <p class="creative-text">creative in every thing with <span>art geeks</span></p>
+          <p class="creative-text">creative in every thing with <span>Moltaqa Tech</span></p>
           <img class="lamp" src="{{asset('images/lamp.png')}}" alt="lamp">
           <div class="download-app">
-            <h6>art geeks creative agency</h6>
+            <h6>Moltaqa Tech creative agency</h6>
             <p class="text-download">
               <span>more than</span>
               <span>mobile app</span>

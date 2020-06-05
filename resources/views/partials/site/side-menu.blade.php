@@ -1,6 +1,6 @@
 <div class="side_menu">
     <div class="container content-menu">
-      <img src="{{asset('images/logo.png')}}" class="logo-side" alt="Art Geeks">
+      <img src="{{asset('images/logo.png')}}" class="logo-side" alt="Moltaqa Tech">
       <img src="{{asset('images/menu.png')}}" class="menu" alt="menu">
       <nav>
         <ul class="list menu-left">

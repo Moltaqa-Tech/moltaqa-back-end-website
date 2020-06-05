@@ -56,7 +56,7 @@
         <div class="container">
             <img src="{{asset('images/newline.png')}}" alt="about line" class="about-line" data-aos="fade-up" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-down" data-aos-duration="2000">discover all about <span>art geeks</span></h3>
+                <h3 data-aos="fade-down" data-aos-duration="2000">discover all about <span>Moltaqa Tech</span></h3>
             </section>
             <section class="play-video">
                 <i class="fab fa-youtube"></i>
@@ -98,7 +98,7 @@
         <div class="container">
         <img src="{{asset('images/newline.png')}}" alt="about line" class="about-line" data-aos="fade-up" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-down" data-aos-duration="2000">why choose <span>art geeks</span></h3>
+                <h3 data-aos="fade-down" data-aos-duration="2000">why choose <span>Moltaqa Tech</span></h3>
             </section>
             <div class="row custom-row">
                 <div class="col-md-4">
