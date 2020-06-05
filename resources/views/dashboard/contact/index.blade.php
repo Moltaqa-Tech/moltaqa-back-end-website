@@ -18,31 +18,25 @@
 
             <div class="box box-primary">
 
-                {{-- <div class="box-header with-border">
+                <div class="box-header with-border">
 
                     <h3 class="box-title" style="margin-bottom: 15px">@lang('dashboard.contact') <small>{{ $contactMessages->total() }}</small></h3>
 
-                    <form action="{{ route('dashboard.categories.index') }}" method="get">
+                    <form action="{{ route('dashboard.contact') }}" method="get">
 
                         <div class="row">
-
                             <div class="col-md-4">
                                 <input type="text" name="search" class="form-control" placeholder="@lang('dashboard.search')" value="{{ request()->search }}">
                             </div>
 
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> @lang('dashboard.search')</button>
-                                @if (auth()->user()->hasPermission('create_categories'))
-                                    <a href="{{ route('dashboard.categories.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('dashboard.add')</a>
-                                @else
-                                    <a href="#" class="btn btn-primary disabled"><i class="fa fa-plus"></i> @lang('dashboard.add')</a>
-                                @endif
                             </div>
 
                         </div>
                     </form><!-- end of form -->
 
-                </div><!-- end of box header --> --}}
+                </div><!-- end of box header -->
 
                 <div class="box-body">
 
