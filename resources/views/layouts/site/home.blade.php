@@ -163,18 +163,23 @@
               <div class="col-md-5 text-latest-work">
                 <section>
                   <div>
+                    <h5>{{$lastWork->title}}</h5>
+                    <p>{{$lastWork->description}}</p>
+                  </div>
+                  {{-- <div>
                     <h5>arto lifewtr</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa aspernatur rerum harum quasi expedita quaerat modi! Magnam doloremque eveniet pariatur soluta quas quidem</p>
-                  </div>
-                  <div>
-                    <h5>arto lifewtr</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa aspernatur rerum harum quasi expedita quaerat modi! Magnam doloremque eveniet pariatur soluta quas quidem</p>
-                  </div>
+                  </div> --}}
                 </section>
               </div>
               <div class="col-md-7">
                 <div class="owl-carousel owl-theme owl-works">
-                    <div class="item">
+                    @foreach ($lastWork->images as $image)
+                        <div class="item">
+                        <img src="{{asset($image->image_path)}}" alt="carsoul">
+                        </div>
+                    @endforeach
+                    {{-- <div class="item">
                       <img src="{{asset('images/carsoul.png')}}" alt="carsoul">
                     </div>
                     <div class="item">
@@ -185,10 +190,7 @@
                     </div>
                     <div class="item">
                       <img src="{{asset('images/carsoul.png')}}" alt="carsoul">
-                    </div>
-                    <div class="item">
-                      <img src="{{asset('images/carsoul.png')}}" alt="carsoul">
-                    </div>
+                    </div> --}}
                 </div>
               </div>
             </div>
@@ -203,7 +205,12 @@
           <div class="container">
             <img src="{{asset('images/THINK.png')}}" class="bg-think">
               <div class="title-tabs">
-                  <div class="tab active" data-class=".all">
+                    @foreach ($categories as $key => $category)
+                        <div class="tab {{($key == 0) ? 'active': ''}}" data-class=".{{($category->id == $categoryAllId) ? 'all' : 'cat_'.$category->id}}">
+                                <span >{{$category->name}}</span>
+                        </div>
+                    @endforeach
+                  {{-- <div class="tab active" data-class=".all">
                        <span >All</span>
                   </div>
                   <div class="tab" data-class=".website">
@@ -217,12 +224,19 @@
                   </div>
                   <div class="tab" data-class=".motion">
                     <span>motion graphics</span>
-                  </div>
+                  </div> --}}
               </div>
           </div>
         </div>
         <div class="portfolio-content row">
-          <div class="website all col-md-4">
+            @foreach ($portofolios as $portofolio)
+                @foreach ($portofolio->images as $image)
+                    <div class="cat_{{$portofolio->category_id}} all col-md-4">
+                        <img src="{{asset($image->image_path)}}" alt="{{$portofolio->category_id}}">
+                    </div>
+                @endforeach
+            @endforeach
+          {{-- <div class="website all col-md-4">
             <img src="{{asset('images/webone.png')}}" alt="website">
           </div>
           <div class="website all col-md-4">
@@ -239,7 +253,7 @@
           </div>
           <div class="motion all col-md-4">
             <img src="{{asset('images/webosix.png')}}" alt="motion">
-          </div>
+          </div> --}}
         </div>
       </section>
 
@@ -253,23 +267,61 @@
 
                 @foreach ($teams as $team)
                     <div class="item">
-                    <div class="social-icons">
-                        <a href="#">
-                        <img src="{{asset('images/inst.png')}}" alt="instgram">
-                        </a>
-                        <a href="#">
-                        <img src="{{asset('images/facebook.png')}}" alt="facebook">
-                        </a>
-                        <a href="#">
-                        <img src="{{asset('images/whats.png')}}" alt="whats">
-                        </a>
-                        <a href="#">
-                        <img src="{{asset('images/twiiter.png')}}" alt="twitter">
-                        </a>
-                    </div>
-                    <div class="card-item">
-                        <img src="{{asset($team->image_path)}}" alt="user">
-                    </div>
+                        <div class="social-icons">
+                            @if($team->instagram_url != null)
+                                <a href="{{$team->instagram_url}}">
+                                    <img src="{{asset('images/inst.png')}}" alt="instgram">
+                                </a>
+                            @endif
+                            @if($team->facebook_url != null)
+                                <a href="{{$team->facebook_url}}">
+                                    <img src="{{asset('images/facebook.png')}}" alt="facebook">
+                                </a>
+                            @endif
+                            @if($team->whatsapp_url != null)
+                                <a href="{{$team->whatsapp_url}}">
+                                    <img src="{{asset('images/whats.png')}}" alt="whats">
+                                </a>
+                            @endif
+                            @if($team->twitter_url != null)
+                                <a href="{{$team->twitter_url}}">
+                                    <img src="{{asset('images/twiiter.png')}}" alt="twitter">
+                                </a>
+                            @endif
+
+                            @if($team->instagram_url == null)
+                                <a href="#" style="visibility: hidden;">
+                                    <img src="{{asset('images/inst.png')}}" alt="facebook">
+                                </a>
+                            @endif
+                            @if($team->facebook_url == null)
+                                <a href="#" style="visibility: hidden;">
+                                    <img src="{{asset('images/facebook.png')}}" alt="facebook">
+                                </a>
+                            @endif
+                            @if($team->whatsapp_url == null)
+                                <a href="#" style="visibility: hidden;">
+                                    <img src="{{asset('images/whats.png')}}" alt="facebook">
+                                </a>
+                            @endif
+                            @if($team->twitter_url == null)
+                                <a href="#" style="visibility: hidden;">
+                                    <img src="{{asset('images/twiiter.png')}}" alt="facebook">
+                                </a>
+                            @endif
+                            {{-- <a href="#">
+                                <img src="{{asset('images/facebook.png')}}" alt="facebook">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('images/whats.png')}}" alt="whats">
+                            </a>
+                            <a href="#">
+                                <img src="{{asset('images/twiiter.png')}}" alt="twitter">
+                            </a> --}}
+                        </div>
+                        <div class="card-item">
+                            <img src="{{asset($team->image_path)}}" alt="user">
+                        </div>
                     </div>
                 @endforeach
 
