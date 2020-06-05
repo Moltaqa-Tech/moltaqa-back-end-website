@@ -31,7 +31,7 @@
                 <div class="feature-box" data-aos="fade-up" data-aos-duration="1000">
                     <div class="bg-feature">
                         <div class="cover-white">
-                        <img src="{{asset($service->image_path)}}" alt="{{$service->title}}">
+                        <img src="{{$service->image_path_val}}" alt="{{$service->title}}">
                         </div>
                     </div>
                     <h6>{{$service->title}}</h6>
@@ -51,7 +51,7 @@
             @foreach($workFlows as $key => $workFlow)
                 <div class="col-md-6 row child-row">
                 <div class="col-md-6">
-                    <img src="{{asset($workFlow->image_path)}}" alt="service" data-aos="fade-right" data-aos-duration="2000">
+                    <img src="{{$workFlow->image_path_val}}" alt="service" data-aos="fade-right" data-aos-duration="2000">
                 </div>
 
                 <div class="col-md-6 pos-top-7" data-aos="fade-up" data-aos-duration="2000">

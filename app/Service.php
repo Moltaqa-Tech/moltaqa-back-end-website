@@ -12,6 +12,15 @@ class Service extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'desc', 'image_path', 'status'
+        'title', 'desc', 'image_path', 'status', 'work_flow',
     ];
+
+    protected $appends = [
+         'image_path_val',
+    ];
+
+    public function getImagePathValAttribute()
+    {
+        return asset('uploads/services/' . $this->image_path);
+    }//end of get image path
 }

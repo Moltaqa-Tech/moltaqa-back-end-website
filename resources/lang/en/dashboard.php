@@ -15,5 +15,18 @@ return [
 
     'dashboard' => 'Dashboard',
     'contact' => 'Contact Messages',
+    'services' => 'Services',
+
+    // actions
+    'search' => 'Search',
+    'add' => 'Add',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'action' => 'Action',
+
+    // delete dialog
+    'confirm_delete' => "Are you sure you want to delete this item ?",
+    "yes" => "Yes",
+    "no" => "No",
 
 ];

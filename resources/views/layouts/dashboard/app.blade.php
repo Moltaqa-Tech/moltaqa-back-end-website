@@ -105,7 +105,7 @@
                 <span class="icon-bar"></span>
             </a>
 
-      
+
         </nav>
 
     </header>
@@ -175,15 +175,15 @@
             e.preventDefault();
 
             var n = new Noty({
-                text: "@lang('site.confirm_delete')",
+                text: "@lang('dashboard.confirm_delete')",
                 type: "warning",
                 killer: true,
                 buttons: [
-                    Noty.button("@lang('site.yes')", 'btn btn-success mr-2', function () {
+                    Noty.button("@lang('dashboard.yes')", 'btn btn-success mr-2', function () {
                         that.closest('form').submit();
                     }),
 
-                    Noty.button("@lang('site.no')", 'btn btn-primary mr-2', function () {
+                    Noty.button("@lang('dashboard.no')", 'btn btn-primary mr-2', function () {
                         n.close();
                     })
                 ]
