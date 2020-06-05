@@ -16,4 +16,7 @@
 // website routes
 require_once 'site/web.php';
 
+// dashborad routes
+require_once 'dashboard/web.php';
+
 
