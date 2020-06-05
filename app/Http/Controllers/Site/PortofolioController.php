@@ -15,6 +15,6 @@ class PortofolioController extends Controller
         $categories = PortofolioCategory::where("status", 1)->get();
         $categoryAllId = PortofolioCategory::where("status", 1)->where("name", "like", "%all%")->first()->id;
         $portofolios = Portofolio::with("images")->where('status', 1)->get();
-        return view("layouts.portofolio", ["categories" => $categories, "portofolios" => $portofolios, "categoryAllId" => $categoryAllId]);
+        return view("layouts.site.portofolio", ["categories" => $categories, "portofolios" => $portofolios, "categoryAllId" => $categoryAllId]);
     }
 }

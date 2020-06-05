@@ -1,8 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.site.main')
 
 @section('content')
     <!-- Nav Bar-->
-    @include("partials.nav-bar", ["home" => 0, "about" => 0, "pricing" => 0, "services" => 1, "proto" => 0, "blog" => 0, "contact" => 0])
+    @include("partials.site.nav-bar", ["home" => 0, "about" => 0, "pricing" => 0, "services" => 1, "proto" => 0, "blog" => 0, "contact" => 0])
 
 
     <div class="navigation">

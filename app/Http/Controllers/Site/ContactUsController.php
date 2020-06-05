@@ -12,7 +12,7 @@ class ContactUsController extends Controller
 
     public function index()
     {
-        return view('layouts.contact-us');
+        return view('layouts.site.contact-us');
     }
 
     public function store(Request $request)

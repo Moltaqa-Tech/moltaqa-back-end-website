@@ -13,6 +13,6 @@ class BlogController extends Controller
     {
         $blogs = Blog::where("status", 1)->get();
 
-        return view("layouts.blog", ["blogs" => $blogs]);
+        return view("layouts.site.blog", ["blogs" => $blogs]);
     }
 }

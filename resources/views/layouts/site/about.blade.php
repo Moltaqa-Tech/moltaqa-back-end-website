@@ -1,7 +1,14 @@
-@extends('layouts.main')
+@extends('layouts.site.main')
+
+@section('css')
+    <!-- style for owl carousel -->
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+@endsection
+
 @section('content')
     <!-- Nav Bar-->
-    @include("partials.nav-bar", ["home" => 0, "about" => 1, "pricing" => 0, "services" => 0, "proto" => 0, "blog" => 0, "contact" => 0])
+    @include("partials.site.nav-bar", ["home" => 0, "about" => 1, "pricing" => 0, "services" => 0, "proto" => 0, "blog" => 0, "contact" => 0])
 
 
     <div class="navigation">
@@ -234,4 +241,55 @@
             <!-- End supports Section -->
         </div>
     </div>
+@endsection
+
+@section("js")
+
+        {{-- owl js--}}
+        <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+        {{-- owl  works--}}
+        <script>
+          $('.owl-works').owlCarousel({
+            loop:true,
+            autoplay:true,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true ,
+            margin:10,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+          });
+        </script>
+
+{{-- owl  works--}}
+<script>
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      autoplay:true,
+      autoplayTimeout:5000,
+      autoplayHoverPause:true ,
+      margin:10,
+      nav:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:1
+          },
+          1000:{
+              items:1
+          }
+      }
+    });
+  </script>
 @endsection

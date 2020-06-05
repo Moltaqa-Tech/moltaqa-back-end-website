@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <!-- Main Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    <!-- style for this page -->
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+    @yield("css")
     <!-- Main Style -->
     <link rel="stylesheet" href="{{asset('css/hovers.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -26,12 +24,11 @@
 <body data-aos-easing="ease-in-out-back" data-aos-duration="1200" data-aos-delay="0">
 
     <!-- Side Menu-->
-    @include("partials.side-menu")
+    @include("partials.site.side-menu")
     <!-- Start Header -->
-    {{-- @include('partials.header') --}}
+    {{-- @include('partials.site.header') --}}
     <!-- End Header -->
 
-    
 
     @yield('content')
 
@@ -98,120 +95,9 @@
     <script>
       AOS.init();
     </script>
-    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-    <script>
-      $('.owl-works').owlCarousel({
-        loop:true,
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true ,
-        margin:10,
-        nav:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-        }
-      });
-    </script>
-    <script>
-      $('.owl-team').owlCarousel({
-        loop:true,
-        margin:25,
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true ,
-        responsiveClass:true,
-        nav:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:3
-            }
-        }
-      });
-    </script>
-    <script src="{{asset('js/particle.js')}}"></script>
-    <script>
-      particlesJS("particles-js",{
-    "particles": {
-        "number": {
-            "value": 100
-        },
-        "color": {
-            "value": "#fff"
-        },
-        "shape": {
-            "type": "star",
-            "stroke": {
-                "width": 3,
-                "color": "fff"
-            }
-        },
-        "opacity": {
-            "value": 0.7,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 1
-            }
-        },
-        "size": {
-            "value": 3,
-            "random": false,
-            "anim": {
-                "enable": false,
-                "speed": 30
-            }
-        },
-        "line_linked": {
-            "enable": true,
-            "distance": 130,
-            "color": "#fff",
-            "width": 1
-        },
-        "move": {
-            "enable": true,
-            "speed": 2,
-            "direction": "none",
-            "straight": false
-        }
-    },
-    "interactivity": {
-        "events": {
-            "onhover": {
-                "enable": false,
-                "mode": "repulse"
-            },
-            "onclick": {
-                "enable": false,
-                "mode": "push"
-            }
-        },
-        "modes": {
-            "repulse": {
-                "distance": 150,
-                "duration": 0.4
-            },
-            "bubble": {
-                "distance": 100,
-                "size": 10
-            }
-        }
-    }
-});
-    </script>
+
+    @yield('js')
+
     <script src="{{asset('js/main.js')}}"></script>
     <!-- End Scripts -->
 </body>

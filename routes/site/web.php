@@ -17,7 +17,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/', 'HomeController@index');
 
     Route::get('/about', function () {
-        return view('layouts.about');
+        return view('layouts.site.about');
     });
 
     Route::get('/pricing', 'PriceController@index');

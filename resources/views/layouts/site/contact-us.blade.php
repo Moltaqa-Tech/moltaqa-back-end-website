@@ -1,8 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.site.main')
 
 @section('content')
     <!-- Nav Bar-->
-    @include("partials.nav-bar", ["home" => 0, "about" => 0, "pricing" => 0, "services" => 0, "proto" => 0, "blog" => 0, "contact" => 1])
+    @include("partials.site.nav-bar", ["home" => 0, "about" => 0, "pricing" => 0, "services" => 0, "proto" => 0, "blog" => 0, "contact" => 1])
 
 
     <div class="navigation">
@@ -100,19 +100,18 @@
             <div class="col-md-6 client-said-box">
               <div class="new-project">
                 <h3>Let's start a new project together!</h3>
-              <form action="{{url('/contact-us')}}" method="POST">
-                @csrf
-
-                  <div class="form-group">
+                <form action="{{url('/contact-us')}}" method="POST">
+                    @csrf
+                    <div class="form-group">
                     <input type="text" class="form-control" name="contactName" id="textinput" placeholder="Name" required>
-                  </div>
-                  <div class="form-group">
+                    </div>
+                    <div class="form-group">
                     <input type="email" class="form-control" name="contactEmail" id="exampleInputEmail1" placeholder="Email" required>
-                  </div>
-                  <div class="form-group">
+                    </div>
+                    <div class="form-group">
                     <textarea class="form-control" name="contactMessage" id="exampleFormControlTextarea1" rows="3" placeholder="Message" required></textarea>
-                  </div>
-                  <button type="submit">Submit Message</button>
+                    </div>
+                    <button type="submit">Submit Message</button>
                 </form>
               </div>
             </div>
