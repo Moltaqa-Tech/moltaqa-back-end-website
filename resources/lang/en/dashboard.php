@@ -18,6 +18,7 @@ return [
     'services' => 'Services',
     'blogs' => 'Blogs',
     'teams' => 'Teams',
+    'porto-categories' => 'Portofolio Categories',
 
     // actions
     'search' => 'Search',

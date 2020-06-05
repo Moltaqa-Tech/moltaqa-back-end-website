@@ -11,5 +11,6 @@ Route::prefix('dashboard')->name('dashboard.')->namespace("Dashboard")->group(fu
     Route::resource('/services', 'ServiceController')->except(['show']);
     Route::resource('/blogs', 'BlogController')->except(['show']);
     Route::resource('/teams', 'TeamController')->except(['show']);
+    Route::resource('/portofolio-categories', 'PortofolioCategoryController')->except(['show']);
 });//end of dashboard routes
 
