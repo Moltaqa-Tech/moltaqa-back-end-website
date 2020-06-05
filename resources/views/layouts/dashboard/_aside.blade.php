@@ -16,6 +16,7 @@
             <li><a href="{{ route('dashboard.welcome') }}"><i class="fa fa-th"></i><span>@lang('dashboard.dashboard')</span></a></li>
             <li><a href="{{ route('dashboard.contact') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.contact')</span></a></li>
             <li><a href="{{ route('dashboard.services.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.services')</span></a></li>
+            <li><a href="{{ route('dashboard.blogs.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.blogs')</span></a></li>
 
             {{-- @if (auth()->user()->hasPermission('read_categories'))
                 <li><a href="{{ route('dashboard.categories.index') }}"><i class="fa fa-th"></i><span>@lang('site.categories')</span></a></li>

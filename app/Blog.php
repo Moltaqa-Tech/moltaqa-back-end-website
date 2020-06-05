@@ -12,8 +12,16 @@ class Blog extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'breif_description', 'description', 'status', 'image_path', 'views_count'
+        'title', 'brief_description', 'description', 'status', 'image_path', 'views_count'
     ];
 
-    
+    protected $appends = [
+        'image_path_val',
+   ];
+
+   public function getImagePathValAttribute()
+   {
+       return asset('uploads/blogs/' . $this->image_path);
+   }//end of get image path
+
 }

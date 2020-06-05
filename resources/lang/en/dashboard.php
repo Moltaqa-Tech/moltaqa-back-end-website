@@ -16,6 +16,7 @@ return [
     'dashboard' => 'Dashboard',
     'contact' => 'Contact Messages',
     'services' => 'Services',
+    'blogs' => 'Blogs',
 
     // actions
     'search' => 'Search',

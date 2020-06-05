@@ -9,5 +9,6 @@ Route::prefix('dashboard')->name('dashboard.')->namespace("Dashboard")->group(fu
     Route::get('/', 'WelcomeController@index')->name("welcome");
     Route::get('/contact-messages', 'ContactUsController@index')->name("contact");
     Route::resource('/services', 'ServiceController')->except(['show']);
+    Route::resource('/blogs', 'BlogController')->except(['show']);
 });//end of dashboard routes
 

@@ -31,7 +31,7 @@
                     <span>{{ $blog->updated_at->format('d') }}</span>
                     <span>{{date('M', strtotime($blog->updated_at))}}</span>
                     </div>
-                    <img class="blog-img" src="{{asset($blog->image_path)}}" alt="blog">
+                    <img class="blog-img" src="{{$blog->image_path_val}}" alt="blog">
                 </div>
                 </div>
                 <div class="col-md-6 custom-row">

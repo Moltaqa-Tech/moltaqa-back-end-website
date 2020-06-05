@@ -11,7 +11,7 @@ class BlogController extends Controller
 
     public function index()
     {
-        $blogs = Blog::where("status", 1)->get();
+        $blogs = Blog::where("status", 1)->orderBy("updated_at", "DESC")->get();
 
         return view("layouts.site.blog", ["blogs" => $blogs]);
     }
