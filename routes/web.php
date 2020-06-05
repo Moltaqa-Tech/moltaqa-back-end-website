@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,24 +12,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
 
-Route::get('/about', function () {
-    return view('layouts.about');
-});
-
-Route::get('/pricing', 'PriceController@index');
-
-Route::get('/services', 'ServiceController@index');
-
-Route::get('/portofolio', 'PortofolioController@index');
-
-Route::get('/blog', 'BlogController@index');
-
-
-// Contact US routes
-Route::get('/contact', 'ContactUsController@index');
-Route::post('/contact-us', 'ContactUsController@store');
-
+// website routes
+require_once 'site/web.php';
 
 
