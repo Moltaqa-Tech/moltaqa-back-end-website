@@ -26,61 +26,22 @@
         <div class="container">
           <img src="{{asset('images/THINK.png')}}" class="bg-think">
             <div class="title-tabs">
-                <div class="tab active" data-class=".all">
-                     <span >All</span>
-                </div>
-                <div class="tab" data-class=".website">
-                    <span >website</span>
-                </div>
-                <div class="tab" data-class=".mobile-app">
-                    <span >mobile app</span>
-                </div>
-                <div class="tab" data-class=".ui-ux">
-                    <span>ui/ux</span>
-                </div>
-                <div class="tab" data-class=".motion">
-                  <span>motion graphics</span>
-                </div>
+                @foreach ($categories as $key => $category)
+                    <div class="tab {{($key == 0) ? 'active': ''}}" data-class=".{{($category->id == $categoryAllId) ? 'all' : 'cat_'.$category->id}}">
+                            <span >{{$category->name}}</span>
+                    </div>
+                @endforeach
             </div>
         </div>
       </div>
       <div class="portfolio-content row">
-        <div class="website all col-md-4">
-          <img src="{{asset('images/webone.png')}}" alt="website">
-        </div>
-        <div class="website all col-md-4">
-          <img src="{{asset('images/webtwo.png')}}" alt="website">
-        </div>
-        <div class="mobile-app all col-md-4">
-          <img src="{{asset('images/webthree.png')}}" alt="mobile-app">
-        </div>
-        <div class="ui-ux all col-md-4">
-          <img src="{{asset('images/webfour.png')}}" alt="ui-ux">
-        </div>
-        <div class="motion all col-md-4">
-          <img src="{{asset('images/webfive.png')}}" alt="motion">
-        </div>
-        <div class="motion all col-md-4">
-          <img src="{{asset('images/webosix.png')}}" alt="motion">
-        </div>
-        <div class="website all col-md-4">
-          <img src="{{asset('images/webone.png')}}" alt="website">
-        </div>
-        <div class="website all col-md-4">
-          <img src="{{asset('images/webtwo.png')}}" alt="website">
-        </div>
-        <div class="mobile-app all col-md-4">
-          <img src="{{asset('images/webthree.png')}}" alt="mobile-app">
-        </div>
-        <div class="ui-ux all col-md-4">
-          <img src="{{asset('images/webfour.png')}}" alt="ui-ux">
-        </div>
-        <div class="motion all col-md-4">
-          <img src="{{asset('images/webfive.png')}}" alt="motion">
-        </div>
-        <div class="motion all col-md-4">
-          <img src="{{asset('images/webosix.png')}}" alt="motion">
-        </div>
+            @foreach ($portofolios as $portofolio)
+                @foreach ($portofolio->images as $image)
+                    <div class="cat_{{$portofolio->category_id}} all col-md-4">
+                        <img src="{{asset($image->image_path)}}" alt="{{$portofolio->category_id}}">
+                    </div>
+                @endforeach
+            @endforeach
       </div>
     </section>
 @endsection
