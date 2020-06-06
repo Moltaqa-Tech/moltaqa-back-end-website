@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\ContactUs;
+use App\Support;
 use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
@@ -12,7 +13,8 @@ class ContactUsController extends Controller
 
     public function index()
     {
-        return view('layouts.site.contact-us');
+        $supports = Support::where("status", 1)->get();
+        return view('layouts.site.contact-us', ["supports" => $supports]);
     }
 
     public function store(Request $request)

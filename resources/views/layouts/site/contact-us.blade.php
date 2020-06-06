@@ -25,69 +25,30 @@
           <div class="container">
               <h3>need some help ? we are here for you</h3>
               <div class="row custom-row">
-                  <div class="col-md-4 help-box">
-                      <img src="" alt="">
-                      <h5>support</h5>
-                      <div class="text-help">
-                          we are here to help with any questions. You can also check our knowladge base
-                      </div>
-                      <ul class="list-unstyled">
-                          <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>My Streat , Kingston , Mansoura</span>
-                          </li>
-                          <li>
-                            <i class="fas fa-phone-volume"></i>
-                            <a href="tel:+6494461709">000 000 000 00</a>
-                          </li>
-                          <li>
-                            <i class="far fa-envelope"></i>
-                            <a href="mailto:webmaster@example.com">webmaster@example.com</a>
-                          </li>
-                        </ul>
-                  </div>
-                  <div class="col-md-4 help-box">
-                      <img src="" alt="">
-                      <h5>sale</h5>
-                      <div class="text-help">
-                          we are here to help with any questions. You can also check our knowladge base
-                      </div>
-                      <ul class="list-unstyled">
-                          <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>My Streat , Kingston , Mansoura</span>
-                          </li>
-                          <li>
-                            <i class="fas fa-phone-volume"></i>
-                            <a href="tel:+6494461709">000 000 000 00</a>
-                          </li>
-                          <li>
-                            <i class="far fa-envelope"></i>
-                            <a href="mailto:webmaster@example.com">webmaster@example.com</a>
-                          </li>
-                        </ul>
-                  </div>
-                  <div class="col-md-4 help-box">
-                      <img src="" alt="">
-                      <h5>pres</h5>
-                      <div class="text-help">
-                          we are here to help with any questions. You can also check our knowladge base
-                      </div>
-                      <ul class="list-unstyled">
-                          <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>My Streat , Kingston , Mansoura</span>
-                          </li>
-                          <li>
-                            <i class="fas fa-phone-volume"></i>
-                            <a href="tel:+6494461709">000 000 000 00</a>
-                          </li>
-                          <li>
-                            <i class="far fa-envelope"></i>
-                            <a href="mailto:webmaster@example.com">webmaster@example.com</a>
-                          </li>
-                        </ul>
-                  </div>
+                  @foreach ($supports as $support)
+                    <div class="col-md-4 help-box">
+                        <img src="" alt="">
+                        <h5>{{$support->title}}</h5>
+                        <div class="text-help">
+                            {{$support->description}}
+                        </div>
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>{{$support->location}}</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-volume"></i>
+                                <a href="tel:{{$support->phone}}">{{$support->phone}}</a>
+                            </li>
+                            <li>
+                                <i class="far fa-envelope"></i>
+                                <a href="mailto:{{$support->email}}">{{$support->email}}</a>
+                            </li>
+                            </ul>
+                    </div>
+                  @endforeach
+               
               </div>
           </div>
       </div>
