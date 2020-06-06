@@ -166,31 +166,15 @@
                     <h5>{{$lastWork->title}}</h5>
                     <p>{{$lastWork->description}}</p>
                   </div>
-                  {{-- <div>
-                    <h5>arto lifewtr</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa aspernatur rerum harum quasi expedita quaerat modi! Magnam doloremque eveniet pariatur soluta quas quidem</p>
-                  </div> --}}
                 </section>
               </div>
               <div class="col-md-7">
                 <div class="owl-carousel owl-theme owl-works">
                     @foreach ($lastWork->images as $image)
                         <div class="item">
-                        <img src="{{asset($image->image_path)}}" alt="carsoul">
+                        <img src="{{$image->image_path_val}}" alt="latest work">
                         </div>
                     @endforeach
-                    {{-- <div class="item">
-                      <img src="{{asset('images/carsoul.png')}}" alt="carsoul">
-                    </div>
-                    <div class="item">
-                      <img src="{{asset('images/carsoul.png')}}" alt="carsoul">
-                    </div>
-                    <div class="item">
-                      <img src="{{asset('images/carsoul.png')}}" alt="carsoul">
-                    </div>
-                    <div class="item">
-                      <img src="{{asset('images/carsoul.png')}}" alt="carsoul">
-                    </div> --}}
                 </div>
               </div>
             </div>
@@ -210,21 +194,6 @@
                                 <span >{{$category->name}}</span>
                         </div>
                     @endforeach
-                  {{-- <div class="tab active" data-class=".all">
-                       <span >All</span>
-                  </div>
-                  <div class="tab" data-class=".website">
-                      <span >website</span>
-                  </div>
-                  <div class="tab" data-class=".mobile-app">
-                      <span >mobile app</span>
-                  </div>
-                  <div class="tab" data-class=".ui-ux">
-                      <span>ui/ux</span>
-                  </div>
-                  <div class="tab" data-class=".motion">
-                    <span>motion graphics</span>
-                  </div> --}}
               </div>
           </div>
         </div>
@@ -232,28 +201,11 @@
             @foreach ($portofolios as $portofolio)
                 @foreach ($portofolio->images as $image)
                     <div class="cat_{{$portofolio->category_id}} all col-md-4">
-                        <img src="{{asset($image->image_path)}}" alt="{{$portofolio->category_id}}">
+                        <img src="{{$image->image_path_val}}" alt="Portofolio - {{$portofolio->category_id}}">
                     </div>
                 @endforeach
             @endforeach
-          {{-- <div class="website all col-md-4">
-            <img src="{{asset('images/webone.png')}}" alt="website">
-          </div>
-          <div class="website all col-md-4">
-            <img src="{{asset('images/webtwo.png')}}" alt="website">
-          </div>
-          <div class="mobile-app all col-md-4">
-            <img src="{{asset('images/webthree.png')}}" alt="mobile-app">
-          </div>
-          <div class="ui-ux all col-md-4">
-            <img src="{{asset('images/webfour.png')}}" alt="ui-ux">
-          </div>
-          <div class="motion all col-md-4">
-            <img src="{{asset('images/webfive.png')}}" alt="motion">
-          </div>
-          <div class="motion all col-md-4">
-            <img src="{{asset('images/webosix.png')}}" alt="motion">
-          </div> --}}
+
         </div>
       </section>
 
@@ -309,156 +261,12 @@
                                     <img src="{{asset('images/twiiter.png')}}" alt="facebook">
                                 </a>
                             @endif
-                            {{-- <a href="#">
-                                <img src="{{asset('images/facebook.png')}}" alt="facebook">
-                            </a>
-                            <a href="#">
-                                <img src="{{asset('images/whats.png')}}" alt="whats">
-                            </a>
-                            <a href="#">
-                                <img src="{{asset('images/twiiter.png')}}" alt="twitter">
-                            </a> --}}
                         </div>
                         <div class="card-item">
                             <img src="{{$team->image_path_val}}" alt="user">
                         </div>
                     </div>
                 @endforeach
-
-              {{-- <div class="item">
-                <div class="social-icons">
-                  <a href="#">
-                    <img src="{{asset('images/inst.png')}}" alt="instgram">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/facebook.png')}}" alt="facebook">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/whats.png')}}" alt="whats">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/twiiter.png')}}" alt="twitter">
-                  </a>
-                </div>
-                  <div class="card-item">
-                    <img src="{{asset('images/usertwo.png')}}" alt="user">
-                  </div>
-              </div>
-              <div class="item">
-                <div class="social-icons">
-                  <a href="#">
-                    <img src="{{asset('images/inst.png')}}" alt="instgram">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/facebook.png')}}" alt="facebook">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/whats.png')}}" alt="whats">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/twiiter.png')}}" alt="twitter">
-                  </a>
-                </div>
-                <div class="card-item">
-                  <img src="{{asset('images/user.png')}}" alt="user">
-                </div>
-              </div>
-              <div class="item">
-                <div class="social-icons">
-                  <a href="#">
-                    <img src="{{asset('images/inst.png')}}" alt="instgram">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/facebook.png')}}" alt="facebook">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/whats.png')}}" alt="whats">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/twiiter.png')}}" alt="twitter">
-                  </a>
-                </div>
-                  <div class="card-item">
-                    <img src="{{asset('images/usertwo.png')}}" alt="user">
-                  </div>
-              </div>
-              <div class="item">
-                <div class="social-icons">
-                  <a href="#">
-                    <img src="{{asset('images/inst.png')}}" alt="instgram">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/facebook.png')}}" alt="facebook">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/whats.png')}}" alt="whats">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/twiiter.png')}}" alt="twitter">
-                  </a>
-                </div>
-                <div class="card-item">
-                  <img src="{{asset('images/user.png')}}" alt="user">
-                </div>
-              </div>
-              <div class="item">
-                <div class="social-icons">
-                  <a href="#">
-                    <img src="{{asset('images/inst.png')}}" alt="instgram">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/facebook.png')}}" alt="facebook">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/whats.png')}}" alt="whats">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/twiiter.png')}}" alt="twitter">
-                  </a>
-                </div>
-                  <div class="card-item">
-                    <img src="{{asset('images/usertwo.png')}}" alt="user">
-                  </div>
-              </div>
-              <div class="item">
-                <div class="social-icons">
-                  <a href="#">
-                    <img src="{{asset('images/inst.png')}}" alt="instgram">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/facebook.png')}}" alt="facebook">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/whats.png')}}" alt="whats">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/twiiter.png')}}" alt="twitter">
-                  </a>
-                </div>
-                <div class="card-item">
-                  <img src="{{asset('images/user.png')}}" alt="user">
-                </div>
-              </div>
-              <div class="item">
-                <div class="social-icons">
-                  <a href="#">
-                    <img src="{{asset('images/inst.png')}}" alt="instgram">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/facebook.png')}}" alt="facebook">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/whats.png')}}" alt="whats">
-                  </a>
-                  <a href="#">
-                    <img src="{{asset('images/twiiter.png')}}" alt="twitter">
-                  </a>
-                </div>
-                  <div class="card-item">
-                    <img src="{{asset('images/usertwo.png')}}" alt="user">
-                  </div>
-              </div> --}}
-
           </div>
           </div>
         </div>

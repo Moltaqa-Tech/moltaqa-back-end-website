@@ -12,3 +12,27 @@ $(".image").change(function () {
     }
 
 });
+
+// image preview
+$(".images").change(function () {
+
+    if (this.files) {
+        $('#galary').empty();
+        for(let i = 0; i < this.files.length; i++) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+
+                $('<img />',
+                            { id: 'image' + i,
+                            src: e.target.result,
+                            width: 100,
+                            class: 'img-thumbnail image-preview',
+                            })
+                            .appendTo($('#galary'));
+            }
+
+            reader.readAsDataURL(this.files[i]);
+        }
+    }
+});
+

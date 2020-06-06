@@ -15,5 +15,7 @@ Route::prefix('dashboard')->name('dashboard.')->namespace("Dashboard")->group(fu
     Route::resource('/price-categories', 'PriceCategoryController');
     Route::resource('/price-attrs', 'PriceAttributeController')->except(['show']);
     Route::post('/category-attrs', 'PriceCategoryController@saveCategoryAttrs');
+    Route::resource('/portofolios', 'PortofolioController')->except(['show']);
+    
 });//end of dashboard routes
 

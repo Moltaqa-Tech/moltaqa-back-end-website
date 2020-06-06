@@ -14,4 +14,13 @@ class PortofolioImage extends Model
     protected $fillable = [
         'portofolio_id', 'image_path'
     ];
+
+    protected $appends = [
+        'image_path_val',
+   ];
+
+   public function getImagePathValAttribute()
+   {
+       return asset('uploads/portofolios/' . $this->image_path);
+   }//end of get image path
 }

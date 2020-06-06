@@ -38,7 +38,7 @@
             @foreach ($portofolios as $portofolio)
                 @foreach ($portofolio->images as $image)
                     <div class="cat_{{$portofolio->category_id}} all col-md-4">
-                        <img src="{{asset($image->image_path)}}" alt="{{$portofolio->category_id}}">
+                        <img src="{{$image->image_path_val}}" alt="{{$portofolio->category_id}}">
                     </div>
                 @endforeach
             @endforeach
