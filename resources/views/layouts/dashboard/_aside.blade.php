@@ -19,6 +19,7 @@
             <li><a href="{{ route('dashboard.blogs.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.blogs')</span></a></li>
             <li><a href="{{ route('dashboard.teams.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.teams')</span></a></li>
             <li><a href="{{ route('dashboard.portofolio-categories.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.porto-categories')</span></a></li>
+            <li><a href="{{ route('dashboard.price-categories.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.price-categories')</span></a></li>
 
             {{-- @if (auth()->user()->hasPermission('read_categories'))
                 <li><a href="{{ route('dashboard.categories.index') }}"><i class="fa fa-th"></i><span>@lang('site.categories')</span></a></li>

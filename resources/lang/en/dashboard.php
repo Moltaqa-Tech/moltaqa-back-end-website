@@ -19,6 +19,7 @@ return [
     'blogs' => 'Blogs',
     'teams' => 'Teams',
     'porto-categories' => 'Portofolio Categories',
+    'price-categories' => 'Price Categories',
 
     // actions
     'search' => 'Search',
