@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Portofolio;
 use Illuminate\Http\Request;
 
 use App\PortofolioCategory;
@@ -52,6 +53,15 @@ class PortofolioCategoryController extends Controller
     {
         return view('dashboard.porto-category.edit', ['portofolioCategory' => $portofolioCategory ]);
     }//end of edit
+
+    public function show(Request $request, PortofolioCategory $portofolioCategory)
+    {
+        $portofolios = Portofolio::where("category_id", $portofolioCategory->id)->when($request->search, function($q) use ($request) {
+            return $q->where('title', 'LIKE', '%' . $request->search . '%');
+        })->latest("id")->paginate(static::PAGINATION_COUNT);
+
+        return view("dashboard.porto-category.portos", ["portofolios" => $portofolios]);
+    }// end of show
 
     public function update(Request $request, PortofolioCategory $portofolioCategory)
     {

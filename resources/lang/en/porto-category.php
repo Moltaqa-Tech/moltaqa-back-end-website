@@ -15,6 +15,8 @@ return [
 
     'name' => 'Name',
     'status' => 'Status',
+    'category_portos' => 'Category Portofolios',
+    'view_portos' => 'View Portofolios',
     'action' => 'Action',
     'no_data_found' => 'No Porotofolio Categories Found',
 

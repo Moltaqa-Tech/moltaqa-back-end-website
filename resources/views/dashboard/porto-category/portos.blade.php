@@ -1,4 +1,3 @@
-
 @extends('layouts.dashboard.app')
 
 @section('content')
@@ -6,11 +5,12 @@
     <div class="content-wrapper">
 
         <section class="content-header">
-            <h1>@lang('dashboard.porto-categories')</h1>
+
+            <h1>@lang('dashboard.portofolios')</h1>
 
             <ol class="breadcrumb">
                 <li><a href="{{ route('dashboard.welcome') }}"><i class="fa fa-dashboard"></i> @lang('dashboard.dashboard')</a></li>
-                <li class="active">@lang('dashboard.porto-categories')</li>
+                <li class="active">@lang('dashboard.portofolios')</li>
             </ol>
         </section>
 
@@ -20,9 +20,9 @@
 
                 <div class="box-header with-border">
 
-                    <h3 class="box-title" style="margin-bottom: 15px">@lang('dashboard.porto-categories') <small>{{ $portofolioCategories->total() }}</small></h3>
+                    <h3 class="box-title" style="margin-bottom: 15px">@lang('dashboard.portofolios') <small>{{ $portofolios->total() }}</small></h3>
 
-                    <form action="{{ route('dashboard.portofolio-categories.index') }}" method="get">
+                    {{-- <form action="{{ route('dashboard.portofolios.index') }}" method="get">
 
                         <div class="row">
 
@@ -32,49 +32,51 @@
 
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> @lang('dashboard.search')</button>
-                                    <a href="{{ route('dashboard.portofolio-categories.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('dashboard.add')</a>
+                                    <a href="{{ route('dashboard.portofolios.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('dashboard.add')</a>
                             </div>
 
                         </div>
-                    </form><!-- end of form -->
+                    </form><!-- end of form --> --}}
 
                 </div><!-- end of box header -->
 
                 <div class="box-body">
 
-                    @if ($portofolioCategories->count() > 0)
+                    @if ($portofolios->count() > 0)
 
                         <table class="table table-hover">
 
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>@lang('porto-category.name')</th>
-                                <th>@lang('porto-category.status')</th>
-                                <th>@lang('porto-category.category_portos')</th>
-                                <th>@lang('porto-category.action')</th>
+                                <th>@lang('portofolio.title')</th>
+                                <th>@lang('portofolio.desc')</th>
+                                <th>@lang('portofolio.status')</th>
+                                {{-- <th>@lang('portofolio.work_flow')</th>
+                                <th>@lang('portofolio.image')</th> --}}
+                                {{-- <th>@lang('portofolio.action')</th> --}}
                             </tr>
                             </thead>
 
                             <tbody>
-                            @foreach ($portofolioCategories as $index=>$category)
+                            @foreach ($portofolios as $index=>$portofolio)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
-                                    <td>{{ $category->name }}</td>
-                                    <td>{{ $category->status }}</td>
-                                    <td>
-                                        <a href="{{ route('dashboard.portofolio-categories.show', $category->id) }}" class="btn btn-info btn-sm"><i class="fa fa-view"></i> @lang('porto-category.view_portos')</a>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('dashboard.portofolio-categories.edit', $category->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('dashboard.edit')</a>
+                                    <td>{{ $portofolio->title }}</td>
+                                    <td>{{ $portofolio->description }}</td>
+                                    <td>{{ $portofolio->status }}</td>
+                                    {{-- <td>{{ $portofolio->work_flow }}</td>
+                                    <td><img src="{{ $portofolio->image_path_val }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}
+                                    {{-- <td>
+                                        <a href="{{ route('dashboard.portofolios.edit', $portofolio->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('dashboard.edit')</a>
 
-                                        <form action="{{ route('dashboard.portofolio-categories.destroy', $category->id) }}" method="post" style="display: inline-block">
+                                        <form action="{{ route('dashboard.portofolios.destroy', $portofolio->id) }}" method="post" style="display: inline-block">
                                             @csrf
                                             @method("DELETE")
                                             <button type="submit" class="btn btn-danger delete btn-sm"><i class="fa fa-trash"></i> @lang('dashboard.delete')</button>
                                         </form><!-- end of form -->
 
-                                    </td>
+                                    </td> --}}
                                 </tr>
 
                             @endforeach
@@ -82,11 +84,11 @@
 
                         </table><!-- end of table -->
 
-                        {{ $portofolioCategories->appends(request()->query())->links() }}
+                        {{ $portofolios->appends(request()->query())->links() }}
 
                     @else
 
-                        <h2>@lang('porto-category.no_data_found')</h2>
+                        <h2>@lang('portofolio.no_data_found')</h2>
 
                     @endif
 
