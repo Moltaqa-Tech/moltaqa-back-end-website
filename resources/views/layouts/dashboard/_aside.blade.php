@@ -23,6 +23,7 @@
             <li><a href="{{ route('dashboard.price-attrs.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.price-attributes')</span></a></li>
             <li><a href="{{ route('dashboard.teams.index') }}"><i class="fa fa-users"></i><span>@lang('dashboard.teams')</span></a></li>
             <li><a href="{{ route('dashboard.blogs.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.blogs')</span></a></li>
+            <li><a href="{{ route('dashboard.supports.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.supports')</span></a></li>
             <li><a href="{{ route('dashboard.contact') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.contact')</span></a></li>
             <li><a href="{{ url('dashboard/logout') }}"><i class="fa fa-sign-out"></i><span>@lang('dashboard.logout')</span></a></li>
 

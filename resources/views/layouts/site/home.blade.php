@@ -7,8 +7,7 @@
 @endsection
 
 @section('content')
-    <!-- Nav Bar-->
-    {{-- @include("partials.site.nav-bar") --}}
+
 
     <!-- Header -->
     @include("partials.site.header")
@@ -45,7 +44,7 @@
                     <div class="feature-box"  data-aos="fade-up" data-aos-duration="1000">
                         <div class="bg-feature">
                             <div class="cover-white">
-                            <img src="{{asset($service->image_path)}}" alt="{{$service->title}}">
+                            <img src="{{$service->image_path_val}}" alt="{{$service->title}}">
                             </div>
                         </div>
                         <h6>{{$service->title}}</h6>
@@ -53,85 +52,7 @@
                     </div>
                     </div>
                 @endforeach
-              {{-- <div class="col-md-3 col-sm-4 cust-col">
-                <div class="feature-box"  data-aos="fade-up" data-aos-duration="1500">
-                  <div class="bg-feature">
-                    <div class="cover-white">
-                      <img src="{{asset('images/ux.png')}}" alt="UI/UX Desgin">
-                    </div>
-                  </div>
-                  <h6>UI/UX Desgin</h6>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              </div>
-              </div>
-              <div class="col-md-3 col-sm-4 cust-col">
-                <div class="feature-box"  data-aos="fade-up" data-aos-duration="2000">
-                    <div class="bg-feature">
-                      <div class="cover-white">
-                        <img src="{{asset('images/platform.png')}}" alt="Web Desgin">
-                      </div>
-                    </div>
-                    <h6>Web Desgin</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 cust-col">
-                <div class="feature-box"  data-aos="fade-up" data-aos-duration="2500">
-                        <div class="bg-feature">
-                        <div class="cover-white">
-                            <img src="{{asset('images/data.png')}}" alt="Web Devolpment">
-                    <div class="col-md-3 col-sm-4 cust-col">
-                        </div>
-                        </div>
-                        <h6>Web Devolpment</h6>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 cust-col">
-                <div class="feature-box"  data-aos="fade-up" data-aos-duration="1000">
-                    <div class="bg-feature">
-                      <div class="cover-white">
-                        <img src="{{asset('images/hosting.png')}}" alt="Hosting">
-                      </div>
-                    </div>
-                    <h6>Hosting</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 cust-col">
-                <div class="feature-box"  data-aos="fade-up" data-aos-duration="1500">
-                    <div class="bg-feature">
-                      <div class="cover-white">
-                        <img src="{{asset('images/digital-marketing.png')}}" alt="Digital Marketing">
-                      </div>
-                    </div>
-                    <h6>Digital Marketing</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 cust-col">
-                <div class="feature-box"  data-aos="fade-left" data-aos-duration="2000">
-                    <div class="bg-feature">
-                      <div class="cover-white">
-                        <img src="{{asset('images/video.png')}}" alt="Courses">
-                      </div>
-                    </div>
-                    <h6>Courses</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 cust-col">
-                <div class="feature-box"  data-aos="fade-up" data-aos-duration="2500">
-                    <div class="bg-feature">
-                      <div class="cover-white">
-                        <img src="{{asset('images/graphic.png')}}" alt="Seo">
-                      </div>
-                    </div>
-                    <h6>Seo</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </div> --}}
+
             </div>
           </div>
         </div>
