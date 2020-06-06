@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Schema\Builder;
 
 class Portofolio extends Model
 {
@@ -18,5 +19,10 @@ class Portofolio extends Model
     public function images()
     {
         return $this->hasMany('App\PortofolioImage');
-    }
+    }// end of images
+
+    public function category()
+    {
+        return $this->belongsTo('App\PortofolioCategory');
+    }// end of category
 }
