@@ -17,12 +17,16 @@ return [
     'price' => 'Price',
     'saved_price' => 'Saved Price',
     'price_type' => 'Price Type',
+    'category_attributes' => 'Category Attributes',
+    'view_attrs' => 'View Attributes',
     'status' => 'Status',
+    'active' => 'Active',
     'action' => 'Action',
     'no_data_found' => 'No Price Categories Found',
 
     // CRUD messages
     'added_successfully' => 'Price Category Added Successfully',
+    'saved_successfully' => 'Price Category Attributes Saved Successfully',
     'updated_successfully' => 'Price Category Updated Successfully',
     'deleted_successfully' => 'Price Category Deleted Successfully',
 ];

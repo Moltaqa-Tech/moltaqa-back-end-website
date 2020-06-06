@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\PriceAttr;
 use Illuminate\Http\Request;
 
 use App\PriceCategory;
@@ -21,6 +22,42 @@ class PriceCategoryController extends Controller
 
         return view("dashboard.price-category.index", ["priceCategories" => $priceCategories]);
     }// end of index
+
+
+    public function show(PriceCategory $priceCategory)
+    {
+        $priceAttrs = PriceAttr::where("price_type", $priceCategory->price_type)->get();
+        $activePriceAttrs = $priceCategory->attrs()->where("active", 1)->pluck("attr_id")->all();
+        return view("dashboard.price-category.attrs", ["priceAttrs" => $priceAttrs, "priceCategory" => $priceCategory, 'activePriceAttrs' => $activePriceAttrs]);
+    }//end of show
+
+
+    public function saveCategoryAttrs(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'category_id' => 'required|exists:price_categories,id',
+        ]);// end of validator
+
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }//end of if
+
+        $categoryId = $request->category_id;
+        $priceCategory = PriceCategory::find($categoryId);
+        $categoryAttrs = isset($request->attrs) ? $request->attrs :[];
+        $priceAttrIds = PriceAttr::where("price_type", $priceCategory->price_type)->pluck("id")->all();
+
+        $priceCategory->attrs()->detach();
+
+        foreach($priceAttrIds as $id) {
+            $priceCategory->attrs()->attach($id, ["active" => in_array($id, $categoryAttrs)]);
+        }
+
+        // $priceCategory->attrs()->attach(array_diff($priceAttrIds, $categoryAttrs), ["active" => 0]);
+
+        session()->flash('success', trans('price-category.saved_successfully'));
+        return redirect()->route('dashboard.price-categories.index');
+    }
 
     public function create()
     {

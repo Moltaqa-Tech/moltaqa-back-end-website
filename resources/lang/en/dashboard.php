@@ -25,6 +25,7 @@ return [
     // actions
     'search' => 'Search',
     'add' => 'Add',
+    'save' => 'Save',
     'edit' => 'Edit',
     'delete' => 'Delete',
     'action' => 'Action',

@@ -53,6 +53,7 @@
                                 <th>@lang('price-category.price')</th>
                                 <th>@lang('price-category.saved_price')</th>
                                 <th>@lang('price-category.price_type')</th>
+                                <th>@lang('price-category.category_attributes')</th>
                                 <th>@lang('price-category.status')</th>
                                 <th>@lang('price-category.action')</th>
                             </tr>
@@ -66,6 +67,9 @@
                                     <td>{{ $category->price }} $</td>
                                     <td>{{ $category->saved_price }} $</td>
                                     <td>{{ \App\Mappers\PricingType::handle($category->price_type) }}</td>
+                                    <td>
+                                        <a href="{{ route('dashboard.price-categories.show', $category->id) }}" class="btn btn-info btn-sm"><i class="fa fa-view"></i> @lang('price-category.view_attrs')</a>
+                                    </td>
                                     <td>{{ $category->status }}</td>
                                     <td>
                                         <a href="{{ route('dashboard.price-categories.edit', $category->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('dashboard.edit')</a>

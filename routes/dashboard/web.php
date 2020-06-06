@@ -12,7 +12,8 @@ Route::prefix('dashboard')->name('dashboard.')->namespace("Dashboard")->group(fu
     Route::resource('/blogs', 'BlogController')->except(['show']);
     Route::resource('/teams', 'TeamController')->except(['show']);
     Route::resource('/portofolio-categories', 'PortofolioCategoryController')->except(['show']);
-    Route::resource('/price-categories', 'PriceCategoryController')->except(['show']);
+    Route::resource('/price-categories', 'PriceCategoryController');
     Route::resource('/price-attrs', 'PriceAttributeController')->except(['show']);
+    Route::post('/category-attrs', 'PriceCategoryController@saveCategoryAttrs');
 });//end of dashboard routes
 
