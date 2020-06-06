@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Blank Page</title>
+    <title>Moltaqa Tech | Admin</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     {{--<!-- Bootstrap 3.3.7 -->--}}
@@ -12,23 +12,9 @@
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/skin-blue.min.css') }}">
 
-    {{-- @if (app()->getLocale() == 'ar')
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/AdminLTE-rtl.min.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/bootstrap-rtl.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/rtl.css') }}">
-
-        <style>
-            body, h1, h2, h3, h4, h5, h6 {
-                font-family: 'Cairo', sans-serif !important;
-            }
-        </style>
-    @else --}}
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dashboard_files/css/AdminLTE.min.css') }}">
-    {{-- @endif --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard_files/css/AdminLTE.min.css') }}">
 
     <style>
         .mr-2{
@@ -72,9 +58,6 @@
     <link rel="stylesheet" href="{{ asset('dashboard_files/plugins/noty/noty.css') }}">
     <script src="{{ asset('dashboard_files/plugins/noty/noty.min.js') }}"></script>
 
-    {{--morris--}}
-    <link rel="stylesheet" href="{{ asset('dashboard_files/plugins/morris/morris.css') }}">
-
     {{--<!-- iCheck -->--}}
     <link rel="stylesheet" href="{{ asset('dashboard_files/plugins/icheck/all.css') }}">
 
@@ -92,8 +75,8 @@
         {{--<!-- Logo -->--}}
         <a href="{{ asset('dashboard') }}/index2.html" class="logo">
             {{--<!-- mini logo for sidebar mini 50x50 pixels -->--}}
-            <span class="logo-mini"><b>A</b>LT</span>
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-mini"><b>T</b>ech</span>
+            <span class="logo-lg"><b>Moltaqa</b>Tech</span>
         </a>
 
         <nav class="navbar navbar-static-top">
@@ -139,18 +122,10 @@
 {{--<!-- AdminLTE App -->--}}
 <script src="{{ asset('dashboard_files/js/adminlte.min.js') }}"></script>
 
-{{--ckeditor standard--}}
-<script src="{{ asset('dashboard_files/plugins/ckeditor/ckeditor.js') }}"></script>
 
 {{--jquery number--}}
 <script src="{{ asset('dashboard_files/js/jquery.number.min.js') }}"></script>
 
-{{--print this--}}
-<script src="{{ asset('dashboard_files/js/printThis.js') }}"></script>
-
-{{--morris --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="{{ asset('dashboard_files/plugins/morris/morris.min.js') }}"></script>
 
 {{--custom js--}}
 <script src="{{ asset('dashboard_files/js/custom/image_preview.js') }}"></script>
@@ -192,23 +167,6 @@
             n.show();
 
         });//end of delete
-
-        // // image preview
-        // $(".image").change(function () {
-        //
-        //     if (this.files && this.files[0]) {
-        //         var reader = new FileReader();
-        //
-        //         reader.onload = function (e) {
-        //             $('.image-preview').attr('src', e.target.result);
-        //         }
-        //
-        //         reader.readAsDataURL(this.files[0]);
-        //     }
-        //
-        // });
-
-        CKEDITOR.config.language =  "{{ app()->getLocale() }}";
 
     });//end of ready
 

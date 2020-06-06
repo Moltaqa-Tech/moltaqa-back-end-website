@@ -36,4 +36,10 @@ return [
     "yes" => "Yes",
     "no" => "No",
 
+    // Auth
+    'email' => 'Email',
+    'password' => 'Password',
+    "login" => 'Login',
+    "logout" => 'Logout',
+
 ];

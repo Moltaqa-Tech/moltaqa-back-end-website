@@ -7,70 +7,25 @@
                 <img src="{{ asset('dashboard_files/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>
+                    {{Auth::user()->name}}
+                </p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
 
         <ul class="sidebar-menu" data-widget="tree">
             <li><a href="{{ route('dashboard.welcome') }}"><i class="fa fa-th"></i><span>@lang('dashboard.dashboard')</span></a></li>
-            <li><a href="{{ route('dashboard.contact') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.contact')</span></a></li>
-            <li><a href="{{ route('dashboard.services.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.services')</span></a></li>
-            <li><a href="{{ route('dashboard.blogs.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.blogs')</span></a></li>
-            <li><a href="{{ route('dashboard.teams.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.teams')</span></a></li>
-            <li><a href="{{ route('dashboard.portofolio-categories.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.porto-categories')</span></a></li>
+            <li><a href="{{ route('dashboard.services.index') }}"><i class="fa fa-server"></i><span>@lang('dashboard.services')</span></a></li>
+            <li><a href="{{ route('dashboard.portofolio-categories.index') }}"><i class="fa fa-th-large"></i><span>@lang('dashboard.porto-categories')</span></a></li>
             <li><a href="{{ route('dashboard.portofolios.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.portofolios')</span></a></li>
-            <li><a href="{{ route('dashboard.price-categories.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.price-categories')</span></a></li>
+            <li><a href="{{ route('dashboard.price-categories.index') }}"><i class="fa fa-th-large"></i><span>@lang('dashboard.price-categories')</span></a></li>
             <li><a href="{{ route('dashboard.price-attrs.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.price-attributes')</span></a></li>
+            <li><a href="{{ route('dashboard.teams.index') }}"><i class="fa fa-users"></i><span>@lang('dashboard.teams')</span></a></li>
+            <li><a href="{{ route('dashboard.blogs.index') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.blogs')</span></a></li>
+            <li><a href="{{ route('dashboard.contact') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.contact')</span></a></li>
+            <li><a href="{{ url('dashboard/logout') }}"><i class="fa fa-sign-out"></i><span>@lang('dashboard.logout')</span></a></li>
 
-            {{-- @if (auth()->user()->hasPermission('read_categories'))
-                <li><a href="{{ route('dashboard.categories.index') }}"><i class="fa fa-th"></i><span>@lang('site.categories')</span></a></li>
-            @endif
-
-            @if (auth()->user()->hasPermission('read_products'))
-                <li><a href="{{ route('dashboard.products.index') }}"><i class="fa fa-th"></i><span>@lang('site.products')</span></a></li>
-            @endif
-
-            @if (auth()->user()->hasPermission('read_clients'))
-                <li><a href="{{ route('dashboard.clients.index') }}"><i class="fa fa-th"></i><span>@lang('site.clients')</span></a></li>
-            @endif
-
-            @if (auth()->user()->hasPermission('read_orders'))
-                <li><a href="{{ route('dashboard.orders.index') }}"><i class="fa fa-th"></i><span>@lang('site.orders')</span></a></li>
-            @endif
-
-            @if (auth()->user()->hasPermission('read_users'))
-                <li><a href="{{ route('dashboard.users.index') }}"><i class="fa fa-th"></i><span>@lang('site.users')</span></a></li>
-            @endif --}}
-
-            {{--<li><a href="{{ route('dashboard.categories.index') }}"><i class="fa fa-book"></i><span>@lang('site.categories')</span></a></li>--}}
-            {{----}}
-            {{----}}
-            {{--<li><a href="{{ route('dashboard.users.index') }}"><i class="fa fa-users"></i><span>@lang('site.users')</span></a></li>--}}
-
-            {{--<li class="treeview">--}}
-            {{--<a href="#">--}}
-            {{--<i class="fa fa-pie-chart"></i>--}}
-            {{--<span>الخرائط</span>--}}
-            {{--<span class="pull-right-container">--}}
-            {{--<i class="fa fa-angle-left pull-right"></i>--}}
-            {{--</span>--}}
-            {{--</a>--}}
-            {{--<ul class="treeview-menu">--}}
-            {{--<li>--}}
-            {{--<a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a>--}}
-            {{--</li>--}}
-            {{--<li>--}}
-            {{--<a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a>--}}
-            {{--</li>--}}
-            {{--<li>--}}
-            {{--<a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a>--}}
-            {{--</li>--}}
-            {{--<li>--}}
-            {{--<a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a>--}}
-            {{--</li>--}}
-            {{--</ul>--}}
-            {{--</li>--}}
         </ul>
 
     </section>
