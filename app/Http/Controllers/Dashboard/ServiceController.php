@@ -46,7 +46,7 @@ class ServiceController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = "service_" . time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('\uploads\services');
+            $destinationPath = public_path('/uploads/services');
             $image->move($destinationPath, $name);
             $request_data['image_path'] = $name;
         }//end of if
@@ -88,7 +88,7 @@ class ServiceController extends Controller
             // upload new image
             $image = $request->file('image');
             $name = "service_" . time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('\uploads\services');
+            $destinationPath = public_path('/uploads/services');
             $image->move($destinationPath, $name);
             $request_data['image_path'] = $name;
         }//end of if

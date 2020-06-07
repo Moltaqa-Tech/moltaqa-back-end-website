@@ -50,7 +50,7 @@ class TeamController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = "team_" . time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('\uploads\teams');
+            $destinationPath = public_path('/uploads/teams');
             $image->move($destinationPath, $name);
             $request_data['image_path'] = $name;
         }//end of if
@@ -92,7 +92,7 @@ class TeamController extends Controller
             // upload new image
             $image = $request->file('image');
             $name = "team_" . time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('\uploads\teams');
+            $destinationPath = public_path('/uploads/teams');
             $image->move($destinationPath, $name);
             $request_data['image_path'] = $name;
         }//end of if

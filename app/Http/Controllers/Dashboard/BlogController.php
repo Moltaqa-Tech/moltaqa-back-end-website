@@ -47,7 +47,7 @@ class BlogController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = "blog_" . time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('\uploads\blogs');
+            $destinationPath = public_path('/uploads/blogs');
             $image->move($destinationPath, $name);
             $request_data['image_path'] = $name;
         }//end of if
@@ -89,7 +89,7 @@ class BlogController extends Controller
             // upload new image
             $image = $request->file('image');
             $name = "blog_" . time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('\uploads\blogs');
+            $destinationPath = public_path('/uploads/blogs');
             $image->move($destinationPath, $name);
             $request_data['image_path'] = $name;
         }//end of if

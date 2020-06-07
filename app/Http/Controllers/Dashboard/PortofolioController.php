@@ -51,7 +51,7 @@ class PortofolioController extends Controller
         foreach ($request->images as $image) {
             $randStr = substr(str_shuffle(MD5(microtime())), 0, 10);
             $name = "portofolio_" . $randStr . time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('\uploads\portofolios');
+            $destinationPath = public_path('/uploads/portofolios');
             $image->move($destinationPath, $name);
             PortofolioImage::create([
                 'image_path' => $name,
@@ -96,7 +96,7 @@ class PortofolioController extends Controller
             foreach ($request->images as $image) {
                 $randStr = substr(str_shuffle(MD5(microtime())), 0, 10);
                 $name = "portofolio_" . $randStr . time() . '.' . $image->getClientOriginalExtension();
-                $destinationPath = public_path('\uploads\portofolios');
+                $destinationPath = public_path('/uploads/portofolios');
                 $image->move($destinationPath, $name);
                 PortofolioImage::create([
                     'image_path' => $name,
