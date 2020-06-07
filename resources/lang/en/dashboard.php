@@ -19,10 +19,11 @@ return [
     'blogs' => 'Blogs',
     'teams' => 'Teams',
     'supports' => 'Supports',
-    'porto-categories' => 'Portofolio Categories',
+    'porto-categories' => 'Categories',
     'portofolios' => 'Portofolios',
-    'price-categories' => 'Price Categories',
-    'price-attributes' => 'Price Attributes',
+    'pricing' => 'Pricing',
+    'price-categories' => 'Categories',
+    'price-attributes' => 'Attributes',
 
     // actions
     'search' => 'Search',
@@ -31,6 +32,7 @@ return [
     'edit' => 'Edit',
     'delete' => 'Delete',
     'action' => 'Action',
+    'view' => 'View',
 
     // delete dialog
     'confirm_delete' => "Are you sure you want to delete this item ?",
