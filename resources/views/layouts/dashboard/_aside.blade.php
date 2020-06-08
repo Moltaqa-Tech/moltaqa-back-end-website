@@ -39,6 +39,7 @@
             </li>
 
             <li><a href="{{ route('dashboard.teams.index') }}"><i class="fa fa-users"></i><span>@lang('dashboard.teams')</span> </a></li>
+            <li><a href="{{ route('dashboard.reviews.index') }}"><i class="fa fa-users"></i><span>@lang('dashboard.reviews')</span> </a></li>
             <li><a href="{{ route('dashboard.blogs.index') }}"><i class="fa fa-th"></i><span>@lang('dashboard.blogs')</span></a></li>
             <li><a href="{{ route('dashboard.supports.index') }}"><i class="fa fa-th"></i><span>@lang('dashboard.supports')</span></a></li>
             <li><a href="{{ route('dashboard.contact') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.contact')</span> <span class="badge badge-info pull-right">5</span></a></li>

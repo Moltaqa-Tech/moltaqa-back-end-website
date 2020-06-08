@@ -18,6 +18,7 @@ return [
     'services' => 'Services',
     'blogs' => 'Blogs',
     'teams' => 'Teams',
+    'reviews' => 'Client Said',
     'supports' => 'Supports',
     'porto-categories' => 'Categories',
     'portofolios' => 'Portofolios',
