@@ -66,7 +66,7 @@
                                     <td>{{ $blog->title }}</td>
                                     <td>{{ $blog->brief_description }}</td>
                                     <td>{{ $blog->description }}</td>
-                                    <td>{{ $blog->status }}</td>
+                                    <td>{{ \App\Mappers\ActiveStatus::handle($blog->status)}}</td>
                                     <td>{{ $blog->views_count }}</td>
                                     <td><img src="{{ $blog->image_path_val }}" style="width: 100px;" class="img-thumbnail" alt=""></td>
                                     <td>

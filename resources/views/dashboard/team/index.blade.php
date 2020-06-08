@@ -71,7 +71,7 @@
                                     <td>{{ $team->whatsapp_url }}</td>
                                     <td>{{ $team->facebook_url }}</td>
                                     <td>{{ $team->twitter_url }}</td>
-                                    <td>{{ $team->status }}</td>
+                                    <td>{{ \App\Mappers\ActiveStatus::handle($team->status) }}</td>
                                     <td><img src="{{ $team->image_path_val }}" style="width: 100px;" class="img-thumbnail" alt=""></td>
                                     <td>
                                         <a href="{{ route('dashboard.teams.edit', $team->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('dashboard.edit')</a>

@@ -61,7 +61,7 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $category->name }}</td>
-                                    <td>{{ $category->status }}</td>
+                                    <td>{{ \App\Mappers\ActiveStatus::handle($category->status) }}</td>
                                     <td>
                                         <a href="{{ route('dashboard.portofolio-categories.show', $category->id) }}" class="btn btn-info btn-sm"><i class="fa fa-view"></i> @lang('porto-category.view_portos')</a>
                                     </td>

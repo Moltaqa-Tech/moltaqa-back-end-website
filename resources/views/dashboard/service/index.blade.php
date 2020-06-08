@@ -64,8 +64,8 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $service->title }}</td>
                                     <td>{{ $service->desc }}</td>
-                                    <td>{{ $service->status }}</td>
-                                    <td>{{ $service->work_flow }}</td>
+                                    <td>{{ \App\Mappers\ActiveStatus::handle($service->status) }}</td>
+                                    <td>{{ ($service->work_flow) ? "Yes" : "No" }}</td>
                                     <td><img src="{{ $service->image_path_val }}" style="width: 100px;" class="img-thumbnail" alt=""></td>
                                     <td>
                                         <a href="{{ route('dashboard.services.edit', $service->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('dashboard.edit')</a>

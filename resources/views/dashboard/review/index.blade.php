@@ -64,8 +64,8 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $review->comment }}</td>
                                     <td>{{ $review->url }}</td>
-                                    <td>{{ $review->satisfied }}</td>
-                                    <td>{{ $review->status }}</td>
+                                    <td>{{ ($review->satisfied) ? "Yes" : "No" }}</td>
+                                    <td>{{ \App\Mappers\ActiveStatus::handle($review->status) }}</td>
                                     <td><img src="{{ $review->image_path_val }}" style="width: 100px;" class="img-thumbnail" alt=""></td>
                                     <td>
                                         <a href="{{ route('dashboard.reviews.edit', $review->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('dashboard.edit')</a>

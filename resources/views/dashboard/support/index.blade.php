@@ -68,7 +68,7 @@
                                     <td>{{ $support->location }}</td>
                                     <td>{{ $support->email }}</td>
                                     <td>{{ $support->phone }}</td>
-                                    <td>{{ $support->status }}</td>
+                                    <td>{{ \App\Mappers\ActiveStatus::handle($support->status) }}</td>
                                     <td>
                                         <a href="{{ route('dashboard.supports.edit', $support->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('dashboard.edit')</a>
 

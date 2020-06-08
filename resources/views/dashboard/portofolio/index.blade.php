@@ -64,7 +64,7 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $portofolio->title }}</td>
                                     <td>{{ $portofolio->description }}</td>
-                                    <td>{{ $portofolio->status }}</td>
+                                    <td>{{ \App\Mappers\ActiveStatus::handle($portofolio->status) }}</td>
                                     {{-- <td>{{ $portofolio->work_flow }}</td>
                                     <td><img src="{{ $portofolio->image_path_val }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}
                                     <td>

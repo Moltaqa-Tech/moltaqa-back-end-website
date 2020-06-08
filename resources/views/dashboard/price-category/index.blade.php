@@ -70,7 +70,7 @@
                                     <td>
                                         <a href="{{ route('dashboard.price-categories.show', $category->id) }}" class="btn btn-info btn-sm"><i class="fa fa-view"></i> @lang('price-category.view_attrs')</a>
                                     </td>
-                                    <td>{{ $category->status }}</td>
+                                    <td>{{ \App\Mappers\ActiveStatus::handle($category->status) }}</td>
                                     <td>
                                         <a href="{{ route('dashboard.price-categories.edit', $category->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> @lang('dashboard.edit')</a>
 
