@@ -39,7 +39,7 @@
 
                         <div class="form-group">
                             <label>@lang('service.desc')</label>
-                            <input type="text" name="desc" class="form-control" value="{{ $service->desc }}">
+                            <textarea type="text" name="desc" class="form-control" rows="5">{{ $service->desc }}</textarea>
                         </div>
 
                         <div class="form-group">

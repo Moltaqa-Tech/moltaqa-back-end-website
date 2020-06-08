@@ -39,12 +39,12 @@
 
                         <div class="form-group">
                             <label>@lang('blog.breif_desc')</label>
-                            <input type="text" name="brief_description" class="form-control" value="{{ $blog->brief_description }}">
+                            <textarea type="text" name="brief_description" class="form-control" rows="3">{{ $blog->brief_description }}</textarea>
                         </div>
 
                         <div class="form-group">
                             <label>@lang('blog.desc')</label>
-                            <input type="text" name="description" class="form-control" value="{{ $blog->description }}">
+                            <textarea type="text" name="description" class="form-control" rows="5">{{ $blog->description }}</textarea>
                         </div>
 
                         <div class="form-group">

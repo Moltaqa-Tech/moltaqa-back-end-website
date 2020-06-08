@@ -44,22 +44,22 @@
 
                         <div class="form-group">
                             <label>@lang('team.instagram_url')</label>
-                            <input type="text" name="instagram_url" class="form-control" value="{{ $team->instagram_url }}">
+                            <input type="url" name="instagram_url" class="form-control" value="{{ $team->instagram_url }}">
                         </div>
 
                         <div class="form-group">
                             <label>@lang('team.whatsapp_url')</label>
-                            <input type="text" name="whatsapp_url" class="form-control" value="{{ $team->whatsapp_url }}">
+                            <input type="url" name="whatsapp_url" class="form-control" value="{{ $team->whatsapp_url }}">
                         </div>
 
                         <div class="form-group">
                             <label>@lang('team.facebook_url')</label>
-                            <input type="text" name="facebook_url" class="form-control" value="{{ $team->facebook_url }}">
+                            <input type="url" name="facebook_url" class="form-control" value="{{ $team->facebook_url }}">
                         </div>
 
                         <div class="form-group">
                             <label>@lang('team.twitter_url')</label>
-                            <input type="text" name="twitter_url" class="form-control" value="{{ $team->twitter_url }}">
+                            <input type="url" name="twitter_url" class="form-control" value="{{ $team->twitter_url }}">
                         </div>
 
                         <div class="form-group">
