@@ -13,23 +13,22 @@
                 <h3 data-aos="fade-left" data-aos-duration="2000">what plan you need?</h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Pricing</li>
+                        <li class="breadcrumb-item"><a href="#">@lang("site.header_home")</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@lang("site.header_pricing")</li>
                     </ol>
                 </nav>
-                <h5>choose your plan now</h5>
+                <h5>@lang("site.pricing_plan")</h5>
             </section>
         </div>
     </div>
 
     <div class="pricing">
       <div class="container">
-        <h3>website pricing</h3>
+        <h3>@lang("site.pricing_website")</h3>
         <div class="row custome-row">
 
             @foreach ($websiteCategories as $category)
-            {{\Log::info("Webist")}}
-            {{\Log::info($category->attrs)}}
+            
                 <div class="col-md-3">
                 <div class="custome-pricing">
                     <div class="on-hover-title">
@@ -43,12 +42,12 @@
                     <span>{{$category->price}}$</span>
                     </div>
                     <div class="price-detials">
-                    <span>save ${{$category->price}}</span>
+                    <span>@lang("site.pricing_save") ${{$category->price}}</span>
                     <span> / </span>
-                    <span>year</span>
+                    <span>@lang("site.pricing_year")</span>
                     </div>
                     <div class="get-start">
-                    <a href="#">get start</a>
+                    <a href="#">@lang("site.pricing_get_start")</a>
                     </div>
                     <ul  class="list-unstyled">
                         @foreach ($category->attrs as $attr)
@@ -61,455 +60,57 @@
                                 @endif
                                 </li>
                         @endforeach
-                        {{--<li>
-                            <span>about us</span>
-                            <span class="no-provided"></span>
-                         </li>
-                        <li>
-                            <span>services</span>
-                            <span class="provided"></span>
-                        </li>
-                        <li>
-                            <span>about us</span>
-                            <span class="no-provided"></span>
-                        </li>
-                        <li>
-                            <span>services</span>
-                            <span class="provided"></span>
-                        </li>
-                        <li>
-                            <span>about us</span>
-                            <span class="no-provided"></span>
-                        </li>
-                        <li>
-                            <span>services</span>
-                            <span class="provided"></span>
-                        </li>
-                        <li>
-                            <span>about us</span>
-                            <span class="no-provided"></span>
-                        </li> --}}
                     </ul>
                 </div>
                 </div>
 
             @endforeach
-          {{-- <div class="col-md-3">
-            <div class="custome-pricing">
-              <div class="on-hover-title">
-                <span>standard</span>
-              </div>
-              <img src="{{asset('images/aboutline.png')}}" alt="about line" class="about-line">
-              <div class="pricing-title">
-                <span>standard</span>
-              </div>
-              <div class="price">
-                <span>19$</span>
-              </div>
-              <div class="price-detials">
-                <span>save $16</span>
-                <span> / </span>
-                <span>year</span>
-              </div>
-              <div class="get-start">
-                <a href="#">get start</a>
-              </div>
-              <ul  class="list-unstyled">
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="custome-pricing">
-              <div class="on-hover-title">
-                <span>standard</span>
-              </div>
-              <img src="{{asset('images/aboutline.png')}}" alt="about line" class="about-line">
-              <div class="pricing-title">
-                <span>standard</span>
-              </div>
-              <div class="price">
-                <span>19$</span>
-              </div>
-              <div class="price-detials">
-                <span>save $16</span>
-                <span> / </span>
-                <span>year</span>
-              </div>
-              <div class="get-start">
-                <a href="#">get start</a>
-              </div>
-              <ul  class="list-unstyled">
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="custome-pricing">
-              <div class="on-hover-title">
-                <span>standard</span>
-              </div>
-              <img src="{{asset('images/aboutline.png')}}" alt="about line" class="about-line">
-              <div class="pricing-title">
-                <span>standard</span>
-              </div>
-              <div class="price">
-                <span>19$</span>
-              </div>
-              <div class="price-detials">
-                <span>save $16</span>
-                <span> / </span>
-                <span>year</span>
-              </div>
-              <div class="get-start">
-                <a href="#">get start</a>
-              </div>
-              <ul  class="list-unstyled">
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-              </ul>
-            </div>
-          </div> --}}
         </div>
       </div>
     </div>
 
     <div class="pricing hoisting-pricing">
       <div class="container">
-        <h3>hoisting prices</h3>
+        <h3>@lang("site.pricing_hosting")</h3>
         <div class="row custome-row">
 
             @foreach ($hostCategories as $hostCategory)
-            {{\Log::info("HOst")}}
-            {{\Log::info($hostCategory->attrs)}}
                 <div class="col-md-3">
-                <div class="custome-pricing">
-                    <div class="on-hover-title">
-                    <span>{{$hostCategory->name}}</span>
+                    <div class="custome-pricing">
+                        <div class="on-hover-title">
+                        <span>{{$hostCategory->name}}</span>
+                        </div>
+                        <img src="{{asset('images/aboutline.png')}}" alt="about line" class="about-line">
+                        <div class="pricing-title">
+                        <span>{{$hostCategory->name}}</span>
+                        </div>
+                        <div class="price">
+                        <span>{{$hostCategory->price}}$</span>
+                        </div>
+                        <div class="price-detials">
+                        <span>@lang("site.pricing_save") ${{$hostCategory->saved_price}}</span>
+                        <span> / </span>
+                        <span>@lang("site.pricing_year")</span>
+                        </div>
+                        <div class="get-start">
+                        <a href="#">@lang("site.pricing_get_start")</a>
+                        </div>
+                        <ul  class="list-unstyled">
+                            @foreach ($hostCategory->attrs as $hostAttr)
+                                <li>
+                                <span>{{$hostAttr->name}}</span>
+                                    @if($hostAttr->pivot->active)
+                                        <span class="provided"></span>
+                                    @else
+                                        <span class="no-provided"></span>
+                                    @endif
+                                    </li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <img src="{{asset('images/aboutline.png')}}" alt="about line" class="about-line">
-                    <div class="pricing-title">
-                    <span>{{$hostCategory->name}}</span>
-                    </div>
-                    <div class="price">
-                    <span>{{$hostCategory->price}}$</span>
-                    </div>
-                    <div class="price-detials">
-                    <span>save ${{$hostCategory->saved_price}}</span>
-                    <span> / </span>
-                    <span>year</span>
-                    </div>
-                    <div class="get-start">
-                    <a href="#">get start</a>
-                    </div>
-                    <ul  class="list-unstyled">
-                        @foreach ($hostCategory->attrs as $hostAttr)
-                            <li>
-                            <span>{{$hostAttr->name}}</span>
-                                @if($hostAttr->pivot->active)
-                                    <span class="provided"></span>
-                                @else
-                                    <span class="no-provided"></span>
-                                @endif
-                                </li>
-                        @endforeach
-                    {{-- <li>
-                        <span>services</span>
-                        <span class="provided"></span>
-                    </li>
-                    <li>
-                        <span>about us</span>
-                        <span class="no-provided"></span>
-                    </li>
-                    <li>
-                        <span>services</span>
-                        <span class="provided"></span>
-                    </li>
-                    <li>
-                        <span>about us</span>
-                        <span class="no-provided"></span>
-                    </li>
-                    <li>
-                        <span>services</span>
-                        <span class="provided"></span>
-                    </li>
-                    <li>
-                        <span>about us</span>
-                        <span class="no-provided"></span>
-                    </li>
-                    <li>
-                        <span>services</span>
-                        <span class="provided"></span>
-                    </li>
-                    <li>
-                        <span>about us</span>
-                        <span class="no-provided"></span>
-                    </li> --}}
-                    </ul>
                 </div>
-                </div>
-
             @endforeach
-          {{-- <div class="col-md-3">
-            <div class="custome-pricing">
-              <div class="on-hover-title">
-                <span>advanced</span>
-              </div>
-              <img src="{{asset('images/aboutline.png')}}" alt="about line" class="about-line">
-              <div class="pricing-title">
-                <span>advanced</span>
-              </div>
-              <div class="price">
-                <span>29$</span>
-              </div>
-              <div class="price-detials">
-                <span>save $26</span>
-                <span> / </span>
-                <span>year</span>
-              </div>
-              <div class="get-start">
-                <a href="#">get start</a>
-              </div>
-              <ul  class="list-unstyled">
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="custome-pricing">
-              <div class="on-hover-title">
-                <span>commerce</span>
-              </div>
-              <img src="{{asset('images/aboutline.png')}}" alt="about line" class="about-line">
-              <div class="pricing-title">
-                <span>commerce</span>
-              </div>
-              <div class="price">
-                <span>39$</span>
-              </div>
-              <div class="price-detials">
-                <span>save $36</span>
-                <span> / </span>
-                <span>year</span>
-              </div>
-              <div class="get-start">
-                <a href="#">get start</a>
-              </div>
-              <ul  class="list-unstyled">
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="custome-pricing">
-              <div class="on-hover-title">
-                <span>venture</span>
-              </div>
-              <img src="{{asset('images/aboutline.png')}}" alt="about line" class="about-line">
-              <div class="pricing-title">
-                <span>venture</span>
-              </div>
-              <div class="price">
-                <span>29$</span>
-              </div>
-              <div class="price-detials">
-                <span>save $26</span>
-                <span> / </span>
-                <span>year</span>
-              </div>
-              <div class="get-start">
-                <a href="#">get start</a>
-              </div>
-              <ul  class="list-unstyled">
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-                <li>
-                  <span>services</span>
-                  <span class="provided"></span>
-                </li>
-                <li>
-                  <span>about us</span>
-                  <span class="no-provided"></span>
-                </li>
-              </ul>
-            </div>
-          </div> --}}
+
         </div>
       </div>
     </div>

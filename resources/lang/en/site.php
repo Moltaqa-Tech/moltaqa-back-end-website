@@ -77,4 +77,16 @@ return [
     'footer_gallary' => 'gallery',
     'footer_designed_by' => 'desgined by eman mosa',
 
+    /**
+     ** Pricing Page
+     */
+
+     'pricing_plan' => 'choose your plan now',
+     'pricing_website' => 'webiste pricing',
+     'pricing_hosting' => 'hosting pricing',
+     'pricing_save' => 'save',
+     'pricing_year' => 'year',
+     'pricing_get_start' => 'get start',
+
+
 ];
