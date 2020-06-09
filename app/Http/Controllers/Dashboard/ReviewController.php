@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\review;
+use App\Review;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -96,7 +96,7 @@ class ReviewController extends Controller
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
         $request_data['satisfied'] = (isset($request->satisfied) && $request->satisfied == 'on') ? 1: 0 ;
-        
+
         $review->update($request_data);
         session()->flash('success', trans('review.updated_successfully'));
         return redirect()->route('dashboard.reviews.index');

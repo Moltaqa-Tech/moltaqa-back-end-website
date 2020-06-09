@@ -42,7 +42,7 @@
             <li><a href="{{ route('dashboard.reviews.index') }}"><i class="fa fa-users"></i><span>@lang('dashboard.reviews')</span> </a></li>
             <li><a href="{{ route('dashboard.blogs.index') }}"><i class="fa fa-th"></i><span>@lang('dashboard.blogs')</span></a></li>
             <li><a href="{{ route('dashboard.supports.index') }}"><i class="fa fa-th"></i><span>@lang('dashboard.supports')</span></a></li>
-            <li><a href="{{ route('dashboard.contact') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.contact')</span> <span class="badge badge-info pull-right">5</span></a></li>
+            <li><a href="{{ route('dashboard.contact') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.contact')</span> </a></li>
             <li><a href="{{ url('dashboard/logout') }}"><i class="fa fa-sign-out"></i><span>@lang('dashboard.logout')</span></a></li>
 
         </ul>
