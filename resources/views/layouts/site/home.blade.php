@@ -19,12 +19,12 @@
           <img src="{{asset('images/bgwho.png')}}" class="bg-who">
           <img src="{{asset('images/ellipse.png')}}" alt="ellipse" class="ellipse" data-aos="zoom-in" data-aos-duration="2000">
           <div class="who-descraption"  data-aos="fade-right" data-aos-duration="2000">
-            <h2>Who are <span class="company-name">Moltaqa Tech</span></h2>
+            <h2>@lang("site.home_who_are")<span class="company-name"> @lang("site.site_title")</span></h2>
             <p class="text-details">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta itaque nam repellendus animi ratione dolores optio. Necessitatibus sapiente itaque placeat corporis possimus nulla odio amet, consectetur, perferendis iusto dignissimos?
+                @lang("site.home_who_details")
             </p>
             <a href="#" class="main-btn read-more">
-              read more
+                @lang("site.home_who_read_more")
             </a>
           </div>
         </div>
@@ -35,7 +35,7 @@
           <img src="{{asset('images/hline.png')}}" alt="Horicantal line" class="rev-hor-line">
           <img src="{{asset('images/WHAT.png')}}" class="bg-what">
           <div class="descraption"  data-aos="fade-right" data-aos-duration="2000">
-            <h2>What WE <span class="company-name">DO</span></h2>
+            <h2>@lang("site.home_what_we") <span class="company-name">@lang("site.home_what_do")</span></h2>
           </div>
           <div class="features">
             <div class="row custom-row">
@@ -60,16 +60,16 @@
 
       <section class="portfolio">
         <div class="container">
-          <h1>unique lourny</h1>
-          <p class="creative-text">creative in every thing with <span>Moltaqa Tech</span></p>
+          <h1>@lang("site.home_porto_title")</h1>
+          <p class="creative-text">@lang("site.home_porto_creative")<span>@lang("site.site_title")</span></p>
           <img class="lamp" src="{{asset('images/lamp.png')}}" alt="lamp">
           <div class="download-app">
-            <h6>Moltaqa Tech creative agency</h6>
+            <h6>@lang("site.home_porto_agnecy")</h6>
             <p class="text-download">
-              <span>more than</span>
-              <span>mobile app</span>
+              <span>@lang("site.home_porto_more")</span>
+              <span>@lang("site.home_porto_app")</span>
             </p>
-            <a href="#">Download Now</a>
+            <a href="#">@lang("site.home_porto_download")</a>
           </div>
         </div>
       </section>
@@ -77,7 +77,7 @@
       <section class="latest-work">
         <img src="{{asset('images//hline.png')}}" alt="Horicantal line" class="hor-line"  data-aos="fade-left" data-aos-duration="2000">
         <img class="latest-img" src="{{asset('images/latest.png')}}" alt="latest">
-        <h2  data-aos="fade-left" data-aos-duration="1500">our latest <span>work</span></h2>
+        <h2  data-aos="fade-left" data-aos-duration="1500">@lang("site.home_our_last") <span>@lang("site.home_our_work")</span></h2>
         <div class="container">
           <div class="content">
             <div class="row">
@@ -109,13 +109,13 @@
       <section class="our-portfolio">
         <div class="portfolio-tabs">
           <img src="{{asset('images/hline.png')}}" alt="Horicantal line" class="rev-hor-line">
-          <h2  data-aos="fade-right" data-aos-duration="2000">our <span>Portofolio</span></h2>
+          <h2  data-aos="fade-right" data-aos-duration="2000">@lang("site.home_porto_our") <span>@lang("site.home_porto_portofolio")</span></h2>
           <div class="container">
             <img src="{{asset('images/THINK.png')}}" class="bg-think">
               <div class="title-tabs">
 
                   <div class="tab active" data-class=".all">
-                          <span >All</span>
+                          <span >@lang("site.home_porto_all")</span>
                   </div>
                     @foreach ($categories as $key => $category)
                         <div class="tab" data-class=".{{'cat_'.$category->id}}">
@@ -139,7 +139,7 @@
 
       <section class="our-geeks">
         <div class="container">
-          <h2  data-aos="fade-left" data-aos-duration="1500">our <span>Geeks</span></h2>
+          <h2  data-aos="fade-left" data-aos-duration="1500">@lang("site.home_geek_our") <span>@lang("site.home_geek_geeks")</span></h2>
           <img src="{{asset('images//hline.png')}}" alt="Horicantal line" class="hor-line"  data-aos="fade-left" data-aos-duration="2000">
           <img class="latest-img" src="{{asset('images/Geeks.png')}}" alt="Geeks">
           <div class="content">
@@ -208,8 +208,8 @@
               <img src="{{asset('images/SAID.png')}}" alt="said" class="said">
               <img src="{{asset('images/symbol.png')}}" alt="symbol" class="symbol">
               <div>
-                <span>our clients</span>
-                <span>said</span>
+                <span>@lang("site.home_our_client")</span>
+                <span>@lang("site.home_client_said")</span>
               </div>
             </div>
           </div>
@@ -237,20 +237,20 @@
           </div>
           <div class="col-md-6 client-said-box">
             <div class="new-project">
-              <h3>Let's start a new project together!</h3>
-              <form action="{{url('/contact-us')}}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <input type="text" class="form-control" name="contactName" id="textinput" placeholder="Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" name="contactEmail" id="exampleInputEmail1" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" name="contactMessage" id="exampleFormControlTextarea1" rows="3" placeholder="Message" required></textarea>
-                </div>
-                <button type="submit">Submit Message</button>
-            </form>
+                <h3>@lang("site.contact_start_new_project")</h3>
+                <form action="{{url('/contact-us')}}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="contactName" id="textinput" placeholder="@lang('site.contact_name')" required>
+                    </div>
+                    <div class="form-group">
+                    <input type="email" class="form-control" name="contactEmail" id="exampleInputEmail1" placeholder="@lang('site.contact_email')" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="contactMessage" id="exampleFormControlTextarea1" rows="3" placeholder="@lang('site.contact_message')" required></textarea>
+                    </div>
+                    <button type="submit">@lang("site.contact_btn")</button>
+                </form>
             </div>
           </div>
         </div>

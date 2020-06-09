@@ -25,7 +25,7 @@
         <img src="{{asset('images/imagic.png')}}" id="addlogo" alt="Moltaqa Tech" data-aos="zoom-in" data-aos-duration="2000">
     </section>
     <p class="text-center">
-        web Desgin - Hosting Services - UI/UX Desgin - Mobile Apps - Digital Marketing
+        @lang('site.header_text_services')
     </p>
     </div>
 </div>

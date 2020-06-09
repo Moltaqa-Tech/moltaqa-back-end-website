@@ -39,7 +39,7 @@
           <div class="col-md-3 col-sm-6 side-footer">
             <img src="{{asset('images/logos.png')}}" alt="logo" class="logo">
             <p class="descraption">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aspernatur odit amet .
+              @lang("site.footer_moltaqa_desc")
             </p>
             <div class="socail-icons">
               <a href="#"><img src="{{asset('images/f.png')}}" alt="facebook"></a>
@@ -49,7 +49,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 side-footer">
-            <h5>Contact us</h5>
+            <h5>@lang("site.footer_contact_us")</h5>
             <ul class="list-unstyled">
               <li>
                 <i class="fas fa-map-marker-alt"></i>
@@ -67,21 +67,21 @@
             </ul>
           </div>
           <div class="col-md-3 col-sm-6 side-footer">
-            <h5>facebook blogin</h5>
+            <h5>@lang("site.footer_facebook_title")</h5>
             <div class="facebook-footer">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga maxime animi assumenda error.</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga maxime animi assumenda error.</p>
+              <p>@lang("site.footer_facebook_desc1")</p>
+              <p>@lang("site.footer_facebook_desc2")</p>
             </div>
           </div>
           <div class="col-md-3 col-sm-6 side-footer">
-            <h5>gallery</h5>
+            <h5>@lang("site.footer_gallary")</h5>
             <div class="footer-gallery">
               <img src="{{asset('images/carsoul.png')}}" alt="gallery">
             </div>
           </div>
         </div>
         <div class="bottom-footer">
-          desgined by eman mosa
+            @lang("site.footer_designed_by")
         </div>
       </div>
     </footer>

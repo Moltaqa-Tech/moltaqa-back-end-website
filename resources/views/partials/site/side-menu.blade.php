@@ -5,25 +5,25 @@
       <nav>
         <ul class="list menu-left">
           <li>
-            <a class="active" href="/">Home</a>
+            <a class="active" href="/">@lang('site.header_home')</a>
           </li>
           <li>
-            <a  href="about">About</a>
+            <a  href="about">@lang('site.header_about')</a>
           </li>
           <li>
-            <a href="pricing">Pricing</a>
+            <a href="pricing">@lang('site.header_pricing')</a>
           </li>
           <li>
-            <a href="services">Services</a>
+            <a href="services">@lang('site.header_services')</a>
           </li>
           <li>
-            <a href="portofolio">Portofolio</a>
+            <a href="portofolio">@lang('site.header_portofolio')</a>
           </li>
           <li>
-            <a href="blog">Blog</a>
+            <a href="blog">@lang('site.header_blog')</a>
           </li>
           <li>
-            <a href="contact">Contact us</a>
+            <a href="contact">@lang('site.header_contact_us')</a>
           </li>
         </ul>
       </nav>
