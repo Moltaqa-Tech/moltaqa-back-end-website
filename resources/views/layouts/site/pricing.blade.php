@@ -10,10 +10,10 @@
           <img src="{{asset('images/hline.png')}}" alt="Horicantal line" class="rev-hor-line">
           <img src="{{asset('images/PRICING.png')}}" class="bg-think pricing-bg" data-aos="fade-right" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-left" data-aos-duration="2000">what plan you need?</h3>
+                <h3 data-aos="fade-left" data-aos-duration="2000">@lang("site.pricing_what_plan")</h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">@lang("site.header_home")</a></li>
+                        <li class="breadcrumb-item"><a href="/">@lang("site.header_home")</a></li>
                         <li class="breadcrumb-item active" aria-current="page">@lang("site.header_pricing")</li>
                     </ol>
                 </nav>
@@ -28,7 +28,7 @@
         <div class="row custome-row">
 
             @foreach ($websiteCategories as $category)
-            
+
                 <div class="col-md-3">
                 <div class="custome-pricing">
                     <div class="on-hover-title">

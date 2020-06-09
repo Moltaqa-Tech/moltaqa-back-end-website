@@ -16,11 +16,11 @@
         <img src="{{asset('images/hline.png')}}" alt="Horicantal line" class="rev-hor-line" >
         <img src="{{asset('images/WORK.png')}}" class="bg-think" data-aos="fade-right" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-left" data-aos-duration="2000">about us</h3>
+                <h3 data-aos="fade-left" data-aos-duration="2000">@lang("site.about_about_us")</h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">About</li>
+                        <li class="breadcrumb-item"><a href="/">@lang("site.header_home")</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@lang("site.header_about")</li>
                     </ol>
                 </nav>
             </section>
@@ -30,7 +30,7 @@
     <div class="words-about-us">
         <div class="container">
             <h3>
-                a few words about us
+                @lang("site.about_few_words")
             </h3>
             <div class="row custom-row">
                 <div class="col-md-4">
@@ -56,11 +56,11 @@
         <div class="container">
             <img src="{{asset('images/newline.png')}}" alt="about line" class="about-line" data-aos="fade-up" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-down" data-aos-duration="2000">discover all about <span>Moltaqa Tech</span></h3>
+                <h3 data-aos="fade-down" data-aos-duration="2000">@lang("site.about_discover") <span>@lang("site.site_title")</span></h3>
             </section>
             <section class="play-video">
                 <i class="fab fa-youtube"></i>
-                <span>play the intro video</span>
+                <span>@lang("site.about_intro_video")</span>
             </section>
         </div>
     </div>
@@ -68,7 +68,7 @@
     <div class="words-about-us">
         <div class="container">
             <h3>
-                expect the best
+                @lang("site.about_expect_best")
             </h3>
             <div class="row custom-row">
                 <div class="col-md-4">
@@ -98,7 +98,7 @@
         <div class="container">
         <img src="{{asset('images/newline.png')}}" alt="about line" class="about-line" data-aos="fade-up" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-down" data-aos-duration="2000">why choose <span>Moltaqa Tech</span></h3>
+                <h3 data-aos="fade-down" data-aos-duration="2000">@lang("site.about_why_choose") <span>@lang("site.site_title")</span></h3>
             </section>
             <div class="row custom-row">
                 <div class="col-md-4">
@@ -120,7 +120,7 @@
     <div class="client-talk">
         <div class="container">
             <h3>
-                client talk about us
+                @lang("site.about_client_talk")
             </h3>
             <div class="slider">
                 <div class="customers">

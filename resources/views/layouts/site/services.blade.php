@@ -10,11 +10,11 @@
           <img src="{{asset('images/hline.png')}}" alt="Horicantal line" class="rev-hor-line">
           <img src="{{asset('images/contact.png')}}" class="bg-think contact-bg" data-aos="fade-right" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-left" data-aos-duration="2000">Services</h3>
+                <h3 data-aos="fade-left" data-aos-duration="2000">@lang("site.header_services")</h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Services</li>
+                        <li class="breadcrumb-item"><a href="/">@lang("site.header_home")</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@lang("site.header_services")</li>
                     </ol>
                 </nav>
             </section>
@@ -24,7 +24,7 @@
     <section class="what-we-do">
       <div class="container">
         <div class="features features-in-services">
-          <h2>Services that we provide</h2>
+          <h2>@lang("site.services_provide")</h2>
           <div class="row custom-row">
             @foreach ($services as $service)
                 <div class="col-md-3 col-sm-4 cust-col">
@@ -46,7 +46,7 @@
 
     <section class="main-services">
       <div class="container">
-        <h3>work flow</h3>
+        <h3>@lang("site.services_work_flow")</h3>
         <div class="row parent-row">
             @foreach($workFlows as $key => $workFlow)
                 <div class="col-md-6 row child-row">

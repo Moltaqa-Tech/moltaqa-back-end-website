@@ -82,11 +82,45 @@ return [
      */
 
      'pricing_plan' => 'choose your plan now',
+     'pricing_what_plan' => 'what plan you need?',
      'pricing_website' => 'webiste pricing',
      'pricing_hosting' => 'hosting pricing',
      'pricing_save' => 'save',
      'pricing_year' => 'year',
      'pricing_get_start' => 'get start',
+
+     /**
+      ** Services Page
+      */
+
+      'services_provide' => 'Services that we provide',
+      'services_work_flow' => 'work flow',
+
+      /**
+       ** Portofolio Page
+       **/
+
+       'portofolio_our' => 'our portofolio',
+       'portofolio_all' => 'All',
+
+       /**
+        ** Contact Us Page
+        */
+        'contact_need_info' => 'need some help ? we are here for you',
+
+        /**
+         ** About Page
+         */
+        'about_about_us' => 'About Us',
+        'about_few_words' => 'a few words about us',
+        'about_discover' => 'discover all about',
+        'about_intro_video' => 'play the intro video',
+        'about_why_choose' => 'why choose',
+        'about_client_talk' => 'client talk about us',
+        'about_expect_best' => 'expect the best',
+
+
+
 
 
 ];

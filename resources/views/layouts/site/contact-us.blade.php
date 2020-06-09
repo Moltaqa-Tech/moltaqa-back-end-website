@@ -10,11 +10,11 @@
           <img src="{{asset('images/hline.png')}}" alt="Horicantal line" class="rev-hor-line">
           <img src="{{asset('images/contact.png')}}" class="bg-think contact-bg" data-aos="fade-right" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-left" data-aos-duration="2000">contact us</h3>
+                <h3 data-aos="fade-left" data-aos-duration="2000">@lang("site.header_contact_us")</h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">contact us</li>
+                        <li class="breadcrumb-item"><a href="{{url('/')}}">@lang("site.header_home")</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@lang("site.header_contact_us")</li>
                     </ol>
                 </nav>
             </section>
@@ -23,7 +23,7 @@
 
       <div class="contact">
           <div class="container">
-              <h3>need some help ? we are here for you</h3>
+              <h3>@lang("site.contact_need_info")</h3>
               <div class="row custom-row">
                   @foreach ($supports as $support)
                     <div class="col-md-4 help-box">
@@ -48,7 +48,7 @@
                             </ul>
                     </div>
                   @endforeach
-               
+
               </div>
           </div>
       </div>
@@ -60,19 +60,19 @@
             </div>
             <div class="col-md-6 client-said-box">
               <div class="new-project">
-                <h3>Let's start a new project together!</h3>
+                <h3>@lang("site.contact_start_new_project")</h3>
                 <form action="{{url('/contact-us')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                    <input type="text" class="form-control" name="contactName" id="textinput" placeholder="Name" required>
+                    <input type="text" class="form-control" name="contactName" id="textinput" placeholder="@lang('site.contact_name')" required>
                     </div>
                     <div class="form-group">
-                    <input type="email" class="form-control" name="contactEmail" id="exampleInputEmail1" placeholder="Email" required>
+                    <input type="email" class="form-control" name="contactEmail" id="exampleInputEmail1" placeholder="@lang('site.contact_email')" required>
                     </div>
                     <div class="form-group">
-                    <textarea class="form-control" name="contactMessage" id="exampleFormControlTextarea1" rows="3" placeholder="Message" required></textarea>
+                    <textarea class="form-control" name="contactMessage" id="exampleFormControlTextarea1" rows="3" placeholder="@lang('site.contact_message')" required></textarea>
                     </div>
-                    <button type="submit">Submit Message</button>
+                    <button type="submit">@lang("site.contact_btn")</button>
                 </form>
               </div>
             </div>

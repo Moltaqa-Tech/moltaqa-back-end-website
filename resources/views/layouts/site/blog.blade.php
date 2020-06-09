@@ -9,11 +9,11 @@
           <img src="{{asset('images/hline.png')}}" alt="Horicantal line" class="rev-hor-line">
           <img src="{{asset('images/contact.png')}}" class="bg-think contact-bg" data-aos="fade-right" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-left" data-aos-duration="2000">blog</h3>
+                <h3 data-aos="fade-left" data-aos-duration="2000">@lang("site.header_blog")</h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">blog</li>
+                        <li class="breadcrumb-item"><a href="{{url('/')}}">@lang("site.header_home")</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@lang("site.header_blog")</li>
                     </ol>
                 </nav>
             </section>

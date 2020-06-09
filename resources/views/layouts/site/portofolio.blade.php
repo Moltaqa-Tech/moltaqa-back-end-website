@@ -10,11 +10,11 @@
           <img src="{{asset('images/hline.png')}}" alt="Horicantal line" class="rev-hor-line">
           <img src="{{asset('images/PORYOFOLIO.png')}}" class="bg-think portofolio-bg" data-aos="fade-right" data-aos-duration="2000">
             <section class="content">
-                <h3 data-aos="fade-left" data-aos-duration="2000">our portofolio</h3>
+                <h3 data-aos="fade-left" data-aos-duration="2000">@lang("site.portofolio_our")</h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">our portofolio</li>
+                        <li class="breadcrumb-item"><a href="/">@lang("site.header_home")</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@lang("site.portofolio_our")</li>
                     </ol>
                 </nav>
             </section>
@@ -28,7 +28,7 @@
             <div class="title-tabs">
 
                 <div class="tab active" data-class=".all">
-                        <span >All</span>
+                        <span >@lang("site.portofolio_all")</span>
                 </div>
                 @foreach ($categories as $key => $category)
                     <div class="tab" data-class=".{{'cat_'.$category->id}}">
