@@ -125,72 +125,78 @@
             <div class="slider">
                 <div class="customers">
                     <div class="owl-carousel owl-theme owl-works">
+
                     <div class="item">
                         <div class="one-client">
-                        <div class="img-user">
-                            <img src="{{asset('images/userone.png')}}" alt="user">
-                        </div>
-                        <div class="arrow">
-                            <img src="{{asset('images/newrevline.png')}}" alt="arrow">
-                        </div>
-                        <div class="comment-user">
+                          <div class="img-user">
+                            <img src="./images/userone.png" alt="user">
+                          </div>
+                          <div class="arrow">
+                            <img src="./images/newrevline.png" alt="arrow">
+                          </div>
+                          <div class="comment-user">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                        </div>
+                          </div>
                         </div>
                     </div>
+
                     <div class="item">
                         <div class="one-client">
-                        <div class="img-user">
-                            <img src="{{asset('images/userone.png')}}" alt="user">
-                        </div>
-                        <div class="arrow">
-                        <img src="{{asset('images/newrevline.png')}}" alt="arrow">
-                        </div>
-                        <div class="comment-user">
+                            <div class="img-user">
+                            <img src="./images/userone.png" alt="user">
+                            </div>
+                            <div class="arrow">
+                            <img src="./images/newrevline.png" alt="arrow">
+                            </div>
+                            <div class="comment-user">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                        </div>
+                            </div>
                         </div>
                     </div>
+
                     <div class="item">
                         <div class="one-client">
-                        <div class="img-user">
-                    <img src="{{asset('images/userone.png')}}" alt="user">
-                        </div>
-                        <div class="arrow">
-                        <img src="{{asset('images/newrevline.png')}}" alt="arrow">
-                        </div>
-                        <div class="comment-user">
+                            <div class="img-user">
+                        <img src="./images/userone.png" alt="user">
+                            </div>
+                            <div class="arrow">
+                            <img src="./images/newrevline.png" alt="arrow">
+                            </div>
+                            <div class="comment-user">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                        </div>
+                            </div>
                         </div>
                     </div>
+
                     <div class="item">
-                        <div class="one-client">
+                    <div class="one-client">
                         <div class="img-user">
-                    <img src="{{asset('images/userone.png')}}" alt="user">
+                    <img src="./images/userone.png" alt="user">
                         </div>
                         <div class="arrow">
-                        <img src="{{asset('images/newrevline.png')}}" alt="arrow">
+                        <img src="./images/newrevline.png" alt="arrow">
                         </div>
                         <div class="comment-user">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                        </div>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
                         </div>
                     </div>
+                    </div>
+
                     <div class="item">
-                        <div class="one-client">
+                    <div class="one-client">
                         <div class="img-user">
-                    <img src="{{asset('images/userone.png')}}" alt="user">
+                    <img src="./images/userone.png" alt="user">
                         </div>
                         <div class="arrow">
-                        <img src="{{asset('images/newrevline.png')}}" alt="arrow">
+                        <img src="./images/newrevline.png" alt="arrow">
                         </div>
                         <div class="comment-user">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                        </div>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
                         </div>
                     </div>
-                </div>
+                    </div>
+
+                  </div>
                 </div>
             </div>
             <!-- Start supports Section -->
@@ -200,39 +206,39 @@
 
                         <div class="item" style="width:auto">
                             <a href="#">
-                                <img src="{{asset('images/slideone.png')}}" alt="support">
+                                <img src="./images/slideone.png" alt="support">
                             </a>
                         </div>
 
                         <div class="item" style="width:auto">
                             <a href="#">
-                            <img src="{{asset('images/slidetwo.png')}}" alt="support">
+                              <img src="./images/slidetwo.png" alt="support">
                             </a>
                         </div>
 
                         <div class="item" style="width:auto">
                             <a href="#">
-                            <img src="{{asset('images/slidethree.png')}}" alt="support">
+                              <img src="./images/slidethree.png" alt="support">
                             </a>
                         </div>
 
                         <div class="item" style="width:auto">
                             <a href="#">
-                            <img src="{{asset('images/slidefour.png')}}" alt="support">
+                              <img src="./images/slidefour.png" alt="support">
                             </a>
                         </div>
 
                         <div class="item" style="width:auto">
-                        <a href="#">
-                            <img src="{{asset('images/slideone.png')}}" alt="support">
-                        </a>
-                    </div>
+                          <a href="#">
+                              <img src="./images/slideone.png" alt="support">
+                          </a>
+                      </div>
 
-                    <div class="item" style="width:auto">
-                        <a href="#">
-                            <img src="{{asset('images/slidetwo.png')}}" alt="support">
-                        </a>
-                    </div>
+                      <div class="item" style="width:auto">
+                          <a href="#">
+                            <img src="./images/slidetwo.png" alt="support">
+                          </a>
+                      </div>
 
 
                     </div>
@@ -241,6 +247,7 @@
             <!-- End supports Section -->
         </div>
     </div>
+
 @endsection
 
 @section("js")

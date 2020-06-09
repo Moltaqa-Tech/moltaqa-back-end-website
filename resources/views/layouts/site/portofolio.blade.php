@@ -26,8 +26,12 @@
         <div class="container">
           <img src="{{asset('images/THINK.png')}}" class="bg-think">
             <div class="title-tabs">
+
+                <div class="tab active" data-class=".all">
+                        <span >All</span>
+                </div>
                 @foreach ($categories as $key => $category)
-                    <div class="tab {{($key == 0) ? 'active': ''}}" data-class=".{{($category->id == $categoryAllId) ? 'all' : 'cat_'.$category->id}}">
+                    <div class="tab" data-class=".{{'cat_'.$category->id}}">
                             <span >{{$category->name}}</span>
                     </div>
                 @endforeach

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use App\Portofolio;
 use App\PortofolioCategory;
+use App\Review;
 use App\Service;
 use App\Team;
 
@@ -18,12 +19,14 @@ class HomeController extends Controller
         })->where("status", 1)->latest("id")->first();
         // portofolio part
         $categories = PortofolioCategory::where("status", 1)->get();
-        $categoryAllId = PortofolioCategory::where("status", 1)->where("name", "like", "%all%")->first()->id;
         $portofolios = Portofolio::with(["images"])->whereHas( "category", function($query) {
             $query->where("status", 1);
         })->where('status', 1)->get();
         // dd($portofolios);
 
-        return view('layouts.site.home', ["teams" => $teams, "services" => $services, "lastWork" => $lastWork, "categories" => $categories, "portofolios" => $portofolios, "categoryAllId" => $categoryAllId]);
+        // Client said
+        $reviews = Review::where("status", 1)->latest("id")->get();
+
+        return view('layouts.site.home', ["teams" => $teams, "services" => $services, "lastWork" => $lastWork, "categories" => $categories, "portofolios" => $portofolios, "reviews" => $reviews]);
     }
 }

@@ -81,23 +81,26 @@
         <div class="container">
           <div class="content">
             <div class="row">
-              <div class="col-md-5 text-latest-work">
-                <section>
-                  <div>
-                    <h5>{{$lastWork->title}}</h5>
-                    <p>{{$lastWork->description}}</p>
-                  </div>
-                </section>
-              </div>
-              <div class="col-md-7">
-                <div class="owl-carousel owl-theme owl-works">
-                    @foreach ($lastWork->images as $image)
-                        <div class="item">
-                        <img src="{{$image->image_path_val}}" alt="latest work">
-                        </div>
-                    @endforeach
+            @if($lastWork != null)
+                <div class="col-md-5 text-latest-work">
+                    <section>
+                            <div>
+                                <h5>{{$lastWork->title}}</h5>
+                                <p>{{$lastWork->description}}</p>
+                            </div>
+
+                    </section>
                 </div>
-              </div>
+                <div class="col-md-7">
+                    <div class="owl-carousel owl-theme owl-works">
+                        @foreach ($lastWork->images as $image)
+                            <div class="item">
+                            <img src="{{$image->image_path_val}}" alt="latest work">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+              @endif
             </div>
           </div>
         </div>
@@ -110,9 +113,13 @@
           <div class="container">
             <img src="{{asset('images/THINK.png')}}" class="bg-think">
               <div class="title-tabs">
+
+                  <div class="tab active" data-class=".all">
+                          <span >All</span>
+                  </div>
                     @foreach ($categories as $key => $category)
-                        <div class="tab {{($key == 0) ? 'active': ''}}" data-class=".{{($category->id == $categoryAllId) ? 'all' : 'cat_'.$category->id}}">
-                                <span >{{$category->name}}</span>
+                        <div class="tab" data-class=".{{'cat_'.$category->id}}">
+                            <span >{{$category->name}}</span>
                         </div>
                     @endforeach
               </div>
@@ -209,56 +216,19 @@
           <div class="col-md-7 client-said-box">
             <div class="customers">
               <div class="owl-carousel owl-theme owl-works">
-                <div class="item">
-                  <div class="one-client">
-                    <div class="img-user">
-                      <img src="{{asset('images/05.jpg')}}" alt="user">
+
+                @foreach ($reviews as $review)
+                    <div class="item">
+                        <div class="one-client">
+                            <div class="img-user">
+                                <img src="{{asset('images/05.jpg')}}" alt="user">
+                            </div>
+                            <div class="comment-user">
+                                {{$review->comment}}
+                            </div>
+                        </div>
                     </div>
-                    <div class="comment-user">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="one-client">
-                    <div class="img-user">
-                      <img src="{{asset('images/05.jpg')}}" alt="user">
-                    </div>
-                    <div class="comment-user">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="one-client">
-                    <div class="img-user">
-                      <img src="{{asset('images/05.jpg')}}" alt="user">
-                    </div>
-                    <div class="comment-user">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="one-client">
-                    <div class="img-user">
-                      <img src="{{asset('images/05.jpg')}}" alt="user">
-                    </div>
-                    <div class="comment-user">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="one-client">
-                    <div class="img-user">
-                      <img src="{{asset('images/05.jpg')}}" alt="user">
-                    </div>
-                    <div class="comment-user">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                    </div>
-                  </div>
-                </div>
+                @endforeach
             </div>
             </div>
           </div>
