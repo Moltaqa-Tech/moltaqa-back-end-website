@@ -12,7 +12,7 @@ class Review extends Model
      * @var array
      */
     protected $fillable = [
-        'comment', 'url', 'image_path', 'satisfied', 'status',
+        'comment', 'url', 'image_path', 'satisfied', 'status', 'locale'
     ];
 
     protected $appends = [

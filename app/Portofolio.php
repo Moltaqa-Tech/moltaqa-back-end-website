@@ -13,7 +13,7 @@ class Portofolio extends Model
      * @var array
      */
     protected $fillable = [
-        'category_id', 'title', 'description', 'status'
+        'category_id', 'title', 'description', 'status', 'locale'
     ];
 
     public function images()

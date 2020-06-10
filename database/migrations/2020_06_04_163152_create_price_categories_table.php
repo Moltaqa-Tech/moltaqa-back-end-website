@@ -18,6 +18,7 @@ class CreatePriceCategoriesTable extends Migration
             $table->string("name");
             $table->float("price")->default(0);
             $table->float("saved_price")->default(0);
+            $table->string("locale")->default("en");
             $table->unsignedTinyInteger("price_type")->default(1);
             $table->unsignedTinyInteger("status")->default(1);
             $table->timestamps();

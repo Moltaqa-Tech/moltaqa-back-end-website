@@ -22,6 +22,7 @@ class CreateTeamsTable extends Migration
             $table->string("whatsapp_url")->nullable();
             $table->string("twitter_url")->nullable();
             $table->string("facebook_url")->nullable();
+            $table->string("locale")->default("en");
             $table->unsignedTinyInteger("status")->default(1);
             $table->timestamps();
         });

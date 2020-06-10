@@ -26,7 +26,7 @@ class PriceCategoryController extends Controller
 
     public function show(PriceCategory $priceCategory)
     {
-        $priceAttrs = PriceAttr::where("price_type", $priceCategory->price_type)->get();
+        $priceAttrs = PriceAttr::where("price_type", $priceCategory->price_type)->where("locale", $priceCategory->locale)->get();
         $activePriceAttrs = $priceCategory->attrs()->where("active", 1)->pluck("attr_id")->all();
         return view("dashboard.price-category.attrs", ["priceAttrs" => $priceAttrs, "priceCategory" => $priceCategory, 'activePriceAttrs' => $activePriceAttrs]);
     }//end of show
@@ -82,6 +82,7 @@ class PriceCategoryController extends Controller
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
+        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         PriceCategory::create($request_data);
         session()->flash('success', trans('price-category.added_successfully'));

@@ -4,6 +4,9 @@
     <!-- style for owl carousel -->
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+
+    {{-- <link href="https://fonts.googleapis.com/css?family=Cairo|Oswald&display=swap" rel="stylesheet"> --}}
+
 @endsection
 
 @section('content')

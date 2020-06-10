@@ -12,7 +12,7 @@ class Service extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'desc', 'image_path', 'status', 'work_flow',
+        'title', 'desc', 'image_path', 'status', 'work_flow', 'locale'
     ];
 
     protected $appends = [

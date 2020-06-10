@@ -62,6 +62,10 @@
                         </div>
 
                         <div class="form-group">
+                            <label><input type="checkbox" name="locale" > @lang('dashboard.arabic')</label>
+                        </div>
+
+                        <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('dashboard.add')</button>
                         </div>
 

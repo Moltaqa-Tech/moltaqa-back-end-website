@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LaravelLocalization::getCurrentLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no , user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Moltaqa Tech</title>
+    <title>@lang("site.site_title")</title>
     <link rel="shortcut icon" href="{{asset('images/logo.png')}}" type="image/x-icon">
+
+    @if (app()->getLocale() == 'ar')
+        {{-- RTL  Arabic CSS--}}
+        @else
+        {{-- LTR English CSS--}}
+    @endif
     <!-- Main Icons -->
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <!-- Main Fonts -->

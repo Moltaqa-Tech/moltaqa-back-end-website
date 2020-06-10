@@ -12,6 +12,6 @@ class PortofolioCategory extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'status'
+        'name', 'status', 'locale'
     ];
 }

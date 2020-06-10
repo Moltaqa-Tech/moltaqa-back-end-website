@@ -46,6 +46,7 @@ class PortofolioController extends Controller
 
         $request_data = $request->all();
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
+        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
         $portofolio = Portofolio::create($request_data);
 
         foreach ($request->images as $image) {

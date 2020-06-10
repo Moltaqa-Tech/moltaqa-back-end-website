@@ -12,7 +12,7 @@ class Blog extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'brief_description', 'description', 'status', 'image_path', 'views_count'
+        'title', 'brief_description', 'description', 'status', 'image_path', 'views_count', 'locale'
     ];
 
     protected $appends = [

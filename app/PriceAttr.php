@@ -12,8 +12,8 @@ class PriceAttr extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'price_type'
+        'name', 'price_type', 'locale'
     ];
 
-    
+
 }

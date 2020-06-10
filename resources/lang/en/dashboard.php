@@ -46,4 +46,7 @@ return [
     "login" => 'Login',
     "logout" => 'Logout',
 
+    // Lang
+    'arabic' => 'Arabic',
+
 ];

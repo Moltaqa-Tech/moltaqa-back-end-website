@@ -19,6 +19,7 @@ class CreateBlogsTable extends Migration
             $table->text("brief_description");
             $table->text("description");
             $table->string("image_path")->nullable();
+            $table->string("locale")->default("en");
             $table->unsignedTinyInteger("status")->default(1);
             $table->unsignedInteger("views_count")->default(0);
             $table->timestamps();

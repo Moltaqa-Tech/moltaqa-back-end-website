@@ -12,7 +12,7 @@ class Team extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'job_title', 'instagram_url', 'whatsapp_url', 'twitter_url', 'facebook_url', 'image_path', 'status'
+        'name', 'job_title', 'instagram_url', 'whatsapp_url', 'twitter_url', 'facebook_url', 'image_path', 'status', 'locale'
     ];
 
     protected $appends = [

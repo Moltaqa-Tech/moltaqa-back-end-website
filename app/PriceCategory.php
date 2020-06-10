@@ -12,7 +12,7 @@ class PriceCategory extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'price', 'saved_price', 'price_type', 'status'
+        'name', 'price', 'saved_price', 'price_type', 'status', 'locale'
     ];
 
     public function attrs()

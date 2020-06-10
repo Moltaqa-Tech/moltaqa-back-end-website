@@ -56,6 +56,10 @@
                         </div>
 
                         <div class="form-group">
+                            <label><input type="checkbox" name="locale" > @lang('dashboard.arabic')</label>
+                        </div>
+
+                        <div class="form-group">
                             <label>@lang('portofolio.image')</label>
                             <input type="file" multiple="multiple" name="images[]" class="form-control images">
                         </div>

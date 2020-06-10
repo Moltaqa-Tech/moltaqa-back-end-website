@@ -13,24 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namespace' => 'Site'], function () {
-    Route::get('/', 'HomeController@index');
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ],
+        'namespace' => 'Site'
+    ], function(){ 
 
-    Route::get('/about', function () {
-        return view('layouts.site.about');
-    });
+        Route::get('/', 'HomeController@index');
 
-    Route::get('/pricing', 'PriceController@index');
+        Route::get('/about', function () {
+            return view('layouts.site.about');
+        });
 
-    Route::get('/services', 'ServiceController@index');
+        Route::get('/pricing', 'PriceController@index');
 
-    Route::get('/portofolio', 'PortofolioController@index');
+        Route::get('/services', 'ServiceController@index');
 
-    Route::get('/blog', 'BlogController@index');
+        Route::get('/portofolio', 'PortofolioController@index');
 
-    // Contact US routes
-    Route::get('/contact', 'ContactUsController@index');
-    Route::post('/contact-us', 'ContactUsController@store');
+        Route::get('/blog', 'BlogController@index');
+
+        // Contact US routes
+        Route::get('/contact', 'ContactUsController@index');
+        Route::post('/contact-us', 'ContactUsController@store');
 });
 
 

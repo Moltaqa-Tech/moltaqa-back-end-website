@@ -54,6 +54,7 @@ class ServiceController extends Controller
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
         $request_data['work_flow'] = (isset($request->work_flow) && $request->work_flow == 'on') ? 1: 0 ;
+        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         Service::create($request_data);
         session()->flash('success', trans('service.added_successfully'));

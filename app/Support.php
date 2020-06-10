@@ -12,6 +12,6 @@ class Support extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'location', 'email', 'phone', 'status', 'main_contact'
+        'title', 'description', 'location', 'email', 'phone', 'status', 'main_contact', 'locale'
     ];
 }

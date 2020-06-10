@@ -17,6 +17,7 @@ class CreatePortofoliosTable extends Migration
             $table->id();
             $table->string("title")->nullable();
             $table->text("description")->nullable();
+            $table->string("locale")->default("en");
             $table->unsignedTinyInteger("status")->default(1);
             $table->unsignedBigInteger('category_id')->nullable();
 
