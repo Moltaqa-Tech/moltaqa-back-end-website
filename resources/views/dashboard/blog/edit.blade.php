@@ -52,6 +52,10 @@
                         </div>
 
                         <div class="form-group">
+                            <label><input type="checkbox" name="locale" @if($blog->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
+                        </div>
+
+                        <div class="form-group">
                             <label>@lang('blog.image')</label>
                             <input type="file" name="image" class="form-control image">
                         </div>

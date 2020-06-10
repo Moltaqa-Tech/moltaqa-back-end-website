@@ -63,7 +63,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label><input type="checkbox" name="status" checked> @lang('team.status')</label>
+                            <label><input type="checkbox" name="status" @if($team->status) checked @endif> @lang('team.status')</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label><input type="checkbox" name="locale" @if($team->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">

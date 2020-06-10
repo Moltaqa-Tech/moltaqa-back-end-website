@@ -110,7 +110,7 @@ class PriceCategoryController extends Controller
         $request_data = $request->all();
         // check status
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-
+        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
         $priceCategory->update($request_data);
         session()->flash('success', trans('price-category.updated_successfully'));
         return redirect()->route('dashboard.price-categories.index');

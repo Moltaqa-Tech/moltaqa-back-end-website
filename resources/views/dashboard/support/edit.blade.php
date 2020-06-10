@@ -60,6 +60,11 @@
                         <div class="form-group">
                             <label><input type="checkbox" name="status" @if($support->status == 1) checked @endif> @lang('support.status')</label>
                         </div>
+
+                        <div class="form-group">
+                            <label><input type="checkbox" name="locale" @if($support->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
+                        </div>
+
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('dashboard.edit')</button>
                         </div>

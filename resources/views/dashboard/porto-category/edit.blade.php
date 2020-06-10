@@ -40,6 +40,9 @@
                             <label><input type="checkbox" name="status" @if($portofolioCategory->status) checked @endif> @lang('porto-category.status')</label>
                         </div>
 
+                        <div class="form-group">
+                            <label><input type="checkbox" name="locale" @if($portofolioCategory->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
+                        </div>
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('dashboard.edit')</button>

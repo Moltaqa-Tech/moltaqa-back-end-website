@@ -97,6 +97,7 @@ class BlogController extends Controller
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
+        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         $blog->update($request_data);
         session()->flash('success', trans('blog.updated_successfully'));

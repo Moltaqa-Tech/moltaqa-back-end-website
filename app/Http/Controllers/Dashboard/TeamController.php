@@ -100,7 +100,7 @@ class TeamController extends Controller
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-
+        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
         $team->update($request_data);
         session()->flash('success', trans('team.updated_successfully'));
         return redirect()->route('dashboard.teams.index');

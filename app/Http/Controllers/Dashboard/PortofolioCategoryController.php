@@ -77,6 +77,7 @@ class PortofolioCategoryController extends Controller
         $request_data = $request->all();
         // check status
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
+        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         $portofolioCategory->update($request_data);
         session()->flash('success', trans('porto-category.updated_successfully'));
