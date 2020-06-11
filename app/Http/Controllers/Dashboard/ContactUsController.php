@@ -17,6 +17,9 @@ class ContactUsController extends Controller
             ->orWhere('email', 'LIKE', '%' . $request->search . '%');
         })->latest("id")->paginate(static::PAGINATION_COUNT);
 
+        // mark messages as seen
+        $unSeenMessages = ContactUs::where('is_seen', 0);
+        $unSeenMessages->update(["is_seen" => 1]);
         return view('dashboard.contact.index', ["contactMessages" => $contactMessages]);
     }
 }

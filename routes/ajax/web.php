@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,14 +13,12 @@
 |
 */
 
+Route::group(
+    [
+        'prefix' => 'dashboard/ajax',
+        'namespace' => 'Ajax',
+    ], function(){
 
-// website routes
-require_once 'site/web.php';
-
-// dashborad routes
-require_once 'dashboard/web.php';
-
-// ajax routes
-require_once 'ajax/web.php';
-
+        Route::get('/messages-count', 'ContactUsController@getUnSeenMessagesCount');
+});
 

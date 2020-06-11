@@ -134,6 +134,20 @@
 <script>
     $(document).ready(function () {
 
+        // Get Un seen contact us messages count
+        $.ajax({
+        url: "ajax/messages-count",
+        type: 'GET',
+        success: function(res) {
+            if(res != 0) {
+                $('#messagesCount').css("display", 'inline');
+                $('#messagesCount').text(res)
+            } else {
+                $('#messagesCount').css("display", 'none');
+            }
+        }
+        });
+
         $('.sidebar-menu').tree();
 
         //icheck

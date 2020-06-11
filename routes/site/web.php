@@ -18,7 +18,7 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ],
         'namespace' => 'Site'
-    ], function(){ 
+    ], function(){
 
         Route::get('/', 'HomeController@index');
 
@@ -36,7 +36,12 @@ Route::group(
 
         // Contact US routes
         Route::get('/contact', 'ContactUsController@index');
-        Route::post('/contact-us', 'ContactUsController@store');
+    });
+
+Route::group(['namespace' => 'Site'], function () {
+    // set this route outside of localizations group
+    // because laravel macamare dosn't support post requests
+    Route::post('/contact-us', 'ContactUsController@store');
 });
 
 
