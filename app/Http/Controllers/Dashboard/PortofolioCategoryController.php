@@ -31,19 +31,21 @@ class PortofolioCategoryController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-        ]);// end of validator
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        $rules = [];
+
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.name' => ['required']];
+
+        }//end of for each
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         PortofolioCategory::create($request_data);
         session()->flash('success', trans('porto-category.added_successfully'));
@@ -66,18 +68,20 @@ class PortofolioCategoryController extends Controller
 
     public function update(Request $request, PortofolioCategory $portofolioCategory)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'max:255',
-         ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.name' => ['required']];
+
+        }//end of for each
+
+
+        $request->validate($rules);
 
         $request_data = $request->all();
         // check status
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         $portofolioCategory->update($request_data);
         session()->flash('success', trans('porto-category.updated_successfully'));

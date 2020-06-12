@@ -13,7 +13,12 @@ return [
     |
     */
 
-    'name' => 'Name',
+    'ar' =>[
+        'name' => 'Arabic Name'
+    ],
+    'en' =>[
+        'name' => 'English Name'
+    ],
     'status' => 'Status',
     'category_portos' => 'Category Portofolios',
     'view_portos' => 'View Portofolios',
