@@ -25,6 +25,15 @@
           <li>
             <a href="contact">@lang('site.header_contact_us')</a>
           </li>
+          @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                @if($localeCode != app()->getLocale())
+                    <li>
+                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                    </li>
+                @endif
+            @endforeach
         </ul>
       </nav>
     </div>

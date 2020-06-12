@@ -29,15 +29,15 @@
           <li class="nav-item">
               <a class="nav-link {{$contact ? 'active' : ''}}" href="contact">@lang('site.header_contact_us')</a>
           </li>
-          {{-- <ul>
-              @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                  <li>
-                      <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                          {{ $properties['native'] }}
-                      </a>
-                  </li>
-              @endforeach
-          </ul> --}}
+            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                @if($localeCode != app()->getLocale())
+                    <li class="nav-item">
+                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                    </li>
+                @endif
+            @endforeach
 
         </ul>
     </div>
