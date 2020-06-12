@@ -42,7 +42,7 @@
                     <span>{{$category->price}}$</span>
                     </div>
                     <div class="price-detials">
-                    <span>@lang("site.pricing_save") ${{$category->price}}</span>
+                    <span>@lang("site.pricing_save") ${{$category->saved_price}}</span>
                     <span> / </span>
                     <span>@lang("site.pricing_year")</span>
                     </div>

@@ -4,7 +4,7 @@
 
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ asset('dashboard_files/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                <img src="{{ asset('dashboard_files/img/avatar.png') }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>
@@ -20,7 +20,7 @@
 
             <li class=" treeview">
                 <a href="{{ route('dashboard.welcome') }}">
-                  <i class="fa fa-th-large"></i> <span>@lang('dashboard.portofolios')</span> <i class="fa fa-angle-left pull-left"></i>
+                  <i class="fa fa-briefcase"></i> <span>@lang('dashboard.portofolios')</span> <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
                   <li class="active"><a href="{{ route('dashboard.portofolio-categories.index') }}"><i class="fa fa-circle-o"></i> @lang('dashboard.porto-categories')</a></li>
@@ -30,7 +30,7 @@
 
             <li class=" treeview">
                 <a href="{{ route('dashboard.welcome') }}">
-                  <i class="fa fa-th-large"></i> <span>@lang('dashboard.pricing')</span> <i class="fa fa-angle-left pull-left"></i>
+                  <i class="fa fa-money"></i> <span>@lang('dashboard.pricing')</span> <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
                     <li><a class="active" href="{{ route('dashboard.price-categories.index') }}"><i class="fa fa-circle-o"></i><span>@lang('dashboard.price-categories')</span></a></li>
@@ -39,9 +39,9 @@
             </li>
 
             <li><a href="{{ route('dashboard.teams.index') }}"><i class="fa fa-users"></i><span>@lang('dashboard.teams')</span> </a></li>
-            <li><a href="{{ route('dashboard.reviews.index') }}"><i class="fa fa-users"></i><span>@lang('dashboard.reviews')</span> </a></li>
-            <li><a href="{{ route('dashboard.blogs.index') }}"><i class="fa fa-th"></i><span>@lang('dashboard.blogs')</span></a></li>
-            <li><a href="{{ route('dashboard.supports.index') }}"><i class="fa fa-th"></i><span>@lang('dashboard.supports')</span></a></li>
+            <li><a href="{{ route('dashboard.reviews.index') }}"><i class=" fa fa-comments-o"></i><span>@lang('dashboard.reviews')</span> </a></li>
+            <li><a href="{{ route('dashboard.blogs.index') }}"><i class=" fa fa-newspaper-o"></i><span>@lang('dashboard.blogs')</span></a></li>
+            <li><a href="{{ route('dashboard.supports.index') }}"><i class="fa fa-support"></i><span>@lang('dashboard.supports')</span></a></li>
             <li><a href="{{ route('dashboard.contact') }}"><i class="fa fa-envelope-o"></i><span>@lang('dashboard.contact')</span> <span id="messagesCount" class="label label-success pull-right" style="display: none">0</span></a></li>
             <li><a href="{{ url('dashboard/logout') }}"><i class="fa fa-sign-out"></i><span>@lang('dashboard.logout')</span></a></li>
 

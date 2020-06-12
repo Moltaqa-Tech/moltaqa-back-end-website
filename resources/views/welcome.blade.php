@@ -25,7 +25,7 @@
                             <p>@lang('dashboard.blogs')</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="fa fa-newspaper-o"></i>
                         </div>
                         <a href="{{ route('dashboard.blogs.index') }}" class="small-box-footer">@lang('dashboard.view') <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
@@ -40,7 +40,7 @@
                             <p>@lang('dashboard.services')</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="fa fa-server"></i>
                         </div>
                         <a href="{{ route('dashboard.services.index') }}" class="small-box-footer">@lang('dashboard.view') <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
@@ -55,7 +55,7 @@
                             <p>@lang('dashboard.teams')</p>
                         </div>
                         <div class="icon">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-users"></i>
                         </div>
                         <a href="{{ route('dashboard.teams.index') }}" class="small-box-footer">@lang('dashboard.view') <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
@@ -70,7 +70,7 @@
                             <p>@lang('dashboard.portofolios')</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="fa fa-briefcase"></i>
                         </div>
                         <a href="{{ route('dashboard.portofolios.index') }}" class="small-box-footer">@lang('dashboard.view') <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
@@ -85,7 +85,7 @@
                             <p>@lang('dashboard.contact')</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="fa fa-comments-o"></i>
                         </div>
                         <a href="{{ route('dashboard.contact') }}" class="small-box-footer">@lang('dashboard.view') <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
