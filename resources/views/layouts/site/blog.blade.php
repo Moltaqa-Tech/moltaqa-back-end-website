@@ -41,9 +41,10 @@
                     <span>eman mosa</span>
                     </div> -->
                     <div>
-                    <span>view: </span>
-                    <span>{{$blog->views_count}}</span>
+                        <span>@lang("site.blog_views_count")</span>
+                        <span>{{$blog->views_count}}</span>
                     </div>
+
                 </div>
                 <div class="details-blog">
                     <h3>{{$blog->title}}</h3>

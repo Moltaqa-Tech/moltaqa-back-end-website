@@ -103,6 +103,11 @@ return [
        'portofolio_all' => 'الكل',
 
        /**
+        * Blog Page
+        */
+        'blog_views_count' => ' مشاهده',
+
+       /**
         ** Contact Us Page
         */
         'contact_need_info' => 'بحاجة لبعض المساعدة ؟ نحن هنا من أجلك',

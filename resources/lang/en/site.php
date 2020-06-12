@@ -103,6 +103,11 @@ return [
        'portofolio_all' => 'All',
 
        /**
+        * Blog Page
+        */
+        'blog_views_count' => 'View: ',
+
+       /**
         ** Contact Us Page
         */
         'contact_need_info' => 'need some help ? we are here for you',
