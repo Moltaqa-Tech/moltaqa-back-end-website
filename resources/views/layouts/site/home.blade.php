@@ -10,7 +10,7 @@
 
 
     <!-- Header -->
-    @include("partials.site.header")
+    @include("partials.site.header", ['services_title' => $services_title])
 
     <section class="who">
         <div class="container">
@@ -282,7 +282,8 @@
       {{-- owl team --}}
     <script>
       $('.owl-team').owlCarousel({
-        loop:true,
+        loop:false,
+        rewind: true,
         margin:25,
         autoplay:true,
         autoplayTimeout:5000,

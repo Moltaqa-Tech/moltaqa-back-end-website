@@ -23,7 +23,6 @@ return [
     'header_portofolio' => 'اعمالنا',
     'header_contact_us' => 'اتصل بنا',
     'header_blog' => 'المنتدي',
-    'header_text_services' => 'تصميم مواقع - خدمات استضافة - تصميم واجهات - تطبيقات الموابيل - التسويق الالكتروني',
 
     /**
      **  Home Page

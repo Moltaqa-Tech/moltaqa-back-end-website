@@ -25,7 +25,7 @@
         <img src="{{asset('images/imagic.png')}}" id="addlogo" alt="Moltaqa Tech" data-aos="zoom-in" data-aos-duration="2000">
     </section>
     <p class="text-center">
-        @lang('site.header_text_services')
+        {{$services_title}}
     </p>
     </div>
 </div>

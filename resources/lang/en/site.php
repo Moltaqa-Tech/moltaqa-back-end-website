@@ -23,7 +23,6 @@ return [
     'header_portofolio' => 'Portofolio',
     'header_contact_us' => 'Contact us',
     'header_blog' => 'Blog',
-    'header_text_services' => 'web Desgin - Hosting Services - UI/UX Desgin - Mobile Apps - Digital Marketing',
 
     /**
      **  Home Page

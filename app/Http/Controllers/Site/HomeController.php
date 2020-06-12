@@ -15,6 +15,11 @@ class HomeController extends Controller
     public function index() {
         $currentLanguage = LaravelLocalization::getCurrentLocale();
         $services = Service::where("status", 1)->where("locale", $currentLanguage)->where("work_flow", 0)->get();
+        $servicesTitle = "";
+        foreach($services as $service) {
+            $servicesTitle .=( " - "  . $service->title);
+        }
+
         $teams = Team::where("status", 1)->where("locale", $currentLanguage)->get();
         $lastWork = Portofolio::with(["images"])->where("locale", $currentLanguage)->where("status", 1)->whereHas( "category", function($query) use ($currentLanguage) {
             $query->where("status", 1)->where("locale", $currentLanguage);
@@ -28,6 +33,6 @@ class HomeController extends Controller
         // Client said
         $reviews = Review::where("status", 1)->where("locale", $currentLanguage)->latest("id")->get();
 
-        return view('layouts.site.home', ["teams" => $teams, "services" => $services, "lastWork" => $lastWork, "categories" => $categories, "portofolios" => $portofolios, "reviews" => $reviews]);
+        return view('layouts.site.home', ["teams" => $teams, "services" => $services, "lastWork" => $lastWork, "categories" => $categories, "portofolios" => $portofolios, "reviews" => $reviews, 'services_title' => substr($servicesTitle, 2)]);
     }
 }
