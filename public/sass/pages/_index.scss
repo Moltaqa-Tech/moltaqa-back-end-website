@@ -471,14 +471,32 @@
     }
     .customers{
         text-align: center;
-        padding: 25px 25px 0;
+        padding: 25px 25px ;
         min-height: 260px;
-        background: url(../images/bg-said.png);
+        background: url(../images/newsaid.png);
         background-size: cover ;
         position: relative;
+        .rev-hor-line{
+            position: absolute;
+            transform: rotate(180deg);
+            width: 341px;
+            top: 68px;
+            left: -100px;
+        }
+        h2{
+            position: absolute;
+            left: 250px;
+            top: 60px ;
+            color: #fff;
+            text-transform: uppercase;
+            span{
+                color: $mainColor;
+            }
+        }
         .one-client{
             text-align: center;
             width: 100%;
+            margin-top: 90px;
             .img-user{
                 width: 80px ;
                 height: 80px ;
@@ -495,7 +513,8 @@
             }
             .comment-user{
                 color: #fff ;
-                width: 90% ;
+                width: 60% ;
+                margin: 0 auto;
                 padding: 15px ;
                 text-align: center;
                 font-size: 14px;
@@ -828,6 +847,15 @@
         .customers{
             padding: 15px 15px 0;
             min-height: 210px;
+            .rev-hor-line{
+                width: 250px;
+                top: 30px;
+            }
+            h2{
+                font-size: 18px;
+                left: 160px;
+                top: 30px ;
+            }
             .one-client{
                 .img-user{
                     width: 70px ;
@@ -1100,6 +1128,15 @@
         .customers{
             padding: 15px 15px 0;
             min-height: 210px;
+            .rev-hor-line{
+                width: 250px;
+                top: 30px;
+            }
+            h2{
+                font-size: 18px;
+                left: 170px;
+                top: 30px ;
+            }
             .one-client{
                 .img-user{
                     width: 70px ;
@@ -1315,6 +1352,19 @@
             div{
                 left: 110px ;
                 font-size: 30px;
+            }
+        }
+        .customers{
+            .rev-hor-line{
+                top: 40px;
+            }
+            h2{
+                font-size: 20px;
+                left: 250px;
+                top: 40px ;
+                span{
+                    color: $mainColor;
+                }
             }
         }
         .new-project{

@@ -57,8 +57,7 @@ return [
     'home_geek_geeks' => 'Geeks',
 
     // Section Our Client side
-    'home_our_client' => 'Our Client',
-    'home_client_said' => 'Said',
+    'home_our_client_said' => 'Our Client Said',
 
     // Section Contact Us
     'contact_start_new_project' => 'Let\'s start a new project together!',

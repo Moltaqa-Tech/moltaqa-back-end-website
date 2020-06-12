@@ -7,21 +7,22 @@
     <title>@lang("site.site_title")</title>
     <link rel="shortcut icon" href="{{asset('images/logo.png')}}" type="image/x-icon">
 
-    @if (app()->getLocale() == 'ar')
-        {{-- RTL  Arabic CSS--}}
-        @else
-        {{-- LTR English CSS--}}
-    @endif
+
     <!-- Main Icons -->
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <!-- Main Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
     @yield("css")
     <!-- Main Style -->
     <link rel="stylesheet" href="{{asset('css/hovers.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/aos.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    @if (app()->getLocale() == 'ar')
+        {{-- RTL  Arabic CSS--}}
+        <link rel="stylesheet" href="{{asset('css/armain.css')}}">
+    @endif
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>

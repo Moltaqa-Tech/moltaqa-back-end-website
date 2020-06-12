@@ -1,6 +1,6 @@
 body{
     font-family: 'Open Sans Condensed', sans-serif;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Changa', sans-serif;
     font-size: 16px;
     line-height: 1.5em;
     font-weight: 400;
@@ -40,9 +40,6 @@ a{
         text-decoration: none ;
         color: #000;
     }
-}
-p{
-    font-family: 'Open Sans Condensed', sans-serif;   
 }
 .main_title{
     color: #294C5B ;
@@ -157,7 +154,7 @@ canvas {
   }
   
   #mainlogo {
-    animation: swing 3s 1 ease-in-out;
+    animation: swing 2s 1 ease-in-out;
     opacity: 0;
   }
   @keyframes swings {
@@ -182,7 +179,7 @@ canvas {
   }
   
   #addlogo {
-    animation: swings 3s 1 ease-in-out;
+    animation: swings 2s 1 ease-in-out;
   }
   
   .event{

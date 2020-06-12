@@ -1,0 +1,166 @@
+body {
+    direction: rtl;
+    text-align: right;
+  }
+  .toggle_icon , header .socail-media {
+    right: 0;
+    left: auto;
+}
+header .v-line {
+    right: 3px;
+    left: auto;
+}
+.side_menu .list li a ,.custom-navbar .nav-item a {
+    border-left: none;
+    border-right: 1px solid transparent;
+}
+
+.side_menu .list li .active, .side_menu .list li a:hover , .custom-navbar .nav-item .active, .custom-navbar .nav-item a:hover {
+    border-left: none;
+    border-right: 1px solid RGB(230, 178, 115);
+}
+.who .container .hor-line {
+    left: -100px;
+    right: auto;
+    transform: rotateZ(180deg);
+}
+.who .container .bg-who {
+    right: -100px;
+    left: auto;
+}
+.who .container .ellipse {
+    left: 200px;
+    right: auto;
+}
+.who .container .who-img ,
+.what-we-do .container .bg-what ,
+.our-portfolio .portfolio-tabs .bg-think  {
+    left: 0px;
+    right: auto;
+}
+.who .container .read-more {
+    margin-left: 0;
+    margin-right: 25px;
+}
+.what-we-do .container .rev-hor-line ,
+.our-portfolio .portfolio-tabs .rev-hor-line ,
+.client-said .customers .rev-hor-line {
+    left: auto;
+    right: -100px;
+    transform: rotate(0);
+}
+.what-we-do .container .features {
+    margin-right: 0px;
+    margin-left: 70px;
+}
+.what-we-do .container .features .custom-row .cust-col .feature-box:hover h6 {
+    text-align: right;
+    margin-right: 0px;
+    margin-left: auto;
+}
+.what-we-do .container .features .custom-row .cust-col .feature-box h6 {
+    margin-left: 0;
+    margin-right: 35px;
+    text-align: right;
+}
+.portfolio{
+    direction: ltr;
+}
+.owl-carousel{
+    direction: ltr;
+}
+.latest-work .content , .our-geeks .content {
+    margin-right: auto;
+}
+.our-portfolio .portfolio-tabs h2 ,
+.client-said .customers h2{
+    left: auto;
+    right: 250px;
+}
+.client-said .new-project form button {
+    border-left: none;
+    border-right: 1px solid rgb(0, 0, 0);
+}
+footer h5::after {
+    left: auto;
+    right: 0px;
+    border-left: none;
+    border-right: 1px solid rgb(230, 178, 115);
+}
+footer ul li span, footer ul li a {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+.mr-auto{
+    margin-left: auto;
+}
+.custom-navbar .navbar-brand {
+    margin-right: 0px;
+    margin-left: 100px;
+}
+.navigation .bg-think {
+    right: auto;
+    left: 0px;
+}
+.navigation .rev-hor-line {
+    left: 0px;
+    right: -100px;
+    transform: rotate(0deg);
+}
+.words-about-us h3::before , .client-talk h3::before , .pricing h3::before , .main-services h3::before{
+    left: auto;
+    right: 0;
+    border-left: none;
+    border-right: 2px solid RGB(230, 178, 115);
+}
+.client-talk h3::before{
+    border-right: 2px solid #fff;
+}
+.discover .content , .choose .content{
+    padding-left: 0px;
+    padding-right: 40px;
+}
+.discover .play-video {
+    left: auto;
+    right: 25px;
+}
+.client-talk .slider {
+    margin-left: 0%;
+    margin-right: 20%;
+}
+@media only screen and (max-width: 767px) and (min-width: 480px){
+    .toggle_icon , header .socail-media {
+        right: 25px;
+    }
+    header .v-line {
+        right: 28px;
+    }
+    .who .container .ellipse {
+        right: 0px;
+    }
+    .our-portfolio .portfolio-tabs h2, .client-said .customers h2 {
+        right: 170px;
+    }
+    .custom-navbar .toggle_icon {
+        right: calc(100% - 30px);
+    }
+}
+@media (max-width: 1199px) and (min-width: 992px){
+    .who .container .ellipse {
+        left: 100px;
+    }
+
+}
+@media only screen and (max-width: 991px) and (min-width: 768px){
+    .who .container .ellipse {
+        left: 100px;
+    }
+    .custom-navbar .toggle_icon {
+        right: calc(100% - 30px);
+    }
+}
+@media only screen and (max-width: 479px){
+    .custom-navbar .toggle_icon {
+        right: calc(100% - 30px);
+    }
+}

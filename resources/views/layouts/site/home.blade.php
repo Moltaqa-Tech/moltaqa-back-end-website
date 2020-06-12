@@ -202,57 +202,52 @@
 
       <section class="client-said">
         <div class="row">
-          <div class="col-md-5 client-said-box">
-            <div class="arrow-said">
-              <img src="{{asset('images/li.png')}}" alt="line" class="line">
-              <img src="{{asset('images/SAID.png')}}" alt="said" class="said">
-              <img src="{{asset('images/symbol.png')}}" alt="symbol" class="symbol">
-              <div>
-                <span>@lang("site.home_our_client")</span>
-                <span>@lang("site.home_client_said")</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-7 client-said-box">
-            <div class="customers">
-              <div class="owl-carousel owl-theme owl-works">
 
-                @foreach ($reviews as $review)
-                    <div class="item">
-                        <div class="one-client">
-                            <div class="img-user">
-                                <img src="{{asset('images/05.jpg')}}" alt="user">
+            <div class="col-md-12 client-said-box">
+                <div class="customers">
+                    <img src="./images/hline.png" alt="Horicantal line" class="rev-hor-line">
+                    <h2  data-aos="fade-right" data-aos-duration="2000">@lang("site.home_our_client_said")</h2>
+                    <div class="owl-carousel owl-theme owl-works">
+                        @foreach ($reviews as $review)
+                            <div class="item">
+                                <div class="one-client">
+                                    <div class="img-user">
+                                        <img src="{{asset($review->image_path_val)}}" alt="user">
+                                    </div>
+                                    <div class="comment-user">
+                                        {{$review->comment}}
+                                    </div>
+                                </div>
                             </div>
-                            <div class="comment-user">
-                                {{$review->comment}}
-                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+              </div>
+
+            <div class="col-md-6 client-said-box">
+                <img src="./images/newedit.png" alt="send" class="send">
+            </div>
+            <div class="col-md-6 client-said-box">
+                <div class="new-project">
+                    <h3>@lang("site.contact_start_new_project")</h3>
+                    <form action="{{url('/contact-us')}}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="contactName" id="textinput" placeholder="@lang('site.contact_name')" required>
                         </div>
-                    </div>
-                @endforeach
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="contactEmail" id="exampleInputEmail1" placeholder="@lang('site.contact_email')" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="contactMessage" id="exampleFormControlTextarea1" rows="3" placeholder="@lang('site.contact_message')" required></textarea>
+                        </div>
+                        <button type="submit">@lang("site.contact_btn")</button>
+                    </form>
+                </div>
             </div>
-            </div>
-          </div>
-          <div class="col-md-6 client-said-box">
-            <img src="{{asset('images/send.png')}}" alt="send" class="send">
-          </div>
-          <div class="col-md-6 client-said-box">
-            <div class="new-project">
-                <h3>@lang("site.contact_start_new_project")</h3>
-                <form action="{{url('/contact-us')}}" method="POST">
-                    @csrf
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="contactName" id="textinput" placeholder="@lang('site.contact_name')" required>
-                    </div>
-                    <div class="form-group">
-                    <input type="email" class="form-control" name="contactEmail" id="exampleInputEmail1" placeholder="@lang('site.contact_email')" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" name="contactMessage" id="exampleFormControlTextarea1" rows="3" placeholder="@lang('site.contact_message')" required></textarea>
-                    </div>
-                    <button type="submit">@lang("site.contact_btn")</button>
-                </form>
-            </div>
-          </div>
+
+
         </div>
       </section>
 @endsection
