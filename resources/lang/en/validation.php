@@ -148,10 +148,14 @@ return [
 
     'attributes' => [
         'ar' => [
-            'name' => 'Arabic Name'
+            'name' => 'Arabic Name',
+            'desc' => 'Arabic Description',
+            'title' => 'Arabic Title',
         ],
         'en' => [
-            'name' => 'English Name'
+            'name' => 'English Name',
+            'desc' => 'English Description',
+            'title' => 'English Title',
         ],
     ],
 

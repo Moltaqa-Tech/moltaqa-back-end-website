@@ -32,7 +32,21 @@
                         @csrf
                         @method("PUT")
 
-                        <div class="form-group">
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('service.' . $locale . '.title')</label>
+                                <input type="text" name="{{ $locale }}[title]" class="form-control" value="{{ $service->translate($locale)->title }}">
+                            </div>
+                        @endforeach
+
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('service.' . $locale . '.desc')</label>
+                                <textarea type="text" name="{{ $locale }}[desc]" rows="5" class="form-control">{{ $service->translate($locale)->desc }}</textarea>
+                            </div>
+                        @endforeach
+
+                        {{-- <div class="form-group">
                             <label>@lang('service.title')</label>
                             <input type="text" name="title" class="form-control" value="{{$service->title}}">
                         </div>
@@ -40,7 +54,7 @@
                         <div class="form-group">
                             <label>@lang('service.desc')</label>
                             <textarea type="text" name="desc" class="form-control" rows="5">{{ $service->desc }}</textarea>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label><input type="checkbox" name="work_flow" @if($service->work_flow) checked @endif> @lang('service.work_flow')</label>
@@ -48,10 +62,6 @@
 
                         <div class="form-group">
                             <label><input type="checkbox" name="status" @if($service->status) checked @endif> @lang('service.status')</label>
-                        </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale" @if($service->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">

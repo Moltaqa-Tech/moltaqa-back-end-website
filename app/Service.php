@@ -2,18 +2,22 @@
 
 namespace App;
 
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
+    use Translatable;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'title', 'desc', 'image_path', 'status', 'work_flow', 'locale'
+        'image_path', 'status', 'work_flow', 'locale'
     ];
+
+    public $translatedAttributes = ['title', 'desc'];
 
     protected $appends = [
          'image_path_val',

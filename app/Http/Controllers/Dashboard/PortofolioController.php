@@ -75,15 +75,18 @@ class PortofolioController extends Controller
 
     public function update(Request $request, Portofolio $portofolio)
     {
-        $validator = Validator::make($request->all(), [
-            'title' => 'max:255',
-            'description' => 'max:520',
-            'category_id' => 'exists:portofolio_categories,id',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.title' => ['required', 'max:255']];
+            $rules += [$locale . '.description' => ['required', 'max:255']];
+
+        }//end of for each
+
+        $rules += ['category_id' => ['required', 'exists:portofolio_categories,id']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 

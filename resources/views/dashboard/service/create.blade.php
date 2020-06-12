@@ -32,7 +32,21 @@
                         @csrf
                         @method("POST")
 
-                        <div class="form-group">
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('service.' . $locale . '.title')</label>
+                                <input type="text" name="{{ $locale }}[title]" class="form-control" value="{{ old($locale . '.title') }}">
+                            </div>
+                        @endforeach
+
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('service.' . $locale . '.desc')</label>
+                                <textarea type="text" name="{{ $locale }}[desc]" rows="5" class="form-control" value="{{ old($locale . '.desc') }}"></textarea>
+                            </div>
+                        @endforeach
+
+                        {{-- <div class="form-group">
                             <label>@lang('service.title')</label>
                             <input type="text" name="title" class="form-control" value="{{ old('title') }}">
                         </div>
@@ -40,7 +54,7 @@
                         <div class="form-group">
                             <label>@lang('service.desc')</label>
                             <textarea type="text" name="desc" class="form-control" rows="5">{{ old('desc') }}</textarea>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label><input type="checkbox" name="work_flow"> @lang('service.work_flow')</label>
@@ -48,10 +62,6 @@
 
                         <div class="form-group">
                             <label><input type="checkbox" name="status" checked> @lang('service.status')</label>
-                        </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale" > @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">

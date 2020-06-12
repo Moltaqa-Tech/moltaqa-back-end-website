@@ -17,7 +17,7 @@ class ServiceController extends Controller
     public function index(Request $request)
     {
         $services = Service::when($request->search, function($q) use ($request) {
-            return $q->where('title', 'LIKE', '%' . $request->search . '%');
+            return $q->whereTranslationLike('title', 'LIKE', '%' . $request->search . '%');
         })->latest("id")->paginate(static::PAGINATION_COUNT);
 
         return view("dashboard.service.index", ["services" => $services]);
@@ -31,15 +31,18 @@ class ServiceController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'title' => 'required|max:255',
-            'desc' => 'required|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.title' => ['required', 'max:255']];
+            $rules += [$locale . '.desc' => ['required', 'max:522']];
+
+        }//end of for each
+
+        $rules += ['image' => ['image', 'mimes:jpeg,png,jpg,gif,svg']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
@@ -54,7 +57,6 @@ class ServiceController extends Controller
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
         $request_data['work_flow'] = (isset($request->work_flow) && $request->work_flow == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         Service::create($request_data);
         session()->flash('success', trans('service.added_successfully'));
@@ -68,15 +70,18 @@ class ServiceController extends Controller
 
     public function update(Request $request, Service $service)
     {
-        $validator = Validator::make($request->all(), [
-            'title' => 'max:255',
-            'desc' => 'max:255',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.title' => ['required', 'max:255']];
+            $rules += [$locale . '.desc' => ['required', 'max:522']];
+
+        }//end of for each
+
+        $rules += ['image' => ['image', 'mimes:jpeg,png,jpg,gif,svg']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
@@ -97,8 +102,7 @@ class ServiceController extends Controller
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
         $request_data['work_flow'] = (isset($request->work_flow) && $request->work_flow == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
-
+        
         $service->update($request_data);
         session()->flash('success', trans('service.updated_successfully'));
         return redirect()->route('dashboard.services.index');
