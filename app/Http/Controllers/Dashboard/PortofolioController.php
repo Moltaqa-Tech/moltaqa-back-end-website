@@ -19,7 +19,7 @@ class PortofolioController extends Controller
     public function index(Request $request)
     {
         $portofolios = Portofolio::when($request->search, function($q) use ($request) {
-            return $q->where('title', 'LIKE', '%' . $request->search . '%');
+            return $q->whereTranslationLike('title', 'LIKE', '%' . $request->search . '%');
         })->latest("id")->paginate(static::PAGINATION_COUNT);
 
         return view("dashboard.portofolio.index", ["portofolios" => $portofolios]);
@@ -34,19 +34,21 @@ class PortofolioController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'title' => 'required|max:255',
-            'description' => 'required|max:520',
-            'category_id' => 'required|exists:portofolio_categories,id',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.title' => ['required', 'max:255']];
+            $rules += [$locale . '.description' => ['required', 'max:255']];
+
+        }//end of for each
+
+        $rules += ['category_id' => ['required', 'exists:portofolio_categories,id']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
         $portofolio = Portofolio::create($request_data);
 
         foreach ($request->images as $image) {
@@ -108,7 +110,6 @@ class PortofolioController extends Controller
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         $portofolio->update($request_data);
         session()->flash('success', trans('portofolio.updated_successfully'));

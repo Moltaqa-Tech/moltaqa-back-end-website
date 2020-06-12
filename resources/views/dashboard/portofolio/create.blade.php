@@ -32,15 +32,19 @@
                         @csrf
                         @method("POST")
 
-                        <div class="form-group">
-                            <label>@lang('portofolio.title')</label>
-                            <input type="text" name="title" class="form-control" value="{{ old('title') }}">
-                        </div>
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('portofolio.' . $locale . '.title')</label>
+                                <input type="text" name="{{ $locale }}[title]" class="form-control" value="{{ old($locale . '.title') }}">
+                            </div>
+                        @endforeach
 
-                        <div class="form-group">
-                            <label>@lang('portofolio.desc')</label>
-                            <textarea type="text" name="description" class="form-control" rows="5" value="{{ old('description') }}"></textarea>
-                        </div>
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('portofolio.' . $locale . '.desc')</label>
+                                <textarea type="text" name="{{ $locale }}[description]" rows="5" class="form-control" value="{{ old($locale . '.description') }}"></textarea>
+                            </div>
+                        @endforeach
 
                         <div class="form-group">
                             <label>@lang('portofolio.category_name')</label>
@@ -53,10 +57,6 @@
 
                         <div class="form-group">
                             <label><input type="checkbox" name="status" checked> @lang('portofolio.status')</label>
-                        </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale" > @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">

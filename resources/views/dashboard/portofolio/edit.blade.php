@@ -32,7 +32,21 @@
                         @csrf
                         @method("PUT")
 
-                        <div class="form-group">
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('portofolio.' . $locale . '.title')</label>
+                                <input type="text" name="{{ $locale }}[title]" class="form-control" value="{{ $portofolio->translate($locale)->title }}">
+                            </div>
+                        @endforeach
+
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('portofolio.' . $locale . '.desc')</label>
+                                <textarea type="text" name="{{ $locale }}[description]" rows="5" class="form-control">{{ $portofolio->translate($locale)->description }}</textarea>
+                            </div>
+                        @endforeach
+
+                        {{-- <div class="form-group">
                             <label>@lang('portofolio.title')</label>
                             <input type="text" name="title" class="form-control" value="{{ $portofolio->title }}">
                         </div>
@@ -40,7 +54,7 @@
                         <div class="form-group">
                             <label>@lang('portofolio.desc')</label>
                             <textarea type="text" name="description" class="form-control" rows="5">{{ $portofolio->description }}</textarea>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label>@lang('portofolio.category_name')</label>
@@ -53,10 +67,6 @@
 
                         <div class="form-group">
                             <label><input type="checkbox" name="status" @if($portofolio->status == 1) checked @endif> @lang('portofolio.status')</label>
-                        </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale" @if($portofolio->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">

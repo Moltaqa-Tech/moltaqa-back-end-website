@@ -7,8 +7,6 @@ use App\Portofolio;
 use Illuminate\Http\Request;
 
 use App\PortofolioCategory;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Validator;
 
 class PortofolioCategoryController extends Controller
 {
@@ -17,7 +15,7 @@ class PortofolioCategoryController extends Controller
     public function index(Request $request)
     {
         $portofolioCategories = PortofolioCategory::when($request->search, function($q) use ($request) {
-            return $q->where('name', 'LIKE', '%' . $request->search . '%');
+            return $q->whereTranslationLike('name', 'LIKE', '%' . $request->search . '%');
         })->paginate(static::PAGINATION_COUNT);
 
         return view("dashboard.porto-category.index", ["portofolioCategories" => $portofolioCategories]);
@@ -60,7 +58,7 @@ class PortofolioCategoryController extends Controller
     public function show(Request $request, PortofolioCategory $portofolioCategory)
     {
         $portofolios = Portofolio::where("category_id", $portofolioCategory->id)->when($request->search, function($q) use ($request) {
-            return $q->where('title', 'LIKE', '%' . $request->search . '%');
+            return $q->whereTranslationLike('title', 'LIKE', '%' . $request->search . '%');
         })->latest("id")->paginate(static::PAGINATION_COUNT);
 
         return view("dashboard.porto-category.portos", ["portofolios" => $portofolios]);

@@ -15,6 +15,16 @@ return [
 
     'title' => 'Title',
     'desc' => 'Description',
+
+    'ar' =>[
+        'title' => 'Arabic Title',
+        'desc' => 'Arabic Description',
+    ],
+    'en' =>[
+        'title' => 'English Title',
+        'desc' => 'English Description',
+    ],
+
     'image' => 'Image',
     'status' => 'Status',
     'category_name' => 'Portofolio Category',

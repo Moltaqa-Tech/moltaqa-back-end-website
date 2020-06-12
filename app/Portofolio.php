@@ -2,19 +2,22 @@
 
 namespace App;
 
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Schema\Builder;
 
 class Portofolio extends Model
 {
+    use Translatable;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'category_id', 'title', 'description', 'status', 'locale'
+        'category_id', 'status',
     ];
+
+    public $translatedAttributes = ['title', 'description'];
 
     public function images()
     {
