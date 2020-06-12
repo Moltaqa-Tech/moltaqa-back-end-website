@@ -104,7 +104,7 @@ return [
        /**
         * Blog Page
         */
-        'blog_views_count' => ' مشاهده',
+        'blog_views_count' => ' مشاهده:',
 
        /**
         ** Contact Us Page

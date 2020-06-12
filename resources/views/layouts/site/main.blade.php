@@ -80,12 +80,12 @@
               <p>@lang("site.footer_facebook_desc2")</p>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6 side-footer">
+          {{-- <div class="col-md-3 col-sm-6 side-footer">
             <h5>@lang("site.footer_gallary")</h5>
             <div class="footer-gallery">
               <img src="{{asset('images/carsoul.png')}}" alt="gallery">
             </div>
-          </div>
+          </div> --}}
         </div>
         <div class="bottom-footer">
             @lang("site.footer_designed_by")

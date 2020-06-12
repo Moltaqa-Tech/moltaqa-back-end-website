@@ -212,7 +212,7 @@
                             <div class="item">
                                 <div class="one-client">
                                     <div class="img-user">
-                                        <img src="{{asset($review->image_path_val)}}" alt="user">
+                                    <a href="{{$review->url}}" target="_blank" ><img src="{{asset($review->image_path_val)}}" alt="user"></a>
                                     </div>
                                     <div class="comment-user">
                                         {{$review->comment}}
