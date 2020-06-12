@@ -67,10 +67,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label><input type="checkbox" name="locale" @if($team->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
-                        </div>
-
-                        <div class="form-group">
                             <label>@lang('team.image')</label>
                             <input type="file" name="image" class="form-control image">
                         </div>

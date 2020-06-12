@@ -38,7 +38,7 @@ class TeamController extends Controller
             'whatsapp_url' => 'max:255',
             'facebook_url' => 'max:255',
             'twitter_url' => 'max:255',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ]);// end of validator
 
         if ($validator->fails()) {
@@ -57,7 +57,6 @@ class TeamController extends Controller
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         Team::create($request_data);
         session()->flash('success', trans('team.added_successfully'));
@@ -72,10 +71,13 @@ class TeamController extends Controller
     public function update(Request $request, team $team)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'max:255',
-            'brief_description' => 'max:255',
-            'description' => 'max:520',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'name' => 'max:255',
+            'job_title' => 'max:255',
+            'instagram_url' => 'max:255',
+            'whatsapp_url' => 'max:255',
+            'facebook_url' => 'max:255',
+            'twitter_url' => 'max:255',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ]);// end of validator
 
         if ($validator->fails()) {
@@ -100,7 +102,6 @@ class TeamController extends Controller
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
         $team->update($request_data);
         session()->flash('success', trans('team.updated_successfully'));
         return redirect()->route('dashboard.teams.index');
