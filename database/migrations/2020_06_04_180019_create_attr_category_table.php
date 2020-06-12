@@ -16,6 +16,7 @@ class CreateAttrCategoryTable extends Migration
         Schema::create('attr_category', function (Blueprint $table) {
             $table->id();
             $table->unsignedTinyInteger("active")->default(0);
+            $table->unsignedTinyInteger("status")->default(0);
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('attr_id');
 

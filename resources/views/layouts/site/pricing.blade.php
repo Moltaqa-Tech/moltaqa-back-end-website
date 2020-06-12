@@ -50,9 +50,9 @@
                     <a href="#">@lang("site.pricing_get_start")</a>
                     </div>
                     <ul  class="list-unstyled">
-                        @foreach ($category->attrs as $attr)
+                        @foreach ($category->activeAttrs as $attr)
                             <li>
-                            <span>{{$attr->name}}</span>
+                                <span>{{$attr->name}}</span>
                                 @if($attr->pivot->active)
                                     <span class="provided"></span>
                                 @else
@@ -96,15 +96,15 @@
                         <a href="#">@lang("site.pricing_get_start")</a>
                         </div>
                         <ul  class="list-unstyled">
-                            @foreach ($hostCategory->attrs as $hostAttr)
+                            @foreach ($hostCategory->activeAttrs as $hostAttr)
                                 <li>
-                                <span>{{$hostAttr->name}}</span>
+                                    <span>{{$hostAttr->name}}</span>
                                     @if($hostAttr->pivot->active)
                                         <span class="provided"></span>
                                     @else
                                         <span class="no-provided"></span>
                                     @endif
-                                    </li>
+                                </li>
                             @endforeach
                         </ul>
                     </div>

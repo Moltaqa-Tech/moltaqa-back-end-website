@@ -28,7 +28,8 @@ class PriceCategoryController extends Controller
     {
         $priceAttrs = PriceAttr::where("price_type", $priceCategory->price_type)->where("locale", $priceCategory->locale)->get();
         $activePriceAttrs = $priceCategory->attrs()->where("active", 1)->pluck("attr_id")->all();
-        return view("dashboard.price-category.attrs", ["priceAttrs" => $priceAttrs, "priceCategory" => $priceCategory, 'activePriceAttrs' => $activePriceAttrs]);
+        $activePriceCases = $priceCategory->attrs()->where("status", 1)->pluck("attr_id")->all();
+        return view("dashboard.price-category.attrs", ["priceAttrs" => $priceAttrs, "priceCategory" => $priceCategory, 'activePriceAttrs' => $activePriceAttrs, 'activePriceCases' => $activePriceCases]);
     }//end of show
 
 
@@ -45,12 +46,13 @@ class PriceCategoryController extends Controller
         $categoryId = $request->category_id;
         $priceCategory = PriceCategory::find($categoryId);
         $categoryAttrs = isset($request->attrs) ? $request->attrs :[];
+        $categoryAttrsStatus = isset($request->cases) ? $request->cases :[];
         $priceAttrIds = PriceAttr::where("price_type", $priceCategory->price_type)->pluck("id")->all();
 
         $priceCategory->attrs()->detach();
 
         foreach($priceAttrIds as $id) {
-            $priceCategory->attrs()->attach($id, ["active" => in_array($id, $categoryAttrs)]);
+            $priceCategory->attrs()->attach($id, ["active" => in_array($id, $categoryAttrs), "status" => in_array($id, $categoryAttrsStatus)]);
         }
 
         // $priceCategory->attrs()->attach(array_diff($priceAttrIds, $categoryAttrs), ["active" => 0]);

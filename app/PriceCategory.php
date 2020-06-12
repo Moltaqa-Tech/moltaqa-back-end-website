@@ -18,6 +18,13 @@ class PriceCategory extends Model
     public function attrs()
     {
         return $this->belongsToMany("App\PriceAttr", 'attr_category', 'category_id' , 'attr_id')
-                            ->withPivot("active");
+                            ->withPivot(["active", "status"]);
+    }
+
+    public function activeAttrs()
+    {
+        return $this->belongsToMany("App\PriceAttr", 'attr_category', 'category_id' , 'attr_id')
+                            ->where("status", 1)
+                            ->withPivot(["active", "status"]);
     }
 }

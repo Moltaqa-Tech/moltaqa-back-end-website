@@ -24,6 +24,7 @@
                                 <th>#</th>
                                 <th>@lang('price-category.name')</th>
                                 <th>@lang('price-category.active')</th>
+                                <th>@lang('price-category.status')</th>
                             </tr>
                         </thead>
 
@@ -37,6 +38,9 @@
                                     <td>{{ $priceAttr->name }}</td>
                                     <td>
                                         <input type="checkbox" name="attrs[]" value="{{$priceAttr->id}}" @if(in_array($priceAttr->id, $activePriceAttrs))  checked @endif>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="cases[]" value="{{$priceAttr->id}}" @if(in_array($priceAttr->id, $activePriceCases))  checked @endif>
                                     </td>
                                 </tr>
 
