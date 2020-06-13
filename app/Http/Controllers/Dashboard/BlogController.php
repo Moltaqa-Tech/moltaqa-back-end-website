@@ -17,7 +17,7 @@ class BlogController extends Controller
     public function index(Request $request)
     {
         $blogs = Blog::when($request->search, function($q) use ($request) {
-            return $q->where('title', 'LIKE', '%' . $request->search . '%');
+            return $q->whereTranslationLike('title', 'LIKE', '%' . $request->search . '%');
         })->latest("id")->paginate(static::PAGINATION_COUNT);
 
         return view("dashboard.blog.index", ["blogs" => $blogs]);
@@ -31,16 +31,19 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'title' => 'required|max:255',
-            'brief_description' => 'required|max:255',
-            'description' => 'required|max:510',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.title' => ['required', 'max:255']];
+            $rules += [$locale . '.brief_description' => ['required', 'max:255']];
+            $rules += [$locale . '.description' => ['required', 'max:522']];
+
+        }//end of for each
+
+        $rules += ['image' => ['image','mimes:jpeg,png,jpg,gif,svg']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
@@ -54,7 +57,6 @@ class BlogController extends Controller
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         Blog::create($request_data);
         session()->flash('success', trans('blog.added_successfully'));
@@ -68,16 +70,19 @@ class BlogController extends Controller
 
     public function update(Request $request, Blog $blog)
     {
-        $validator = Validator::make($request->all(), [
-            'title' => 'max:255',
-            'brief_description' => 'max:255',
-            'description' => 'max:520',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.title' => ['required', 'max:255']];
+            $rules += [$locale . '.brief_description' => ['required', 'max:255']];
+            $rules += [$locale . '.description' => ['required', 'max:522']];
+
+        }//end of for each
+
+        $rules += ['image' => ['image','mimes:jpeg,png,jpg,gif,svg']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
@@ -97,7 +102,6 @@ class BlogController extends Controller
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         $blog->update($request_data);
         session()->flash('success', trans('blog.updated_successfully'));

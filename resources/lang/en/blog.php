@@ -16,6 +16,16 @@ return [
     'title' => 'Title',
     'breif_desc' => 'Breif Description',
     'desc' => 'Description',
+    'ar' =>[
+        'title' => 'Arabic Title',
+        'brief_desc' => 'Arabic Breif Description',
+        'desc' => 'Arabic Description',
+    ],
+    'en' =>[
+        'title' => 'English Title',
+        'brief_desc' => 'English Breif Description',
+        'desc' => 'English Description',
+    ],
     'image' => 'Image',
     'status' => 'Status',
     'views_count' => 'Views Count',

@@ -32,27 +32,29 @@
                         @csrf
                         @method("POST")
 
-                        <div class="form-group">
-                            <label>@lang('blog.title')</label>
-                            <input type="text" name="title" class="form-control" value="{{ old('title') }}">
-                        </div>
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('blog.' . $locale . '.title')</label>
+                                <input type="text" name="{{ $locale }}[title]" class="form-control" value="{{ old($locale . '.title') }}">
+                            </div>
+                        @endforeach
 
-                        <div class="form-group">
-                            <label>@lang('blog.breif_desc')</label>
-                            <textarea type="text" name="brief_description" class="form-control" rows = "3">{{ old('brief_description') }}</textarea>
-                        </div>
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('blog.' . $locale . '.brief_desc')</label>
+                                <textarea type="text" name="{{ $locale }}[brief_description]" rows="5" class="form-control" value="{{ old($locale . '.brief_description') }}"></textarea>
+                            </div>
+                        @endforeach
 
-                        <div class="form-group">
-                            <label>@lang('blog.desc')</label>
-                            <textarea type="text" name="description" class="form-control" rows="5">{{ old('description') }}</textarea>
-                        </div>
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('blog.' . $locale . '.desc')</label>
+                                <textarea type="text" name="{{ $locale }}[description]" rows="5" class="form-control" value="{{ old($locale . '.description') }}"></textarea>
+                            </div>
+                        @endforeach
 
                         <div class="form-group">
                             <label><input type="checkbox" name="status" checked> @lang('blog.status')</label>
-                        </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale"> @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">
