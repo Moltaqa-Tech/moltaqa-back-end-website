@@ -150,12 +150,16 @@ return [
         'ar' => [
             'name' => 'Arabic Name',
             'desc' => 'Arabic Description',
+            'description' => 'Arabic Description',
             'title' => 'Arabic Title',
+            'location' => 'Arabic Location',
         ],
         'en' => [
             'name' => 'English Name',
             'desc' => 'English Description',
+            'description' => 'English Description',
             'title' => 'English Title',
+            'location' => 'English Location',
         ],
     ],
 

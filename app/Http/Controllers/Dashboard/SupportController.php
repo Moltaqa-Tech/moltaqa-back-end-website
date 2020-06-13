@@ -18,7 +18,7 @@ class SupportController extends Controller
     public function index(Request $request)
     {
         $supports = Support::when($request->search, function($q) use ($request) {
-            return $q->where('title', 'LIKE', '%' . $request->search . '%');
+            return $q->whereTranslationLike('title', 'LIKE', '%' . $request->search . '%');
         })->paginate(static::PAGINATION_COUNT);
 
         return view("dashboard.support.index", ["supports" => $supports]);
@@ -32,23 +32,37 @@ class SupportController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'title' => 'max:255',
-            'description' => 'max:255',
-            'location' => 'max:255',
-            'email' => 'email',
-            'phone' => 'max:255',
-        ]);// end of validator
+        // $validator = Validator::make($request->all(), [
+        //     'title' => 'max:255',
+        //     'description' => 'max:255',
+        //     'location' => 'max:255',
+        //     'email' => 'email',
+        //     'phone' => 'max:255',
+        // ]);// end of validator
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        // if ($validator->fails()) {
+        //     return Redirect::back()->withErrors($validator);
+        // }//end of if
+
+        $rules = [];
+
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.title' => ['required', 'max:255']];
+            $rules += [$locale . '.description' => ['required', 'max:522']];
+            $rules += [$locale . '.location' => ['required', 'max:255']];
+
+        }//end of for each
+
+        $rules += ['email' => ['required', 'email']];
+        $rules += ['phone' => ['required', 'max:255']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         Support::create($request_data);
         session()->flash('success', trans('support.added_successfully'));
@@ -62,22 +76,37 @@ class SupportController extends Controller
 
     public function update(Request $request, Support $support)
     {
-        $validator = Validator::make($request->all(), [
-            'title' => 'required|max:255',
-            'description' => 'required|max:255',
-            'location' => 'required|max:255',
-            'email' => 'required|email',
-            'phone' => 'max:255',
-        ]);// end of validator
+        // $validator = Validator::make($request->all(), [
+        //     'title' => 'required|max:255',
+        //     'description' => 'required|max:255',
+        //     'location' => 'required|max:255',
+        //     'email' => 'required|email',
+        //     'phone' => 'max:255',
+        // ]);// end of validator
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        // if ($validator->fails()) {
+        //     return Redirect::back()->withErrors($validator);
+        // }//end of if
+
+        $rules = [];
+
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.title' => ['required', 'max:255']];
+            $rules += [$locale . '.description' => ['required', 'max:522']];
+            $rules += [$locale . '.location' => ['required', 'max:255']];
+
+        }//end of for each
+
+        $rules += ['email' => ['required', 'email']];
+        $rules += ['phone' => ['required', 'max:255']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
         // check status
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
+
         $support->update($request_data);
         session()->flash('success', trans('support.updated_successfully'));
         return redirect()->route('dashboard.supports.index');

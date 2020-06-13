@@ -32,7 +32,7 @@
                         @csrf
                         @method("PUT")
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label>@lang('support.title')</label>
                             <input type="text" name="title" class="form-control" value="{{ $support->title }}">
                         </div>
@@ -45,7 +45,28 @@
                         <div class="form-group">
                             <label>@lang('support.location')</label>
                             <input type="text" name="location" class="form-control" value="{{ $support->location }}">
+                        </div> --}}
+
+                        @foreach (config('translatable.locales') as $locale)
+                        <div class="form-group">
+                            <label>@lang('support.' . $locale . '.title')</label>
+                            <input type="text" name="{{ $locale }}[title]" class="form-control" value="{{ $support->translate($locale)->title }}">
                         </div>
+                        @endforeach
+
+                        @foreach (config('translatable.locales') as $locale)
+                        <div class="form-group">
+                            <label>@lang('support.' . $locale . '.desc')</label>
+                            <textarea type="text" name="{{ $locale }}[description]" rows="5" class="form-control">{{ $support->translate($locale)->description }}</textarea>
+                        </div>
+                        @endforeach
+
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('support.' . $locale . '.location')</label>
+                                <input type="text" name="{{ $locale }}[location]" class="form-control" value="{{ $support->translate($locale)->location }}">
+                            </div>
+                        @endforeach
 
                         <div class="form-group">
                             <label>@lang('support.email')</label>
@@ -59,10 +80,6 @@
 
                         <div class="form-group">
                             <label><input type="checkbox" name="status" @if($support->status == 1) checked @endif> @lang('support.status')</label>
-                        </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale" @if($support->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">

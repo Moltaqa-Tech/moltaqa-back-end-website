@@ -16,6 +16,17 @@ return [
     'title' => 'Title',
     'description' => 'Description',
     'location' => 'Location',
+
+    'ar' =>[
+        'title' => 'Arabic Title',
+        'location' => 'Arabic Location',
+        'desc' => 'Arabic Description',
+    ],
+    'en' =>[
+        'title' => 'English Title',
+        'location' => 'English Location',
+        'desc' => 'English Description',
+    ],
     'phone' => 'Phone',
     'email' => 'Email',
     'action' => 'Action',

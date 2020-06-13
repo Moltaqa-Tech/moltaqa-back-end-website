@@ -7,8 +7,6 @@ use App\ContactUs;
 use App\Support;
 use Illuminate\Http\Request;
 
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-
 
 class ContactUsController extends Controller
 {
@@ -16,8 +14,7 @@ class ContactUsController extends Controller
 
     public function index()
     {
-        $currentLanguage = LaravelLocalization::getCurrentLocale();
-        $supports = Support::where("locale", $currentLanguage)->where("status", 1)->get();
+        $supports = Support::where("status", 1)->get();
         return view('layouts.site.contact-us', ["supports" => $supports]);
     }
 
