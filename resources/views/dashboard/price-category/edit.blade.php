@@ -31,10 +31,13 @@
 
                         @csrf
                         @method("PUT")
-                        <div class="form-group">
-                            <label>@lang('price-category.name')</label>
-                            <input type="text" name="name" class="form-control" value="{{ $priceCategory->name }}">
-                        </div>
+
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('price-category.' . $locale . '.name')</label>
+                                <input type="text" name="{{ $locale }}[name]" class="form-control" value="{{ $priceCategory->translate($locale)->name }}">
+                            </div>
+                        @endforeach
 
                         <div class="form-group">
                             <label>@lang('price-category.price')</label>
@@ -56,10 +59,6 @@
 
                         <div class="form-group">
                             <label><input type="checkbox" name="status" checked> @lang('price-category.status')</label>
-                        </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale" @if($priceCategory->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">

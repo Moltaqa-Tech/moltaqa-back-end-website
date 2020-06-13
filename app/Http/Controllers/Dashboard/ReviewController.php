@@ -15,7 +15,7 @@ class ReviewController extends Controller
     public function index(Request $request)
     {
         $reviews = Review::when($request->search, function($q) use ($request) {
-            return $q->where('name', 'LIKE', '%' . $request->search . '%');
+            return $q->whereTranslationLike('name', 'LIKE', '%' . $request->search . '%');
         })->latest("id")->paginate(static::PAGINATION_COUNT);
 
         return view("dashboard.review.index", ["reviews" => $reviews]);

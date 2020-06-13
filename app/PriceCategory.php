@@ -2,17 +2,24 @@
 
 namespace App;
 
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
 class PriceCategory extends Model
 {
+    use Translatable;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'price', 'saved_price', 'price_type', 'status', 'locale'
+        'price', 'saved_price', 'price_type', 'status', 'locale'
+    ];
+
+    public $translatedAttributes = [
+        'name'
     ];
 
     public function attrs()

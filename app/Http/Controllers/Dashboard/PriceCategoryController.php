@@ -17,7 +17,7 @@ class PriceCategoryController extends Controller
     public function index(Request $request)
     {
         $priceCategories = PriceCategory::when($request->search, function($q) use ($request) {
-            return $q->where('name', 'LIKE', '%' . $request->search . '%');
+            return $q->whereTranslationLike('name', 'LIKE', '%' . $request->search . '%');
         })->paginate(static::PAGINATION_COUNT);
 
         return view("dashboard.price-category.index", ["priceCategories" => $priceCategories]);
@@ -26,7 +26,7 @@ class PriceCategoryController extends Controller
 
     public function show(PriceCategory $priceCategory)
     {
-        $priceAttrs = PriceAttr::where("price_type", $priceCategory->price_type)->where("locale", $priceCategory->locale)->get();
+        $priceAttrs = PriceAttr::where("price_type", $priceCategory->price_type)->get();
         $activePriceAttrs = $priceCategory->attrs()->where("active", 1)->pluck("attr_id")->all();
         $activePriceCases = $priceCategory->attrs()->where("status", 1)->pluck("attr_id")->all();
         return view("dashboard.price-category.attrs", ["priceAttrs" => $priceAttrs, "priceCategory" => $priceCategory, 'activePriceAttrs' => $activePriceAttrs, 'activePriceCases' => $activePriceCases]);
@@ -69,22 +69,24 @@ class PriceCategoryController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'price' => 'required|numeric|min:0',
-            'saved_price' => 'required|numeric|min:0',
-            'price_type' => 'required|numeric|between:1,2',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.name' => ['required', 'max:255']];
+
+        }//end of for each
+
+        $rules += [ 'price' => ['required', 'numeric', 'min:0']];
+        $rules += [ 'saved_price' => ['required', 'numeric', 'min:0']];
+        $rules += [ 'price_type' => ['required', 'numeric']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         PriceCategory::create($request_data);
         session()->flash('success', trans('price-category.added_successfully'));
@@ -98,21 +100,24 @@ class PriceCategoryController extends Controller
 
     public function update(Request $request, PriceCategory $priceCategory)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'max:255',
-            'price' => 'numeric|min:0',
-            'saved_price' => 'numeric|min:0',
-            'price_type' => 'numeric|between:1,2',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.name' => ['required', 'max:255']];
+
+        }//end of for each
+
+        $rules += [ 'price' => ['required', 'numeric', 'min:0']];
+        $rules += [ 'saved_price' => ['required', 'numeric', 'min:0']];
+        $rules += [ 'price_type' => ['required', 'numeric']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
         // check status
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
+
         $priceCategory->update($request_data);
         session()->flash('success', trans('price-category.updated_successfully'));
         return redirect()->route('dashboard.price-categories.index');

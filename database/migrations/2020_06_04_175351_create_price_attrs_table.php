@@ -15,8 +15,6 @@ class CreatePriceAttrsTable extends Migration
     {
         Schema::create('price_attrs', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("locale")->default("en");
             $table->unsignedTinyInteger("price_type")->default(1);
             $table->timestamps();
         });

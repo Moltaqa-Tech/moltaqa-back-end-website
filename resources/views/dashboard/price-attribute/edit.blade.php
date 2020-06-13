@@ -32,10 +32,12 @@
                         @csrf
                         @method("PUT")
 
-                        <div class="form-group">
-                            <label>@lang('price-attribute.name')</label>
-                            <input type="text" name="name" class="form-control" value="{{ $priceAttr->name }}">
-                        </div>
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('price-attribute.' . $locale . '.name')</label>
+                                <input type="text" name="{{ $locale }}[name]" class="form-control" value="{{ $priceAttr->translate($locale)->name }}">
+                            </div>
+                        @endforeach
 
                         <div class="form-group">
                             <label>@lang('price-attribute.price_type')</label>
@@ -44,11 +46,6 @@
                                 <option value="2" @if($priceAttr->price_type == 2) selected @endif>Host Pricing</option>
                             </select>
                         </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale" @if($priceAttr->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
-                        </div>
-
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> @lang('dashboard.edit')</button>

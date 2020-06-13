@@ -14,6 +14,12 @@ return [
     */
 
     'name' => 'Name',
+    'ar' =>[
+        'name' => 'Arabic Name'
+    ],
+    'en' =>[
+        'name' => 'English Name'
+    ],
     'price' => 'Price',
     'saved_price' => 'Saved Price',
     'price_type' => 'Price Type',

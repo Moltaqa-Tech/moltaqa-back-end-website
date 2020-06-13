@@ -16,7 +16,7 @@ class PriceAttributeController extends Controller
     public function index(Request $request)
     {
         $priceAttributes = PriceAttr::when($request->search, function($q) use ($request) {
-            return $q->where('name', 'LIKE', '%' . $request->search . '%');
+            return $q->whereTranslationLike('name', 'LIKE', '%' . $request->search . '%');
         })->paginate(static::PAGINATION_COUNT);
 
         return view("dashboard.price-attribute.index", ["priceAttributes" => $priceAttributes]);
@@ -30,20 +30,22 @@ class PriceAttributeController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'price_type' => 'required|numeric|between:1,2',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.name' => ['required', 'max:255']];
+
+        }//end of for each
+
+        $rules += [ 'price_type' => ['required', 'numeric']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         PriceAttr::create($request_data);
         session()->flash('success', trans('price-attrs.added_successfully'));
@@ -57,20 +59,21 @@ class PriceAttributeController extends Controller
 
     public function update(Request $request, PriceAttr $priceAttr)
     {
+        $rules = [];
 
-        $validator = Validator::make($request->all(), [
-            'name' => 'max:255',
-            'price_type' => 'numeric|between:1,2',
-        ]);// end of validator
+        foreach (config('translatable.locales') as $locale) {
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+            $rules += [$locale . '.name' => ['required', 'max:255']];
+
+        }//end of for each
+
+        $rules += [ 'price_type' => ['required', 'numeric']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
         // check status
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
         // $priceAttr = PriceAttr::find($id);
         $priceAttr->update($request_data);
         session()->flash('success', trans('price-attribute.updated_successfully'));

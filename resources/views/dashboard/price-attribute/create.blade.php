@@ -32,10 +32,12 @@
                         @csrf
                         @method("POST")
 
-                        <div class="form-group">
-                            <label>@lang('price-attribute.name')</label>
-                            <input type="text" name="name" class="form-control" value="{{ old('name') }}">
-                        </div>
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('price-attribute.' . $locale . '.name')</label>
+                                <input type="text" name="{{ $locale }}[name]" class="form-control" value="{{ old($locale . '.name') }}">
+                            </div>
+                        @endforeach
 
                         <div class="form-group">
                             <label>@lang('price-attribute.price_type')</label>
@@ -43,10 +45,6 @@
                                 <option value="1">Website Pricing</option>
                                 <option value="2">Host Pricing</option>
                             </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale" > @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">
