@@ -32,10 +32,17 @@
                         @csrf
                         @method("PUT")
 
-                        <div class="form-group">
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('review.' . $locale . '.comment')</label>
+                                <textarea type="text" name="{{ $locale }}[comment]" rows="3" class="form-control" >{{ $review->translate($locale)->comment }}</textarea>
+                            </div>
+                        @endforeach
+                        {{-- <div class="form-group">
                             <label>@lang('review.comment')</label>
                             <textarea type="text" name="comment" rows="3" class="form-control" >{{ $review->comment }}</textarea>
-                        </div>
+                        </div> --}}
+
 
                         <div class="form-group">
                             <label>@lang('review.url')</label>
@@ -49,10 +56,6 @@
 
                         <div class="form-group">
                             <label><input type="checkbox" name="status" @if($review->status) checked @endif> @lang('review.status')</label>
-                        </div>
-
-                        <div class="form-group">
-                            <label><input type="checkbox" name="locale" @if($review->locale == 'ar') checked @endif> @lang('dashboard.arabic')</label>
                         </div>
 
                         <div class="form-group">

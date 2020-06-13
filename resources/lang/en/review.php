@@ -14,6 +14,12 @@ return [
     */
 
     'comment' => 'Comment',
+    'ar' =>[
+        'comment' => 'Arabic Comment'
+    ],
+    'en' =>[
+        'comment' => 'English Comment'
+    ],
     'url' => 'URL',
     'image' => 'Image',
     'status' => 'Status',

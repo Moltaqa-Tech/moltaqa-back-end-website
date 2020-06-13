@@ -15,10 +15,8 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->text("comment")->nullable();
             $table->string("url")->nullable();;
             $table->string("image_path")->nullable();
-            $table->string("locale")->default("en");
             $table->unsignedTinyInteger("satisfied")->default(1);
             $table->unsignedTinyInteger("status")->default(1);
             $table->timestamps();

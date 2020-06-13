@@ -2,17 +2,24 @@
 
 namespace App;
 
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+    use Translatable;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'comment', 'url', 'image_path', 'satisfied', 'status', 'locale'
+        'url', 'image_path', 'satisfied', 'status',
+    ];
+
+    public $translatedAttributes = [
+        'comment'
     ];
 
     protected $appends = [

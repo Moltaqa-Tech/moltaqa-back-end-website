@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Review;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 
 class ReviewController extends Controller
 {
@@ -31,15 +29,18 @@ class ReviewController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'comment' => 'required|max:255',
-            'url' => 'required|url',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);// end of validator
+        $rules = [];
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.comment' => ['required', 'max:522']];
+
+        }//end of for each
+
+        $rules += ['url' => ['url']];
+        $rules += ['image' => ['image','mimes:jpeg,png,jpg,gif,svg']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
@@ -54,29 +55,41 @@ class ReviewController extends Controller
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
         $request_data['satisfied'] = (isset($request->satisfied) && $request->satisfied == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         Review::create($request_data);
         session()->flash('success', trans('review.added_successfully'));
         return redirect()->route('dashboard.reviews.index');
     }//end of store
 
-    public function edit(review $review)
+    public function edit(Review $review)
     {
         return view('dashboard.review.edit', ['review' => $review ]);
     }//end of edit
 
     public function update(Request $request, Review $review)
     {
-        $validator = Validator::make($request->all(), [
-            'comment' => 'max:255',
-            'url' => 'url',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
-        ]);// end of validator
+        // $validator = Validator::make($request->all(), [
+        //     'comment' => 'max:255',
+        //     'url' => 'url',
+        //     'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        // ]);// end of validator
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
-        }//end of if
+        // if ($validator->fails()) {
+        //     return Redirect::back()->withErrors($validator);
+        // }//end of if
+
+        $rules = [];
+
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.comment' => ['required', 'max:522']];
+
+        }//end of for each
+
+        $rules += ['url' => ['url']];
+        $rules += ['image' => ['image','mimes:jpeg,png,jpg,gif,svg']];
+
+        $request->validate($rules);
 
         $request_data = $request->all();
 
@@ -97,7 +110,6 @@ class ReviewController extends Controller
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
         $request_data['satisfied'] = (isset($request->satisfied) && $request->satisfied == 'on') ? 1: 0 ;
-        $request_data['locale'] = (isset($request->locale) && $request->locale == 'on') ? 'ar': 'en' ;
 
         $review->update($request_data);
         session()->flash('success', trans('review.updated_successfully'));
