@@ -60,16 +60,16 @@
             <ul class="list-unstyled">
               <li>
                 <i class="fas fa-map-marker-alt"></i>
-                <span>My Streat , Kingston , Mansoura</span>
+                <span>@lang("site.footer_contact_us_location")</span>
               </li>
               <li>
                 <i class="fas fa-phone-volume"></i>
-                <a href="tel:+6494461709">000 000 000 00</a>
-                <a class="block-a" href="tel:+6494461709">111 111 111 11</a>
+                <a href="tel:@lang("site.footer_contact_us_phone_1")">@lang("site.footer_contact_us_phone_1")</a>
+                <a class="block-a" href="tel:@lang("site.footer_contact_us_phone_2")">@lang("site.footer_contact_us_phone_2")</a>
               </li>
               <li>
                 <i class="far fa-envelope"></i>
-                <a href="mailto:webmaster@example.com">webmaster@example.com</a>
+                <a href="mailto:@lang("site.footer_contact_us_email")">@lang("site.footer_contact_us_email")</a>
               </li>
             </ul>
           </div>

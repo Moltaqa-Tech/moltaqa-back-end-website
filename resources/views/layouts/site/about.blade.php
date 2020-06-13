@@ -37,19 +37,19 @@
             </h3>
             <div class="row custom-row">
                 <div class="col-md-4">
-                    <h5>who we are ?</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!</p>
-                    <p>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!</p>
+                    <h5>@lang("site.about_who_we_are")</h5>
+                    <p>@lang("site.about_who_we_are_desc1")</p>
+                    <p>@lang("site.about_who_we_are_desc2")</p>
                 </div>
                 <div class="col-md-4">
-                    <h5>what we do ?</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!</p>
-                    <p>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!</p>
+                    <h5>@lang("site.about_what_we_do")</h5>
+                    <p>@lang("site.about_what_we_do_desc1")</p>
+                    <p>@lang("site.about_what_we_do_desc2")</p>
                 </div>
                 <div class="col-md-4">
-                    <h5>why we do it ?</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!</p>
-                    <p>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!</p>
+                    <h5>@lang("site.about_why_do_it")</h5>
+                    <p>@lang("site.about_why_do_it_desc1")</p>
+                    <p>@lang("site.about_why_do_it_desc2")</p>
                 </div>
             </div>
         </div>
@@ -75,23 +75,23 @@
             </h3>
             <div class="row custom-row">
                 <div class="col-md-4">
-                    <h5>skills we have</h5>
+                    <h5>@lang("site.about_skill_we_have")</h5>
                     <ul class="list-unstyled">
-                        <li>digital marketing</li>
-                        <li>interior&exterior</li>
-                        <li>web</li>
-                        <li>studio</li>
+                        <li>@lang("site.about_skill_1")</li>
+                        <li>@lang("site.about_skill_2")</li>
+                        <li>@lang("site.about_skill_3")</li>
+                        <li>@lang("site.about_skill_4")</li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h5>our mission</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!</p>
-                    <p>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!</p>
+                    <h5>@lang("site.about_our_mission")</h5>
+                    <p>@lang("site.about_our_mission_desc1")</p>
+                    <p>@lang("site.about_our_mission_desc2")</p>
                 </div>
                 <div class="col-md-4">
-                    <h5>our value</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!</p>
-                    <p>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!</p>
+                    <h5>@lang("site.about_our_value")</h5>
+                    <p>@lang("site.about_our_value_desc1")</p>
+                    <p>@lang("site.about_our_value_desc2 ")</p>
                 </div>
             </div>
         </div>
@@ -105,16 +105,16 @@
             </section>
             <div class="row custom-row">
                 <div class="col-md-4">
-                    <h5>unlimited features</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!</p>
+                    <h5>@lang("site.about_feature_1")</h5>
+                    <p>@lang("site.about_feature_1_desc")</p>
                 </div>
                 <div class="col-md-4">
-                    <h5>unlimited features</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!</p>
+                    <h5>@lang("site.about_feature_2")</h5>
+                    <p>@lang("site.about_feature_2_desc")</p>
                 </div>
                 <div class="col-md-4">
-                    <h5>unlimited features</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!</p>
+                    <h5>@lang("site.about_feature_3")</h5>
+                    <p>@lang("site.about_feature_3_desc")</p>
                 </div>
             </div>
         </div>
@@ -128,121 +128,40 @@
             <div class="slider">
                 <div class="customers">
                     <div class="owl-carousel owl-theme owl-works">
-
-                    <div class="item">
-                        <div class="one-client">
-                          <div class="img-user">
-                            <img src="./images/userone.png" alt="user">
-                          </div>
-                          <div class="arrow">
-                            <img src="./images/newrevline.png" alt="arrow">
-                          </div>
-                          <div class="comment-user">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="one-client">
-                            <div class="img-user">
-                            <img src="./images/userone.png" alt="user">
+                        @foreach ($reviews as $review)
+                            <div class="item">
+                                <div class="one-client">
+                                <div class="img-user">
+                                    <a href="{{$review->url}}" target="_blank">
+                                        <img src="{{$review->image_path_val}}" alt="user">
+                                    </a>
+                                </div>
+                                <div class="arrow">
+                                    <img src="{{asset('images/newrevline.png')}}" alt="arrow">
+                                </div>
+                                <div class="comment-user">
+                                    {{$review->comment}}
+                                </div>
+                                </div>
                             </div>
-                            <div class="arrow">
-                            <img src="./images/newrevline.png" alt="arrow">
-                            </div>
-                            <div class="comment-user">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
 
-                    <div class="item">
-                        <div class="one-client">
-                            <div class="img-user">
-                        <img src="./images/userone.png" alt="user">
-                            </div>
-                            <div class="arrow">
-                            <img src="./images/newrevline.png" alt="arrow">
-                            </div>
-                            <div class="comment-user">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="item">
-                    <div class="one-client">
-                        <div class="img-user">
-                    <img src="./images/userone.png" alt="user">
-                        </div>
-                        <div class="arrow">
-                        <img src="./images/newrevline.png" alt="arrow">
-                        </div>
-                        <div class="comment-user">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="item">
-                    <div class="one-client">
-                        <div class="img-user">
-                    <img src="./images/userone.png" alt="user">
-                        </div>
-                        <div class="arrow">
-                        <img src="./images/newrevline.png" alt="arrow">
-                        </div>
-                        <div class="comment-user">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem modi hic facilis sed amet assumenda, eum molestias porro aliquam voluptas sit deleniti .
-                        </div>
-                    </div>
-                    </div>
-
-                  </div>
                 </div>
             </div>
             <!-- Start supports Section -->
             <section class="supports">
                 <div class="custom-carousel">
                     <div class="owl-carousel owl-theme">
-
-                        <div class="item" style="width:auto">
-                            <a href="#">
-                                <img src="./images/slideone.png" alt="support">
-                            </a>
-                        </div>
-
-                        <div class="item" style="width:auto">
-                            <a href="#">
-                              <img src="./images/slidetwo.png" alt="support">
-                            </a>
-                        </div>
-
-                        <div class="item" style="width:auto">
-                            <a href="#">
-                              <img src="./images/slidethree.png" alt="support">
-                            </a>
-                        </div>
-
-                        <div class="item" style="width:auto">
-                            <a href="#">
-                              <img src="./images/slidefour.png" alt="support">
-                            </a>
-                        </div>
-
-                        <div class="item" style="width:auto">
-                          <a href="#">
-                              <img src="./images/slideone.png" alt="support">
-                          </a>
-                      </div>
-
-                      <div class="item" style="width:auto">
-                          <a href="#">
-                            <img src="./images/slidetwo.png" alt="support">
-                          </a>
-                      </div>
-
+                        @foreach ($reviews as $review)
+                            @if($review->satisfied == 1)
+                                <div class="item" style="width:auto" >
+                                    <a href="{{$review->url}}" target="_blank">
+                                        <img src="{{$review->image_path_val}}" alt="support">
+                                    </a>
+                                </div>
+                            @endif
+                        @endforeach
 
                     </div>
                 </div>
@@ -280,26 +199,16 @@
           });
         </script>
 
-{{-- owl  works--}}
-<script>
-    $('.owl-carousel').owlCarousel({
-      loop:true,
-      autoplay:true,
-      autoplayTimeout:5000,
-      autoplayHoverPause:true ,
-      margin:10,
-      nav:true,
-      responsive:{
-          0:{
-              items:1
-          },
-          600:{
-              items:1
-          },
-          1000:{
-              items:1
-          }
-      }
-    });
+    {{-- owl  works--}}
+    <script>
+        $('.owl-carousel').owlCarousel({
+        loop:false,
+        rewind: true,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true ,
+        margin:10,
+        nav:true,
+        });
   </script>
 @endsection

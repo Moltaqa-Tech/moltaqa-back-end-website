@@ -22,9 +22,7 @@ Route::group(
 
         Route::get('/', 'HomeController@index');
 
-        Route::get('/about', function () {
-            return view('layouts.site.about');
-        });
+        Route::get('/about', 'AboutController@index');
 
         Route::get('/pricing', 'PriceController@index');
 

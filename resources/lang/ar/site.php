@@ -69,10 +69,15 @@ return [
     // footer
     'footer_moltaqa_desc' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aspernatur odit amet .',
     'footer_contact_us' => 'اتصل بنا',
+    'footer_contact_us_location' => 'My Streat , Kingston , Mansoura',
+    'footer_contact_us_phone_1' => '000 000 000 00',
+    'footer_contact_us_phone_2' => '111 111 111 11',
+    'footer_contact_us_email' => 'webmaster@example.com',
+
     'footer_facebook_title' => 'مدونة الفيس بوك',
     'footer_facebook_desc1' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga maxime animi assumenda error.',
     'footer_facebook_desc2' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga maxime animi assumenda error.',
-    'footer_gallary' => 'البوم صور',
+    // 'footer_gallary' => 'البوم صور',
     'footer_designed_by' => 'صمم بواسطة ايمان موسي',
 
     /**
@@ -115,10 +120,47 @@ return [
          ** About Page
          */
         'about_about_us' => 'من نحن',
+        // a few words about us
         'about_few_words' => 'بضع كلمات عنا',
+
+        'about_who_we_are' => 'who we are ?',
+        'about_who_we_are_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        'about_who_we_are_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
+
+        'about_what_we_do' => 'what we do ?',
+        'about_what_we_do_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        'about_what_we_do_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
+
+        'about_why_do_it' => 'why we do it ?',
+        'about_why_do_it_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        'about_why_do_it_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
+
         'about_discover' => 'اكتشف كل شيء عنا',
         'about_intro_video' => 'تشغيل الفيديو التمهيدي',
+        // why choose moltaqa tech
         'about_why_choose' => 'لماذا تختار',
-        'about_client_talk' => 'يتحدث العميل عنا',
+        'about_feature_1' => 'unlimited features',
+        'about_feature_1_desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        'about_feature_2' => 'unlimited features',
+        'about_feature_2_desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        'about_feature_3' => 'unlimited features',
+        'about_feature_3_desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+
+        // expected the best
         'about_expect_best' => 'نتوقع الأفضل',
+        'about_skill_we_have' => 'skills we have',
+        'about_skill_1' => 'digital marketing',
+        'about_skill_2' => 'interior&exterior',
+        'about_skill_3' => 'web',
+        'about_skill_4' => 'studio',
+
+        'about_our_mission' => 'Our Mission',
+        'about_our_mission_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        'about_our_mission_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
+
+        'about_our_value' => 'Our Value',
+        'about_our_value_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        'about_our_value_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
+
+        'about_client_talk' => 'يتحدث العميل عنا',
 ];

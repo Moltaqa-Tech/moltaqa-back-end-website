@@ -226,7 +226,7 @@
               </div>
 
             <div class="col-md-6 client-said-box">
-                <img src="./images/newedit.png" alt="send" class="send">
+                <img src="{{asset('images/newedit.png')}}" alt="send" class="send">
             </div>
             <div class="col-md-6 client-said-box">
                 <div class="new-project">
