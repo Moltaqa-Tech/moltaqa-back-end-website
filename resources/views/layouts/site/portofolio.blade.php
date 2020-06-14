@@ -40,9 +40,15 @@
       </div>
       <div class="portfolio-content row">
             @foreach ($portofolios as $portofolio)
+                @php
+                    $catClass = "";
+                    foreach ($portofolio->categories as $cat) {
+                        $catClass .= " cat_" . $cat->id;
+                    }
+                @endphp
                 @foreach ($portofolio->images as $image)
-                    <div class="cat_{{$portofolio->category_id}} all col-md-4">
-                        <img src="{{$image->image_path_val}}" alt="{{$portofolio->category_id}}">
+                    <div class="cat_{{$catClass}} all col-md-4">
+                        <img src="{{$image->image_path_val}}" alt="Portofolio - {{$catClass}}">
                     </div>
                 @endforeach
             @endforeach

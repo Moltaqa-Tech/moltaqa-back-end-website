@@ -48,7 +48,7 @@
 
                         <div class="form-group">
                             <label>@lang('portofolio.category_name')</label>
-                            <select class="form-control" name="category_id" id="category_id">
+                            <select class="form-control" multiple name="categories[]" id="category_id" size="5">
                                 @foreach ($portofolioCategories as $category)
                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach

@@ -14,7 +14,7 @@ class Portofolio extends Model
      * @var array
      */
     protected $fillable = [
-        'category_id', 'status',
+        'status',
     ];
 
     public $translatedAttributes = ['title', 'description'];
@@ -24,8 +24,13 @@ class Portofolio extends Model
         return $this->hasMany('App\PortofolioImage');
     }// end of images
 
-    public function category()
+    // public function category()
+    // {
+    //     return $this->belongsTo('App\PortofolioCategory');
+    // }// end of category
+
+    public function categories()
     {
-        return $this->belongsTo('App\PortofolioCategory');
-    }// end of category
+        return $this->belongsToMany('App\PortofolioCategory', 'porto_category', 'porotofolio_id', 'category_id');
+    }// end of categories
 }

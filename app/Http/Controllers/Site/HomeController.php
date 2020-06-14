@@ -20,12 +20,12 @@ class HomeController extends Controller
         }
 
         $teams = Team::where("status", 1)->get();
-        $lastWork = Portofolio::with(["images"])->where("status", 1)->whereHas( "category", function($query) {
+        $lastWork = Portofolio::with(["images"])->where("status", 1)->whereHas( "categories", function($query) {
             $query->where("status", 1);
         })->latest("id")->first();
         // portofolio part
         $categories = PortofolioCategory::where("status", 1)->get();
-        $portofolios = Portofolio::with(["images"])->where("status", 1)->whereHas( "category", function($query) {
+        $portofolios = Portofolio::with(["images"])->where("status", 1)->whereHas( "categories", function($query) {
             $query->where("status", 1);
         })->get();
 

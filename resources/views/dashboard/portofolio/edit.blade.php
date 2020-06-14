@@ -46,21 +46,11 @@
                             </div>
                         @endforeach
 
-                        {{-- <div class="form-group">
-                            <label>@lang('portofolio.title')</label>
-                            <input type="text" name="title" class="form-control" value="{{ $portofolio->title }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label>@lang('portofolio.desc')</label>
-                            <textarea type="text" name="description" class="form-control" rows="5">{{ $portofolio->description }}</textarea>
-                        </div> --}}
-
                         <div class="form-group">
                             <label>@lang('portofolio.category_name')</label>
-                            <select class="form-control" name="category_id" id="category_id">
+                            <select class="form-control" multiple name="categories[]" id="category_id" size="5">
                                 @foreach ($portofolioCategories as $category)
-                                    <option value="{{$category->id}}" @if($portofolio->category_id == $category->id) selected @endif>{{$category->name}}</option>
+                                    <option value="{{$category->id}}" @if(in_array($category->id, $portoCatIds)) selected @endif>{{$category->name}}</option>
                                 @endforeach
                             </select>
                         </div>

@@ -43,13 +43,19 @@ class PortofolioController extends Controller
 
         }//end of for each
 
-        $rules += ['category_id' => ['required', 'exists:portofolio_categories,id']];
+
+        $rules += ['categories' => ['required', 'array']];
+        $rules += ['categories.*' => ['required', 'exists:portofolio_categories,id']];
+        // $rules += ['category_id' => ['required', 'exists:portofolio_categories,id']];
 
         $request->validate($rules);
 
         $request_data = $request->all();
-        $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
+        $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0;
+
         $portofolio = Portofolio::create($request_data);
+        $categoriesIds = $request->categories;
+        $portofolio->categories()->attach($categoriesIds);
 
         foreach ($request->images as $image) {
             $randStr = substr(str_shuffle(MD5(microtime())), 0, 10);
@@ -69,8 +75,9 @@ class PortofolioController extends Controller
     public function edit(Portofolio $portofolio)
     {
         $portofolioCategories = PortofolioCategory::all();
+        $portoCatIds = $portofolio->categories->pluck('id')->toArray();
         // dd($portofolioCategories);
-        return view('dashboard.portofolio.edit', ['portofolio' => $portofolio, 'portofolioCategories' => $portofolioCategories]);
+        return view('dashboard.portofolio.edit', ['portofolio' => $portofolio, 'portofolioCategories' => $portofolioCategories, 'portoCatIds' => (count($portoCatIds) > 0 ? $portoCatIds : []) ]);
     }//end of edit
 
     public function update(Request $request, Portofolio $portofolio)
@@ -84,11 +91,18 @@ class PortofolioController extends Controller
 
         }//end of for each
 
-        $rules += ['category_id' => ['required', 'exists:portofolio_categories,id']];
+    //     'ids' => 'required|array',
+    // 'ids.*' => 'exists:users,id', // check each item in the array
+        $rules += ['categories' => ['required', 'array']];
+        $rules += ['categories.*' => ['required', 'exists:portofolio_categories,id']];
 
         $request->validate($rules);
 
         $request_data = $request->all();
+        $portofolio->categories()->detach();
+
+        $categoriesIds = $request->categories;
+        $portofolio->categories()->attach($categoriesIds);
 
         if ($request->images) {
             // delete images if exists

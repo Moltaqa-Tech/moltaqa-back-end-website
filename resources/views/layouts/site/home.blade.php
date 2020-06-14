@@ -128,8 +128,14 @@
         <div class="portfolio-content row">
             @foreach ($portofolios as $portofolio)
                 @foreach ($portofolio->images as $image)
-                    <div class="cat_{{$portofolio->category_id}} all col-md-4">
-                        <img src="{{$image->image_path_val}}" alt="Portofolio - {{$portofolio->category_id}}">
+                    @php
+                        $catClass = "";
+                        foreach ($portofolio->categories as $cat) {
+                            $catClass .= " cat_" . $cat->id;
+                        }
+                    @endphp
+                    <div class="{{$catClass}} all col-md-4">
+                        <img src="{{$image->image_path_val}}" alt="Portofolio - {{$catClass}}">
                     </div>
                 @endforeach
             @endforeach

@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'name' => 'Name',
     'ar' =>[
         'name' => 'Arabic Name'
     ],

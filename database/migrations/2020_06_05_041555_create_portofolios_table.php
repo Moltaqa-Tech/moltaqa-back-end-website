@@ -16,10 +16,10 @@ class CreatePortofoliosTable extends Migration
         Schema::create('portofolios', function (Blueprint $table) {
             $table->id();
             $table->unsignedTinyInteger("status")->default(1);
-            $table->unsignedBigInteger('category_id')->nullable();
+            // $table->unsignedBigInteger('category_id')->nullable();
 
-            $table->foreign('category_id')->references('id')->on('portofolio_categories')
-            ->onDelete('set null');
+            // $table->foreign('category_id')->references('id')->on('portofolio_categories')
+            // ->onDelete('set null');
 
             $table->timestamps();
         });
