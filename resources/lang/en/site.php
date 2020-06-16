@@ -17,7 +17,7 @@ return [
 
     // Header
     'header_home' => 'Home',
-    'header_about' => 'About',
+    'header_about' => 'About Us',
     'header_pricing' => 'Pricing',
     'header_services' => 'Services',
     'header_portofolio' => 'Portofolio',
@@ -29,7 +29,9 @@ return [
     **/
     // Section who are
     'home_who_are' => 'Who Are',
-    'home_who_details' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta itaque nam repellendus animi ratione dolores optio. Necessitatibus sapiente itaque placeat corporis possimus nulla odio amet, consectetur, perferendis iusto dignissimos?',
+    'home_who_details' => 'Mobile applications and web systems are the language of the age<br>
+    Imagine your app and leave us to innovate<br>
+    We specialize in programming and designing mobile applications on smartphones and tablets for iPhone and Android systems, web site design and development, and we provide solutions that help in planning and building technical projects while providing practical and scientific support and implementing all ideas to be success partners.',
     'home_who_read_more' => 'Read More',
 
     // section what do
@@ -48,7 +50,7 @@ return [
     'home_porto_download' => 'download now',
 
     // Section Our Last Work
-    'home_our_last' => 'Our Last',
+    'home_our_last' => 'Latest',
     'home_our_work' => 'work',
 
     // Section Our Geeks
@@ -56,29 +58,29 @@ return [
     'home_geek_geeks' => 'Geeks',
 
     // Section Our Client side
-    'home_our_client_said' => 'Our Client Said',
+    'home_our_client_said' => 'Our Clients Said',
 
     // Section Contact Us
-    'contact_start_new_project' => 'Let\'s start a new project together!',
+    'contact_start_new_project' => 'Let\'s start a new project together.',
     'contact_name' => 'Name',
     'contact_email' => 'Email',
     'contact_message' => 'Message',
-    'contact_btn' => "Submit Message",
+    'contact_btn' => "Send",
 
 
     // footer
-    'footer_moltaqa_desc' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aspernatur odit amet .',
+    'footer_moltaqa_desc' => 'Moltaqa tech Company specializing in programming and designing mobile applications on smartphones and tablets for iPhone and Android systems and the design and development of websites',
     'footer_contact_us' => 'contact us',
-    'footer_contact_us_location' => 'My Streat , Kingston , Mansoura',
-    'footer_contact_us_phone_1' => '000 000 000 00',
-    'footer_contact_us_phone_2' => '111 111 111 11',
-    'footer_contact_us_email' => 'webmaster@example.com',
+    'footer_contact_us_location' => 'Al Rawda, Jiddah, Saudi Arabia',
+    'footer_contact_us_phone_1' => '00966546113972',
+    'footer_contact_us_phone_2' => '',
+    'footer_contact_us_email' => 'info@moltaqa.net',
 
-    'footer_facebook_title' => 'facebook blogin',
+    'footer_facebook_title' => 'Twitter Blogs',
     'footer_facebook_desc1' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga maxime animi assumenda error.',
     'footer_facebook_desc2' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga maxime animi assumenda error.',
     // 'footer_gallary' => 'gallery',
-    'footer_designed_by' => 'desgined by eman mosa',
+    'footer_designed_by' => 'desgined by Moltaqa Tech',
 
     /**
      ** Pricing Page
@@ -89,7 +91,7 @@ return [
      'pricing_website' => 'webiste pricing',
      'pricing_hosting' => 'hosting pricing',
      'pricing_save' => 'save',
-     'pricing_year' => 'year',
+     'pricing_month' => 'month',
      'pricing_get_start' => 'get start',
 
      /**
@@ -124,45 +126,53 @@ return [
         'about_few_words' => 'a few words about us',
 
         'about_who_we_are' => 'who we are ?',
-        'about_who_we_are_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
-        'about_who_we_are_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
+        'about_who_we_are_desc1' => 'We specialize in programming and designing mobile applications on smartphones and tablets for iPhone and Android systems, web site design and development, and we provide solutions that help in planning and building technical projects while providing practical and scientific support and implementing all ideas to be success partners.',
+        'about_who_we_are_desc2' => '',
 
         'about_what_we_do' => 'what we do ?',
-        'about_what_we_do_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
-        'about_what_we_do_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
+        'about_what_we_do_desc1' => '
+        •    Designing and developing mobile applications<br>
+        •    Designing and developing websites<br>
+        •    Providing hosting and domain services<br>
+        •    E-marketing services<br>
+        •    Courses<br>
+        •    Archive SEO sites<br>
+        •    Designing the full corporate identity<br>
+',
+        //'about_what_we_do_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
 
-        'about_why_do_it' => 'why we do it ?',
-        'about_why_do_it_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
-        'about_why_do_it_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
+        //'about_why_do_it' => '',
+        //'about_why_do_it_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        //'about_why_do_it_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
 
         'about_discover' => 'discover all about',
         'about_intro_video' => 'play the intro video',
 
         // why choose moltaqa tech
         'about_why_choose' => 'why choose',
-        'about_feature_1' => 'unlimited features',
-        'about_feature_1_desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
-        'about_feature_2' => 'unlimited features',
-        'about_feature_2_desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
-        'about_feature_3' => 'unlimited features',
-        'about_feature_3_desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        'about_feature_1' => 'Customer comes first',
+        'about_feature_1_desc' => 'Attention to clients by devoting our time and efforts to meet their needs, understanding and translating there ideas, and informing them of all stages of the project and its developments.',
+        'about_feature_2' => 'Excellence, diversity, innovation and making a difference',
+        'about_feature_2_desc' => 'We go beyond the impossible, by innovative creative touches and design and the difference in the pace of growth in modern technology, where we believe that innovation is our leader towards development.',
+        'about_feature_3' => 'Integrated support service',
+        'about_feature_3_desc' => ' We work to provide all-time support to achieve lasting customer satisfaction, and to ensure our success and flexibility',
 
         // expected the best
         'about_expect_best' => 'expect the best',
-        'about_skill_we_have' => 'skills we have',
-        'about_skill_1' => 'digital marketing',
-        'about_skill_2' => 'interior&exterior',
-        'about_skill_3' => 'web',
-        'about_skill_4' => 'studio',
+        'about_skill_we_have' => 'our skills',
+        'about_skill_1' => 'web applications',
+        'about_skill_2' => 'mobile applications',
+        'about_skill_3' => 'digital marketing',
+        'about_skill_4' => 'motion graphic',
 
         'about_our_mission' => 'Our Mission',
-        'about_our_mission_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
-        'about_our_mission_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
+        'about_our_mission_desc1' => 'Committed to superior service, sophistication, punctuality, quality and quality.Committed to superior service, sophistication, punctuality, quality and quality.',
+        'about_our_mission_desc2' => 'Committed to superior service, sophistication, punctuality, quality and quality.',
 
-        'about_our_value' => 'Our Value',
-        'about_our_value_desc1' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla quaerat ab praesentium!',
+        'about_our_value' => 'Our vision',
+        'about_our_value_desc1' => 'We always seek to be the first and always the best choice for the customer by providing the best software and marketing solutions.',
         'about_our_value_desc2' => '>Nam quas distinctio tempora, itaque quae laudantium illo ipsam iusto. Fugiat eos enim itaque. Eos, maxime amet!',
 
-        'about_client_talk' => 'client talk about us',
+        'about_client_talk' => 'our clients said',
 
 ];

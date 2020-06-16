@@ -43,8 +43,8 @@
                     </div>
                     <div class="price-detials">
                     <span>@lang("site.pricing_save") ${{$category->saved_price}}</span>
-                    <span> / </span>
-                    <span>@lang("site.pricing_year")</span>
+                    {{-- <span> / </span>
+                    <span>@lang("site.pricing_year")</span> --}}
                     </div>
                     <div class="get-start">
                     <a href="#">@lang("site.pricing_get_start")</a>
@@ -90,7 +90,7 @@
                         <div class="price-detials">
                         <span>@lang("site.pricing_save") ${{$hostCategory->saved_price}}</span>
                         <span> / </span>
-                        <span>@lang("site.pricing_year")</span>
+                        <span>@lang("site.pricing_month")</span>
                         </div>
                         <div class="get-start">
                         <a href="#">@lang("site.pricing_get_start")</a>

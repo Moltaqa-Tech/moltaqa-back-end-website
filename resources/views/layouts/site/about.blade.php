@@ -44,13 +44,13 @@
                 <div class="col-md-4">
                     <h5>@lang("site.about_what_we_do")</h5>
                     <p>@lang("site.about_what_we_do_desc1")</p>
-                    <p>@lang("site.about_what_we_do_desc2")</p>
+                    {{-- <p>@lang("site.about_what_we_do_desc2")</p> --}}
                 </div>
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <h5>@lang("site.about_why_do_it")</h5>
                     <p>@lang("site.about_why_do_it_desc1")</p>
                     <p>@lang("site.about_why_do_it_desc2")</p>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@
                 <div class="col-md-4">
                     <h5>@lang("site.about_our_value")</h5>
                     <p>@lang("site.about_our_value_desc1")</p>
-                    <p>@lang("site.about_our_value_desc2 ")</p>
+                    {{-- <p>@lang("site.about_our_value_desc2 ")</p> --}}
                 </div>
             </div>
         </div>
@@ -132,9 +132,13 @@
                             <div class="item">
                                 <div class="one-client">
                                 <div class="img-user">
-                                    <a href="{{$review->url}}" target="_blank">
-                                        <img src="{{$review->image_path_val}}" alt="user">
-                                    </a>
+                                    @if($review->url != null)
+                                        <a href="{{$review->url}}" target="_blank">
+                                            <img src="{{$review->image_path_val}}" alt="support">
+                                        </a>
+                                    @else
+                                        <img src="{{$review->image_path_val}}" alt="support">
+                                    @endif
                                 </div>
                                 <div class="arrow">
                                     <img src="{{asset('images/newrevline.png')}}" alt="arrow">
@@ -156,9 +160,13 @@
                         @foreach ($reviews as $review)
                             @if($review->satisfied == 1)
                                 <div class="item" style="width:auto" >
-                                    <a href="{{$review->url}}" target="_blank">
+                                    @if($review->url != null)
+                                        <a href="{{$review->url}}" target="_blank">
+                                            <img src="{{$review->image_path_val}}" alt="support">
+                                        </a>
+                                    @else
                                         <img src="{{$review->image_path_val}}" alt="support">
-                                    </a>
+                                    @endif
                                 </div>
                             @endif
                         @endforeach

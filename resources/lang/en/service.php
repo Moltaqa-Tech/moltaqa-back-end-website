@@ -13,6 +13,8 @@ return [
     |
     */
 
+    'title' => 'Title',
+    'desc' => 'Description',
     'ar' =>[
         'title' => 'Arabic Title',
         'desc' => 'Arabic Description',

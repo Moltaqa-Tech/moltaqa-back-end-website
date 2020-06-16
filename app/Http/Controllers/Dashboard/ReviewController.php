@@ -37,7 +37,7 @@ class ReviewController extends Controller
 
         }//end of for each
 
-        $rules += ['url' => ['url']];
+        // $rules += ['url' => ['url']];
         $rules += ['image' => ['image','mimes:jpeg,png,jpg,gif,svg']];
 
         $request->validate($rules);
@@ -86,7 +86,7 @@ class ReviewController extends Controller
 
         }//end of for each
 
-        $rules += ['url' => ['url']];
+        // $rules += ['url' => ['url']];
         $rules += ['image' => ['image','mimes:jpeg,png,jpg,gif,svg']];
 
         $request->validate($rules);
