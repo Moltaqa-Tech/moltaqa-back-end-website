@@ -48,7 +48,7 @@
                 @endphp
                 @foreach ($portofolio->images as $image)
                     <div class="cat_{{$catClass}} all col-md-4">
-                        <img src="{{$image->image_path_val}}" alt="Portofolio - {{$catClass}}">
+                        <img height="400" src="{{$image->image_path_val}}" alt="Portofolio - {{$catClass}}">
                     </div>
                 @endforeach
             @endforeach

@@ -175,4 +175,15 @@ return [
 
         'about_client_talk' => 'our clients said',
 
+        /**
+         * Social Links
+         */
+
+        'footer_instagram_url' => 'https://instagram.com/moltaqallbrmjyat',
+        'footer_facebook_url' => 'https://facebook.com/moltaqallbrmjyat',
+        'footer_twitter_url' => 'https://twitter.com/moltaqallbrmjyt',
+        'footer_snapchat_url' => 'https://www.snapchat.com/add/moltaqallbrmjyat',
+        'footer_whatsup_phone' => '00966546113972',
+
+
 ];

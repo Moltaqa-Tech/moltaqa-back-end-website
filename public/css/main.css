@@ -1,5 +1,4 @@
 body {
-  font-family: "Open Sans Condensed", sans-serif;
   font-family: "Changa", sans-serif;
   font-size: 16px;
   line-height: 1.5em;
@@ -30,7 +29,6 @@ a:hover {
 
 .main_title {
   color: #294C5B;
-  font-family: "Oswald", sans-serif;
   text-transform: capitalize;
   font-size: 2rem;
   margin: 0;
@@ -258,7 +256,6 @@ header .header-cover .contnet-img img {
   object-fit: cover;
 }
 header .header-cover p {
-  font-family: "Roboto Condensed", sans-serif;
   position: absolute;
   width: 100%;
   bottom: 145px;
@@ -683,7 +680,6 @@ footer h5::after {
 }
 footer ul {
   margin-top: 60px;
-  font-family: "Open Sans Condensed", sans-serif;
 }
 footer ul li {
   font-size: 14px;
@@ -1006,7 +1002,6 @@ footer .bottom-footer {
   text-transform: uppercase;
 }
 .portfolio .container .creative-text {
-  font-family: "Roboto Condensed", sans-serif;
   text-transform: capitalize;
   font-size: 20px;
   text-align: center;
@@ -1021,6 +1016,10 @@ footer .bottom-footer {
 .latest-work {
   padding: 50px 0;
   position: relative;
+}
+.latest-work .owl-carousel .owl-item img {
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .latest-work .latest-img {
   position: absolute;
@@ -1123,13 +1122,12 @@ footer .bottom-footer {
   border-image-slice: 20;
 }
 .our-portfolio .portfolio-content .all {
-  height: 250px;
+  height: 400px;
   margin: 0;
   padding: 0;
 }
 .our-portfolio .portfolio-content .all img {
-  height: 100%;
-  width: 100%;
+  object-fit: cover;
 }
 
 .main-portfolio {
@@ -1182,11 +1180,19 @@ footer .bottom-footer {
 .our-geeks .content .item {
   position: relative;
 }
+.our-geeks .content .item h5 {
+  text-align: center;
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+.our-geeks .content .item h6 {
+  text-align: center;
+  color: RGB(230, 178, 115);
+}
 .our-geeks .content .card-item {
   position: relative;
   left: 40px;
   width: 250px;
-  background: url(../images/Rectangle.png);
   background-size: cover;
 }
 .our-geeks .content .social-icons {
@@ -2160,7 +2166,6 @@ footer .bottom-footer {
   font-weight: bold;
 }
 .contact .container .custom-row .help-box .text-help {
-  font-family: "Open Sans Condensed", sans-serif;
   margin: 15px 0;
   text-transform: capitalize;
   font-size: 15px;
@@ -2174,9 +2179,6 @@ footer .bottom-footer {
   width: 60px;
   height: 15px;
   border-bottom: 2px solid RGB(230, 178, 115);
-}
-.contact .container .custom-row .help-box ul {
-  font-family: "Open Sans Condensed", sans-serif;
 }
 .contact .container .custom-row .help-box ul li {
   font-size: 14px;

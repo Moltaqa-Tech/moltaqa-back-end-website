@@ -135,7 +135,7 @@
                         }
                     @endphp
                     <div class="{{$catClass}} all col-md-4">
-                        <img src="{{$image->image_path_val}}" alt="Portofolio - {{$catClass}}">
+                        <img height="400" src="{{$image->image_path_val}}" alt="Portofolio - {{$catClass}}">
                     </div>
                 @endforeach
             @endforeach
@@ -198,6 +198,8 @@
                         </div>
                         <div class="card-item">
                             <img src="{{$team->image_path_val}}" alt="user">
+                            <h5>{{$team->name}}</h5>
+                            <h6>{{$team->job_title}}</h6>
                         </div>
                     </div>
                 @endforeach

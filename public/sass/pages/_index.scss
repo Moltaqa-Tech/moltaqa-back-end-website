@@ -221,7 +221,6 @@
             text-transform: uppercase;
         }
         .creative-text{
-            font-family: 'Roboto Condensed', sans-serif;
             text-transform: capitalize;
             font-size: 20px;
             text-align: center;
@@ -238,6 +237,10 @@
 .latest-work{
     padding: 50px 0;
     position: relative;
+    .owl-carousel .owl-item img {
+        display: inline-block;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
     .latest-img{
         position: absolute ;
         right: 50px;
@@ -343,12 +346,11 @@
     }
     .portfolio-content {
         .all{
-            height: 250px;
+            height: 400px;
             margin: 0 ;
             padding: 0;
             img{
-                height: 100%;
-                width: 100%;
+                object-fit: cover;
             }
         }
     }
@@ -399,12 +401,21 @@
         position: relative;
         .item{
             position: relative;
+            h5{
+                text-align: center;
+                margin: 15px 0 5px;
+                font-weight: bold;
+            }
+            h6{
+                text-align: center;
+                color: $mainColor;
+            }
         }
         .card-item{
             position: relative;
             left: 40px ;
             width: 250px;
-            background: url(../images/Rectangle.png);
+            // background: url(../images/Rectangle.png);
             background-size: cover;
         }
         .social-icons{

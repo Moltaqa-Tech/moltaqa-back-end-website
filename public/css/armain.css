@@ -14,7 +14,9 @@ header .v-line {
     border-left: none;
     border-right: 1px solid transparent;
 }
-
+.what-we-do .container .features .custom-row .cust-col .feature-box p {
+    text-align: right;
+}
 .side_menu .list li .active, .side_menu .list li a:hover , .custom-navbar .nav-item .active, .custom-navbar .nav-item a:hover {
     border-left: none;
     border-right: 1px solid RGB(230, 178, 115);
@@ -60,8 +62,7 @@ header .v-line {
 }
 .what-we-do .container .features .custom-row .cust-col .feature-box h6 {
     margin-left: 0;
-    margin-right: 35px;
-    text-align: right;
+    text-align: center;
 }
 .portfolio{
     direction: ltr;
