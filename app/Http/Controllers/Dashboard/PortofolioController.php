@@ -39,7 +39,7 @@ class PortofolioController extends Controller
         foreach (config('translatable.locales') as $locale) {
 
             $rules += [$locale . '.title' => ['required', 'max:255']];
-            $rules += [$locale . '.description' => ['required', 'max:255']];
+            $rules += [$locale . '.description' => ['required']];
 
         }//end of for each
 
@@ -87,7 +87,7 @@ class PortofolioController extends Controller
         foreach (config('translatable.locales') as $locale) {
 
             $rules += [$locale . '.title' => ['required', 'max:255']];
-            $rules += [$locale . '.description' => ['required', 'max:255']];
+            $rules += [$locale . '.description' => ['required']];
 
         }//end of for each
 

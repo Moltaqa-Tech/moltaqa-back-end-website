@@ -49,7 +49,7 @@ class SupportController extends Controller
         foreach (config('translatable.locales') as $locale) {
 
             $rules += [$locale . '.title' => ['required', 'max:255']];
-            $rules += [$locale . '.description' => ['required', 'max:522']];
+            $rules += [$locale . '.description' => ['required']];
             $rules += [$locale . '.location' => ['required', 'max:255']];
 
         }//end of for each

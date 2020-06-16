@@ -86,7 +86,7 @@
                     <section>
                             <div>
                                 <h5>{{$lastWork->title}}</h5>
-                                <p>{{$lastWork->description}}</p>
+                                <p>{!!$lastWork->description!!}</p>
                             </div>
 
                     </section>
@@ -134,7 +134,7 @@
                             $catClass .= " cat_" . $cat->id;
                         }
                     @endphp
-                    <div class="{{$catClass}} all col-md-4">
+                    <div class="{{$catClass}} all col-md-3">
                         <img height="400" src="{{$image->image_path_val}}" alt="Portofolio - {{$catClass}}">
                     </div>
                 @endforeach

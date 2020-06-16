@@ -33,7 +33,7 @@ class ReviewController extends Controller
 
         foreach (config('translatable.locales') as $locale) {
 
-            $rules += [$locale . '.comment' => ['required', 'max:522']];
+            $rules += [$locale . '.comment' => ['required']];
 
         }//end of for each
 
@@ -82,7 +82,7 @@ class ReviewController extends Controller
 
         foreach (config('translatable.locales') as $locale) {
 
-            $rules += [$locale . '.comment' => ['required', 'max:522']];
+            $rules += [$locale . '.comment' => ['required']];
 
         }//end of for each
 

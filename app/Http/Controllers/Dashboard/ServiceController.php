@@ -36,7 +36,7 @@ class ServiceController extends Controller
         foreach (config('translatable.locales') as $locale) {
 
             $rules += [$locale . '.title' => ['required', 'max:255']];
-            $rules += [$locale . '.desc' => ['required', 'max:522']];
+            $rules += [$locale . '.desc' => ['required']];
 
         }//end of for each
 
@@ -75,7 +75,7 @@ class ServiceController extends Controller
         foreach (config('translatable.locales') as $locale) {
 
             $rules += [$locale . '.title' => ['required', 'max:255']];
-            $rules += [$locale . '.desc' => ['required', 'max:522']];
+            $rules += [$locale . '.desc' => ['required']];
 
         }//end of for each
 
@@ -102,7 +102,7 @@ class ServiceController extends Controller
         // check status and work flow
         $request_data['status'] = (isset($request->status) && $request->status == 'on') ? 1: 0 ;
         $request_data['work_flow'] = (isset($request->work_flow) && $request->work_flow == 'on') ? 1: 0 ;
-        
+
         $service->update($request_data);
         session()->flash('success', trans('service.updated_successfully'));
         return redirect()->route('dashboard.services.index');
