@@ -187,6 +187,9 @@ return [
         'footer_twitter_url' => 'https://twitter.com/moltaqallbrmjyt',
         'footer_snapchat_url' => 'https://www.snapchat.com/add/moltaqallbrmjyat',
         'footer_whatsup_phone' => '00966546113972',
+        'footer_linked_in_url' => 'https://www.linkedin.com/in/moltaqallbrmjyat',
+        'footer_benhance_url' => '#',
+        'footer_gmail_url' => '#',
 
 
 ];

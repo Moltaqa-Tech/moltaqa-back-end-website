@@ -49,7 +49,7 @@
                 <div class="details-blog">
                     <h3>{{$blog->title}}</h3>
                     <p>{{$blog->brief_description}}</p>
-                    <a data-toggle="modal" data-target="#blogModal" data-title="{{$blog->title}}" data-desc="{{$blog->description}}" class="main-btn">read more</a>
+                    <a data-toggle="modal" data-target="#blogModal" data-title="{{$blog->title}}" data-desc="{{$blog->description}}" class="main-btn">@lang("site.blog_read_more")</a>
                 </div>
                 </div>
             @endforeach
@@ -69,7 +69,7 @@
         <div class="modal-body" id="blogModalDesc">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary additional-btn" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary additional-btn" data-dismiss="modal">@lang("site.blog_close")</button>
         </div>
       </div>
     </div>

@@ -346,11 +346,12 @@
     }
     .portfolio-content {
         .all{
-            height: 400px;
+            height: auto;
             margin: 0 ;
             padding: 0;
             img{
-                object-fit: cover;
+                width: 100%;
+                height: auto;
             }
         }
     }
@@ -372,7 +373,7 @@
     }
 }
 .our-geeks{
-    padding: 25px 0 ;
+    padding: 45px 0 25px ;
     .container{
         position: relative;
     }
@@ -555,7 +556,7 @@
         padding: 25px;
         background: url(../images/maincolor.png);
         background-size: cover ;
-        position: relative; 
+        position: relative;
         height: 330px;
         form{
             width: 80% ;
@@ -585,14 +586,14 @@
                 font-weight: bold ;
                 font-size: 14px;
             }
-        }  
+        }
     }
     .send{
         height: 330px;
         width: 100% ;
     }
 }
-  
+
 
 /*** Start Media Queries ***/
 @media only screen and (max-width: 479px){
@@ -711,7 +712,7 @@
             }
             .creative-text{
                 font-size: 14px;
-                top: 15px;    
+                top: 15px;
             }
         }
     }
@@ -893,7 +894,7 @@
                 button{
                     font-size: 13px;
                 }
-            }  
+            }
         }
         .send{
             height: 250px;
@@ -993,7 +994,7 @@
             }
             .creative-text{
                 font-size: 16px;
-                top: 15px;    
+                top: 15px;
             }
         }
     }
@@ -1051,7 +1052,6 @@
         }
         .portfolio-content {
             .all{
-                height: 150px;
                 -ms-flex: 0 0 50%;
                 flex: 0 0 50%;
                 max-width: 50%;
@@ -1161,7 +1161,7 @@
             }
         }
         .new-project{
-            padding: 15px 60px; 
+            padding: 15px 60px;
             h3{
                 font-size: 18px;
             }
@@ -1379,7 +1379,7 @@
             }
         }
         .new-project{
-            padding: 15px; 
+            padding: 15px;
             h3{
                 font-size: 18px;
             }
@@ -1401,7 +1401,7 @@
     .our-geeks{
         .content{
             .social-icons{
-                left: 40px; 
+                left: 40px;
             }
         }
     }
