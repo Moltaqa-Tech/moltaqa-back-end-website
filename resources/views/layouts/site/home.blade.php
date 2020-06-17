@@ -1,3 +1,4 @@
+
 @extends('layouts.site.main')
 
 @section('css')
@@ -23,7 +24,7 @@
             <p class="text-details">
                 @lang("site.home_who_details")
             </p>
-            <a href="#" class="main-btn read-more">
+            <a href="{{url('/about')}}" class="main-btn read-more">
                 @lang("site.home_who_read_more")
             </a>
           </div>
@@ -69,7 +70,7 @@
               <span>@lang("site.home_porto_more")</span>
               <span>@lang("site.home_porto_app")</span>
             </p>
-            <a href="#">@lang("site.home_porto_download")</a>
+            <a href="#new-project">@lang("site.home_porto_download")</a>
           </div>
         </div>
       </section>
@@ -243,7 +244,7 @@
                 <img src="{{asset('images/newedit.png')}}" alt="send" class="send">
             </div>
             <div class="col-md-6 client-said-box">
-                <div class="new-project">
+                <div id="new-project" class="new-project">
                     <h3>@lang("site.contact_start_new_project")</h3>
                     <form action="{{url('/contact-us')}}" method="POST">
                         @csrf

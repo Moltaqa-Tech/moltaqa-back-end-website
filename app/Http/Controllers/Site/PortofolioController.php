@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Portofolio;
 use App\PortofolioCategory;
 
-class PortofolioController extends Controller
+class PortofolioController extends BaseController
 {
     //
 

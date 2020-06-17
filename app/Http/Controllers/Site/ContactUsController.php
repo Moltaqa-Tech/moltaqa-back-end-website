@@ -8,7 +8,7 @@ use App\Support;
 use Illuminate\Http\Request;
 
 
-class ContactUsController extends Controller
+class ContactUsController extends BaseController
 {
 
 

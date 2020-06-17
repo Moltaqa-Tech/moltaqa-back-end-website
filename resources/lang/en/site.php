@@ -47,7 +47,7 @@ return [
     'home_porto_agnecy' => 'Moltaqa Tech creative agency',
     'home_porto_more' => 'more than',
     'home_porto_app' => 'mobile app',
-    'home_porto_download' => 'download now',
+    'home_porto_download' => 'send message',
 
     // Section Our Last Work
     'home_our_last' => 'Latest',
@@ -91,6 +91,7 @@ return [
      'pricing_website' => 'webiste pricing',
      'pricing_hosting' => 'hosting pricing',
      'pricing_save' => 'save',
+     'pricing_currency' => 'SAR',
      'pricing_month' => 'month',
      'pricing_get_start' => 'get start',
 
@@ -112,6 +113,8 @@ return [
         * Blog Page
         */
         'blog_views_count' => 'View: ',
+        'blog_read_more' => 'Read More',
+        'blog_close' => 'Close',
 
        /**
         ** Contact Us Page

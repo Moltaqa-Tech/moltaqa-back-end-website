@@ -9,8 +9,9 @@ use App\Review;
 use App\Service;
 use App\Team;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
+    
     public function index() {
 
         $services = Service::where("status", 1)->where("work_flow", 0)->get();

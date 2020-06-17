@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mappers\PricingType;
 use App\PriceCategory;
 
-class PriceController extends Controller
+class PriceController extends BaseController
 {
     public function index() {
         $websiteCategories = PriceCategory::where('price_type', PricingType::WEBSITE_PRICING)->where("status", 1)->get();

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use App\Blog;
 
-class BlogController extends Controller
+class BlogController extends BaseController
 {
 
 

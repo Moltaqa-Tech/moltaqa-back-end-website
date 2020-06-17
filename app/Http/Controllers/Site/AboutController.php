@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use App\Review;
 
-class AboutController extends Controller
+class AboutController extends BaseController
 {
 
     public function index()

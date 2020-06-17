@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{asset('images/logo.png')}}" alt="logo">
         </a>
         <div class="toggle_icon" title="Menu Bar">

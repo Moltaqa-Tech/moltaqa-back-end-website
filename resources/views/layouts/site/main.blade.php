@@ -51,7 +51,7 @@
             <div class="socail-icons">
               <a href="@lang("site.footer_facebook_url")" target="_blank"><img src="{{asset('images/f.png')}}" alt="facebook"></a>
               <a href="@lang("site.footer_instagram_url")" target="_blank"><img src="{{asset('images/i.png')}}" alt="instgram"></a>
-              <a href="tel:@lang("site.footer_whatsup_phone")" target="_blank"><img src="{{asset('images/w.png')}}" alt="whats"></a>
+              <a href="https://api.whatsapp.com/send?phone=+@lang("site.footer_whatsup_phone")" target="_blank"><img src="{{asset('images/w.png')}}" alt="whats"></a>
               <a href="@lang("site.footer_twitter_url")" target="_blank"><img src="{{asset('images/t.png')}}" alt="twitter"></a>
             </div>
           </div>
@@ -76,8 +76,10 @@
           <div class="col-md-3 col-sm-6 side-footer">
             <h5>@lang("site.footer_facebook_title")</h5>
             <div class="facebook-footer">
-              <p>@lang("site.footer_facebook_desc1")</p>
-              <p>@lang("site.footer_facebook_desc2")</p>
+
+                <p>{{($blog1_desc != null) ? $blog1_desc : ""}}</p>
+                <p>{{($blog2_desc != null) ? $blog2_desc : ""}}</p>
+              {{-- <p>@lang("site.footer_facebook_desc2")</p> --}}
             </div>
           </div>
           {{-- <div class="col-md-3 col-sm-6 side-footer">

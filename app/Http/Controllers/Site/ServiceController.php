@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
 use App\Service;
 
-class ServiceController extends Controller
+class ServiceController extends BaseController
 {
 
     public function index()
